@@ -1,9 +1,10 @@
 module imem(masterif.imem io);
   
-  reg[31:0] imemory[0:255];
+  bit[31:0] imemory[0:255];
   
   initial begin
     $readmemb("prog.data", imemory);
+    $display("imem0:%X", imemory[0]);
   end
   
   always_comb

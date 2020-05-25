@@ -1,23 +1,19 @@
 module alu(masterif.alu io);
-  
-  typedef enum
 
-always @(*)
-begin 
- case(alu_control)
- 3'b000: result = a + b; // add
- 3'b001: result = a - b; // sub
- 3'b010: result = ~a;
- 3'b011: result = a<<b;
- 3'b100: result = a>>b;
- 3'b101: result = a & b; // and
- 3'b110: result = a | b; // or
- 3'b111: begin if (a<b) result = 16'd1;
-    else result = 16'd0;
-    end
- default:result = a + b; // add
- endcase
-end
-assign zero = (result==16'd0) ? 1'b1: 1'b0;
- 
+  always_comb begin 
+    case(io.alu_sel)
+      ALU_ADD: io.alu_out = io.alu_a + io.alu_b;
+      ALU_SUB: io.alu_out = io.alu_a - io.alu_b;
+      ALU_NOT: io.alu_out = ~a;
+      ALU_LS: io.alu_out = io.alu_a << io.alu_b;
+      ALU_RS: io.alu_out = io.alu_a >> io.alu_b;
+      ALU_AND: io.alu_out = io.alu_a & io.alu_b;
+      ALU_OR: io.alu_out = io.alu_a | io.alu_b;
+      ALU_LT: 
+        if (io.alu_a < io.alu_b) io.alu_out = 32'd1;
+        else io.alu_out = 32'd0;
+      default: io.alu_out = io.alu_a + io.alu_b;
+    endcase
+  end
+  
 endmodule

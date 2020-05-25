@@ -18,10 +18,15 @@ interface masterif (
   logic[31:0] alu_out;
   logic[2:0] alu_sel;
   
+  always @(posedge clk) begin
+    if (pc) pc<=0;
+    else pc<=1;
+  end
   
   modport imem (
     input pc,
-    output instruction
+    output instruction,
+    input nreset
   );
   
   modport umem (
@@ -30,7 +35,7 @@ interface masterif (
     output mem_rdata,
     input mem_addr,
     input mem_rw
-  )
+  );
   
   modport alu (
     input clk,
@@ -38,6 +43,6 @@ interface masterif (
     input alu_b,
     output alu_out,
     input alu_sel
-  )
+  );
   
 endinterface
