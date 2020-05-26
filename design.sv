@@ -11,8 +11,8 @@ module cpu (
 
   masterif mif(.*);
 
-  imem(mif.imem);
-  umem(mif.umem);
+  imem imem_inst(mif.imem);
+  umem umem_inst(mif.umem);
   
 
   instruction_parser instruction(mif.instruction);
@@ -66,56 +66,60 @@ module cpu (
     endcase    
   end
   
-  logic k;
-  always @(posedge mif.clk)
-  begin
-    if(mif.pc!=1) mif.pc <= 1;
-    else mif.pc <= 0;
-  end
-  
   always_comb begin
-    if(!mif.nreset) mif.rx = '{default:32'h00000000};
+    if(!mif.nreset) begin
+      //mif.rx = '{default:32'h00000000};
+      mif.rx[0] = 0;
+      mif.rx[1] = 4;
+      mif.rx[2] = 0;
+      mif.rx[3] = 0;
+      mif.mem_addr = 0;
+    end
     else begin
       case (instruction.name)
         
         LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + instruction.i_imm11c0;
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm11c0);
           mif.rx[instruction.rd] = mif.mem_rdata;
+          $display("rd; %X", mif.rx[instruction.rd]);
         end
         
         LH: begin //Load 16-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + instruction.i_imm11c0;
-          if(mif.mem_rdata[15] == 1)
-            mif.rx[instruction.rd] = {16'hFF, mif.mem_rdata[15:0]};
-          else
-            mif.rx[instruction.rd] = {16'h00, mif.mem_rdata[15:0]};
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm11c0);
+          mif.rx[instruction.rd] = `SIGN_EXTEND32(16, mif.mem_rdata);
+          $display("rd; %X", mif.rx[instruction.rd]);
         end
         
         LHU: begin //Load 16-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + instruction.i_imm11c0;
-          mif.rx[instruction.rd] = {16'h00, mif.mem_rdata[15:0]};
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm11c0);
+          mif.rx[instruction.rd] = {16'h0000, mif.mem_rdata[15:0]};
+          $display("rd; %X", mif.rx[instruction.rd]);
         end
         
         LB: begin //Load 8-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + instruction.i_imm11c0;
-          if(mif.mem_rdata[7] == 1)
-            mif.rx[instruction.rd] = {24'hFFF, mif.mem_rdata[7:0]};
-          else
-            mif.rx[instruction.rd] = {24'h000, mif.mem_rdata[7:0]};
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm11c0);
+          mif.rx[instruction.rd] = `SIGN_EXTEND32(8, mif.mem_rdata);
+          $display("rd; %X", mif.rx[instruction.rd]);
         end
         
         LBU: begin //Load 8-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + instruction.i_imm11c0;
-          mif.rx[instruction.rd] = {24'h000, mif.mem_rdata[7:0]};
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm11c0);
+          mif.rx[instruction.rd] = {24'h000000, mif.mem_rdata[7:0]};
+          $display("rd; %X", mif.rx[instruction.rd]);
         end
         
-        ADDI: k=0;
-      
+        SW: begin
+          mif.mem_rw = 1;
+          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, {instruction.s_imm11c5, instruction.s_imm4c0});
+          mif.mem_wdata = mif.rx[instruction.rs2];
+          $display("rd; %X", umem.umemory[mif.mem_addr]);
+        end
+        
       endcase
     end
   end

@@ -19,8 +19,10 @@ interface masterif (
   logic[2:0] alu_sel;
   
   always @(posedge clk) begin
-    if (pc) pc<=0;
-    else pc<=1;
+    if(nreset)begin
+      if (pc) pc<=0;
+      else pc<=0;
+    end
   end
   
   modport imem (
