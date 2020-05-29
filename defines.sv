@@ -1,7 +1,8 @@
 `ifndef DEFINES_SV
 `define DEFINES_SV
 
-`define SIGN_EXTEND32(n, r) {{(32-n){r[n-1]}}, r} 
+`define SIGN_EXTEND32(n, r) {{(32-n){r[n-1]}}, r[n-1:0]} 
+// Sign-extend a value of n bits to 32 bits
 
 typedef enum integer {
     LUI, AUIPC, JAL, JALR, BEQ, BNE, BLT, BGE, BLTU,

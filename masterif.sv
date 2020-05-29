@@ -6,6 +6,13 @@ interface masterif (
   logic[31:0] rx [31:0];
   logic[31:0] pc;
   
+  wire[31:0] rx1;
+  wire[31:0] rx2;
+  wire[31:0] rx3;
+  assign rx1=rx[1];
+  assign rx2=rx[2];
+  assign rx3=rx[3];
+  
   logic[31:0] instruction;
   
   logic[31:0] mem_wdata;
@@ -18,13 +25,6 @@ interface masterif (
   logic[31:0] alu_out;
   logic[2:0] alu_sel;
   
-  always @(posedge clk) begin
-    if(nreset)begin
-      if (pc) pc<=0;
-      else pc<=0;
-    end
-  end
-  
   modport imem (
     input pc,
     output instruction,
@@ -33,6 +33,7 @@ interface masterif (
   
   modport umem (
     input clk,
+    input instruction,
     input mem_wdata,
     output mem_rdata,
     input mem_addr,
