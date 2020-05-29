@@ -25,7 +25,8 @@ module cpu (
   bit rd_w_en;
   assign rd_w_en = instruction.name inside {LW, LH, LHU, LB, 
     LBU, ADDI, SLTI, SLTIU, ANDI, ORI, XORI, ADD, SUB, 
-    SLT, SLTU, AND, OR, XOR, SLL, SRL, SRA, JAL} ? 1 : 0;
+    SLT, SLTU, AND, OR, XOR, SLL, SRL, SRA, JAL, SLLI,
+    SRLI, SRAI, LUI, AUIPC} ? 1 : 0;
   
   bit on_branch_instrution;
   assign on_branch_instruction = instruction.name inside {BEQ, 
@@ -229,7 +230,7 @@ module cpu (
         end
                 
         SRA: begin
-          rdbuffer = mif.rx[instruction.rs1] >>> {mif.rx[instruction.rs2]}[4:0];
+          rdbuffer = $signed(mif.rx[instruction.rs1]) >>> {mif.rx[instruction.rs2]}[4:0];
           $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], {mif.rx[instruction.rs2]}[4:0]);
         end
         
@@ -251,6 +252,69 @@ module cpu (
           $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
         end
         
+        BNE: begin
+          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+          take_branch = (mif.rx[instruction.rs1] != mif.rx[instruction.rs2]) ? 1 : 0;
+          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
+        end
+        
+        BLT: begin
+          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+          take_branch = ($signed(mif.rx[instruction.rs1]) < $signed(mif.rx[instruction.rs2])) ? 1 : 0;
+          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
+        end
+        
+        BLTU: begin
+          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+          take_branch = (mif.rx[instruction.rs1] < mif.rx[instruction.rs2]) ? 1 : 0;
+          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
+        end
+        
+        BGE: begin
+          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+          take_branch = ($signed(mif.rx[instruction.rs1]) >= $signed(mif.rx[instruction.rs2])) ? 1 : 0;
+          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
+        end
+        
+        BGEU: begin
+          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+          take_branch = (mif.rx[instruction.rs1] >= mif.rx[instruction.rs2]) ? 1 : 0;
+          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
+        end
+        
+        SLLI: begin
+          rdbuffer = mif.rx[instruction.rs1] << instruction.rs2;
+          $display("rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
+        end
+           
+        SRLI: begin
+          rdbuffer = mif.rx[instruction.rs1] >> instruction.rs2;
+          $display("rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
+        end
+           
+        SRAI: begin
+          rdbuffer = $signed(mif.rx[instruction.rs1]) >>> instruction.rs2;
+          $display("SRAI: rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
+        end
+        
+        LUI: begin
+          rdbuffer = {instruction.u_imm, 12'b000000000000};
+        end
+        
+        AUIPC: begin
+          rdbuffer = {instruction.u_imm, 12'b000000000000} + mif.pc;
+          $display("SRAI: rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
+        end
+        
+        FENCE: begin
+        end
+          
+        ECALL: begin
+        end
+          
+        EBREAK: begin
+        end
+        
       endcase
     end
   end
@@ -259,7 +323,7 @@ module cpu (
     if(!mif.nreset) begin
       //mif.rx = '{default:32'h00000000};
       mif.rx[0] = 12;
-      mif.rx[1] = 9;
+      mif.rx[1] = 32'b10000000000000000000000010000100;
       mif.rx[2] = 4;
       mif.rx[3] = 5;
       mif.rx[4] = 'hfffffffe;

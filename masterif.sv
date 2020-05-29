@@ -20,11 +20,6 @@ interface masterif (
   logic[31:0] mem_addr;
   logic mem_rw;
   
-  logic[31:0] alu_a;
-  logic[31:0] alu_b;
-  logic[31:0] alu_out;
-  logic[2:0] alu_sel;
-  
   modport imem (
     input pc,
     output instruction,
@@ -38,14 +33,6 @@ interface masterif (
     output mem_rdata,
     input mem_addr,
     input mem_rw
-  );
-  
-  modport alu (
-    input clk,
-    input alu_a,
-    input alu_b,
-    output alu_out,
-    input alu_sel
   );
   
 endinterface

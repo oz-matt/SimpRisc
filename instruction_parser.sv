@@ -9,7 +9,7 @@ interface instruction_parser (
   wire[11:0] i_imm;  
   wire[11:0] s_imm;
   wire[11:0] b_imm;
-  wire[19:0] u_imm31c12;
+  wire[19:0] u_imm;
   wire[19:0] j_imm;
   wire aluc;
   wire ebit;
@@ -21,7 +21,7 @@ interface instruction_parser (
   assign rs2 = instruction[24:20];
   assign funct7 = instruction[31:25];
   assign i_imm = instruction[31:20];
-  assign u_imm31c12 = instruction[31:12];
+  assign u_imm = instruction[31:12];
   assign aluc = instruction[30];
   assign ebit = instruction[20];
   
