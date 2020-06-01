@@ -3,16 +3,18 @@
 `include "instruction_parser.sv"
 `include "imem.sv"
 `include "umem.sv"
+`include "axim.sv"
   
 module cpu (
   input clk,
-  input nreset
+  input nreset,
+  aximem.mem io
 );
 
   masterif mif(.*);
 
   imem imem_inst(mif.imem);
-  umem umem_inst(mif.umem);
+  umem umem_inst(.io(mif.umem), .mem(io));
   
 
   instruction_parser instruction(mif.instruction);
@@ -322,10 +324,10 @@ module cpu (
   always @(posedge clk or negedge mif.nreset) begin
     if(!mif.nreset) begin
       //mif.rx = '{default:32'h00000000};
-      mif.rx[0] = 12;
-      mif.rx[1] = 32'b10000000000000000000000010000100;
+      mif.rx[0] = 0;
+      mif.rx[1] = 0;
       mif.rx[2] = 4;
-      mif.rx[3] = 5;
+      mif.rx[3] = 44;
       mif.rx[4] = 'hfffffffe;
     end
     else begin

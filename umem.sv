@@ -1,9 +1,30 @@
-module umem(masterif.umem io);
+module umem(masterif.umem io,
+            aximem.mem mem);
   
   reg[7:0] umemory[0:255];
   
   initial begin
-    $readmemb("mem.data", umemory);
+    //$readmemb("mem.data", umemory);
+    umemory[0] = 8'h11;
+    umemory[1] = 0;
+    umemory[2] = 3;
+    umemory[3] = 0;
+    
+    umemory[4] = 3;
+    umemory[5] = 0;
+    umemory[6] = 0;
+    umemory[7] = 0;
+    
+    umemory[8] = 8'h99;
+    umemory[9] = 8'haa;
+    umemory[10] = 8'hbb;
+    umemory[11] = 8'hcc;
+    
+    umemory[12] = 4;
+    umemory[13] = 0;
+    umemory[14] = 0;
+    umemory[15] = 0;
+    if(mem.axi_mem_w) umemory[15] = 0;
   end
   
   always @* begin
@@ -36,5 +57,16 @@ module umem(masterif.umem io);
    umemory[io.mem_addr + 2], 
    umemory[io.mem_addr + 1], 
        umemory[io.mem_addr]};
+  
+  
+  
+  always @* begin
+    if(mem.axi_mem_w) begin
+      umemory[mem.axi_mem_addr] = mem.axi_mem_data[7:0];
+      umemory[mem.axi_mem_addr + 1] = mem.axi_mem_data[15:8];
+      umemory[mem.axi_mem_addr + 2] = mem.axi_mem_data[23:16];
+      umemory[mem.axi_mem_addr + 3] = mem.axi_mem_data[31:24];
+    end
+  end
   
 endmodule
