@@ -4,6 +4,9 @@
 `include "imem.sv"
 `include "umem.sv"
 `include "axim.sv"
+`include "adc_handoff.sv"
+`include "sindrv.sv"
+`include "soc_top.sv"
   
 module cpu (
   input clk,

@@ -6,11 +6,7 @@ module tb();
     forever #1 clk <= !clk;
   end
   
-  aximem aximem_inst();
-  
-  mdriver_int#(32,8) vif(.*);
-  master_wrapper master_wrapper_inst(.io(vif.slave), .mem(aximem_inst.axim));
-  cpu cpu_inst(.*, .io(aximem_inst.mem));
+  soc_top soc_top_inst(.*);
   
   initial begin
     $dumpfile("dump.vcd"); 
@@ -22,14 +18,16 @@ module tb();
     nreset <= 1;
     //vif.nreset <= 1;
 
-    vif.execute_write(0, 'hb4b4b4b4);
+    //vif.execute_write(0, 'hb4b4b4b4);
+
+    //vif.execute_write(0, 'hb4b4b4b4);
     //vif.execute_read(0); //Value then avilable in vif.so_data
 
-    $display("Read data: %X", vif.so_data);
+    //$display("Read data: %X", vif.so_data);
    
     
     #50;
-    disp_rx(cpu_inst.mif.rx);
+    //disp_rx(cpu_inst.mif.rx);
     //disp_umem(cpu_inst.umem_inst.umemory);
     $finish;
   end

@@ -187,10 +187,20 @@ module memslave(axilite_int.slave io, aximem.axim memaxi);
 	logic write_request_permitted;
 
 	logic[31:0] mem[255:0];
+  
+    logic[7:0] raddr;
 
 	always_comb begin
 		valid_read_received = io.AXI_ARVALID && io.AXI_ARREADY;
 		write_request_permitted = vif.AXI_AWVALID && vif.AXI_AWREADY && vif.AXI_WVALID && vif.AXI_WREADY;
+    end
+  
+    always_ff @ (posedge io.AXI_ACLK or negedge io.AXI_ARESETN) begin
+      if (!io.AXI_ARESETN)
+        raddr <= 0;
+      else begin
+        raddr <= raddr + 1;
+      end
     end
 
 
@@ -255,7 +265,7 @@ module memslave(axilite_int.slave io, aximem.axim memaxi);
   always_ff @(posedge write_request_permitted) begin
 	mem[io.AXI_AWADDR] <= io.AXI_WDATA;
     memaxi.axi_mem_w <= 1;
-    memaxi.axi_mem_addr <= io.AXI_AWADDR;
+    memaxi.axi_mem_addr <= {1'b1, raddr[7:0]};//io.AXI_AWADDR;
     memaxi.axi_mem_data <= io.AXI_WDATA;
   end
 
@@ -276,6 +286,10 @@ module master_wrapper(mdriver_int.slave io, aximem.axim mem);
 	pstate_t pstate;
 
   memslave memslave_inst(.io(vif.slave), .memaxi(mem));
+  
+  logic[31:0] adcdata;
+  
+  adc_handoff adc_inst(.clk(io.clk), .adcout(adcdata));
 
 	integer local_data;
 	logic   ready_for_data;

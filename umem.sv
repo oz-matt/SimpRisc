@@ -1,7 +1,7 @@
 module umem(masterif.umem io,
             aximem.mem mem);
   
-  reg[7:0] umemory[0:255];
+  reg[7:0] umemory[0:511];
   
   initial begin
     //$readmemb("mem.data", umemory);
@@ -58,14 +58,41 @@ module umem(masterif.umem io,
    umemory[io.mem_addr + 1], 
        umemory[io.mem_addr]};
   
+  logic[8:0] fixed_addr1;
+  logic[8:0] fixed_addr2;
+  logic[8:0] fixed_addr3;
+  logic[8:0] fixed_addr4;
   
+  always_comb begin
+    if(mem.axi_mem_addr < 509) begin
+      fixed_addr1 = mem.axi_mem_addr;
+      fixed_addr2 = mem.axi_mem_addr + 1;
+      fixed_addr3 = mem.axi_mem_addr + 2;
+      fixed_addr4 = mem.axi_mem_addr + 3;
+    end else if (mem.axi_mem_addr == 509) begin
+      fixed_addr1 = 509;
+      fixed_addr2 = 510;
+      fixed_addr3 = 511;
+      fixed_addr4 = 256;
+    end else if (mem.axi_mem_addr == 510) begin
+      fixed_addr1 = 510;
+      fixed_addr2 = 511;
+      fixed_addr3 = 256;
+      fixed_addr4 = 257;
+    end else if (mem.axi_mem_addr == 511) begin
+      fixed_addr1 = 511;
+      fixed_addr2 = 256;
+      fixed_addr3 = 257;
+      fixed_addr4 = 258;
+    end
+  end  
   
   always @* begin
     if(mem.axi_mem_w) begin
-      umemory[mem.axi_mem_addr] = mem.axi_mem_data[7:0];
-      umemory[mem.axi_mem_addr + 1] = mem.axi_mem_data[15:8];
-      umemory[mem.axi_mem_addr + 2] = mem.axi_mem_data[23:16];
-      umemory[mem.axi_mem_addr + 3] = mem.axi_mem_data[31:24];
+      umemory[fixed_addr1] = mem.axi_mem_data[7:0];
+      umemory[fixed_addr2] = mem.axi_mem_data[15:8];
+      umemory[fixed_addr3] = mem.axi_mem_data[23:16];
+      umemory[fixed_addr4] = mem.axi_mem_data[31:24];
     end
   end
   
