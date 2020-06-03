@@ -4,6 +4,7 @@ module sindrv(mdriver_int.master io);
   bit wstate;
   bit loop_finished;
   
+  wire[4:0] rand_5[1:0];
   wire[7:0] rand_byte;
   
   logic[7:0] adcdata[0:255];
@@ -12,11 +13,18 @@ module sindrv(mdriver_int.master io);
     $readmemh("adc.data", adcdata);
   end
   
-  lfsr_8bit lfsr_inst(
-    .clk(io.clk), 
-    .nreset(io.nreset), 
-    .data(rand_byte)
-  );
+  genvar i;
+  
+  generate 
+    for (i = 0; i < 2; i = i + 1) begin
+      lfsr_5bit lfsr_insta(
+        .clk(io.clk), 
+        .nreset(io.nreset), 
+        .data(rand_5[i]));
+    end
+  endgenerate
+  
+  assign rand_byte = {rand_5[0][3:0], rand_5[1][3:0]};
   
     always_ff @ (posedge io.clk or negedge io.nreset) begin
       if (!io.nreset)
