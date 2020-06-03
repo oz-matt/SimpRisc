@@ -45,7 +45,7 @@ endinterface
 interface aximem ();
 
   logic[31:0] axi_mem_data;
-  logic[31:0] axi_mem_addr;
+  logic[8:0] axi_mem_addr;
   logic axi_mem_w;
   
   modport mem (

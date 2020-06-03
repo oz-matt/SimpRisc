@@ -7,6 +7,7 @@
 `include "adc_handoff.sv"
 `include "sindrv.sv"
 `include "soc_top.sv"
+`include "lfsr8.sv"
   
 module cpu (
   input clk,
