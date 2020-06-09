@@ -4,7 +4,7 @@ interface masterif (
 );
   
   logic[31:0] rx [31:0];
-  logic[31:0] pc;
+  logic[31:0] pc = 32'h80000000;
   
   wire[31:0] rx1;
   wire[31:0] rx2;
