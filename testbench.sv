@@ -26,7 +26,7 @@ module tb();
     //$display("Read data: %X", vif.so_data);
    
     
-    #50;
+    #200;
     //disp_rx(cpu_inst.mif.rx);
     //disp_umem(cpu_inst.umem_inst.umemory);
     $finish;

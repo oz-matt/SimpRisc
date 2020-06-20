@@ -1,14 +1,18 @@
 `include "masterif.sv"
+`include "mdriver_int.sv"
+`include "axil_int.sv"
 `include "defines.sv"
+`include "memslave.sv"
+`include "axi_master_wrapper.sv"
 `include "instruction_parser.sv"
 `include "imem.sv"
+`include "axi_mem.sv"
 `include "umem.sv"
-`include "axim.sv"
-`include "adc_handoff.sv"
 `include "sindrv.sv"
 `include "soc_top.sv"
 `include "lfsr5.sv"
-  
+
+
 module cpu (
   input clk,
   input nreset,
@@ -60,7 +64,6 @@ module cpu (
   
   
   always_comb begin
-    if(instruction.size == 4) begin
     casex ({instruction.aluc, instruction.funct3, instruction.opcode})
       11'bxxxx0110111: instruction.name = LUI;
       11'bxxxx0010111: instruction.name = AUIPC;
@@ -106,61 +109,12 @@ module cpu (
         else
           instruction.name = ECALL;
       default: instruction.name = NOP;
-    endcase    
-    end
-    else if (instruction.size == 2) begin
-      casex({instruction.c_ubits, instruction.c_12bit, instruction.c_umbits, instruction.c_lmbits, instruction.c_lbits})
-        10'b000xxxxx00: instruction.name = C_ADDI4SPN;
-        10'b001xxxxx00: instruction.name = C_FLD;
-        10'b010xxxxx00: instruction.name = C_LW;
-        10'b011xxxxx00: instruction.name = C_FLW;
-        10'b101xxxxx00: instruction.name = C_FSD;
-        10'b110xxxxx00: instruction.name = C_SW;
-        10'b111xxxxx00: instruction.name = C_FSW;
-        10'b000xxxxx01: begin
-          if(instruction.instruction[12:2] == 0)
-            instruction.name = C_NOP;
-          else
-            instruction.name = C_ADDI;
-        end  
-        10'b001xxxxx01: instruction.name = C_JAL;
-        10'b010xxxxx01: instruction.name = C_LI;
-        10'b100x00xx01: instruction.name = C_SRLI;
-        10'b100x01xx01: instruction.name = C_SRAI;
-        10'b100x10xx01: instruction.name = C_ANDI;
-        10'b1000110001: instruction.name = C_SUB;
-        10'b1000110101: instruction.name = C_XOR;
-        10'b1000111001: instruction.name = C_OR;
-        10'b1000111101: instruction.name = C_AND;
-        10'b101xxxxx01: instruction.name = C_J;
-        10'b110xxxxx01: instruction.name = C_BEQZ;
-        10'b111xxxxx01: instruction.name = C_BNEZ;
-        
-        10'b000xxxxx10: instruction.name = C_SLLI;
-        10'b001xxxxx10: instruction.name = C_FLDSP;
-        10'b011xxxxx10: instruction.name = C_FLWSP;
-        10'b1000xxxx10: begin
-          if(instruction.instruction[6:2] == 0)
-            instruction.name = C_JR;
-          else
-            instruction.name = C_MV;
-        end  
-        10'b1001xxxx10: begin
-          if(instruction.instruction[11:2] == 0)
-            instruction.name = C_EBREAK;
-          else if(instruction.instruction[6:2] == 0)
-            instruction.name = C_JALR;
-          else
-            instruction.name = C_ADD;
-        end  
-        10'b101xxxxx10: instruction.name = C_FSDSP;
-        10'b110xxxxx10: instruction.name = C_SWSP;
-        10'b111xxxxx10: instruction.name = C_FSWSP;
-      endcase
-    end
+    endcase
   end
   
   logic[31:0] rdbuffer;
+  
+  reg[31:0] se32;
   
   always_comb begin
     if(!mif.nreset) begin
@@ -172,7 +126,8 @@ module cpu (
         
         LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
           mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+          se32 = `SIGN_EXTEND32(12, instruction.i_imm);
+          mif.mem_addr = mif.rx[instruction.rs1] + se32;
           rdbuffer = mif.mem_rdata;
           $display("rd; %X", mif.rx[instruction.rd]);
         end
