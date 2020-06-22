@@ -88,7 +88,7 @@ end
     case (wstate)
       0: begin
         io.we <= 1;
-        io.si_address <= {1'b1, curr_addr};
+        io.si_address <= 32'hA0000000 + curr_addr;
         io.si_data <= curr_data;
         io.exec <= 1; 
       end

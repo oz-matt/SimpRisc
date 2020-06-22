@@ -5,7 +5,6 @@
 `include "memslave.sv"
 `include "axi_master_wrapper.sv"
 `include "instruction_parser.sv"
-`include "imem.sv"
 `include "axi_mem.sv"
 `include "umem.sv"
 `include "sindrv.sv"
@@ -21,7 +20,6 @@ module cpu (
 
   masterif mif(.*);
 
-  imem imem_inst(mif.imem);
   umem umem_inst(.io(mif.umem), .mem(io));
   
 
@@ -55,10 +53,10 @@ module cpu (
         if (take_branch)
           mif.pc <= jump;
         else
-          mif.pc <= mif.pc + instruction.size;
+          mif.pc <= mif.pc + 4;
       end
       else
-        mif.pc <= mif.pc + instruction.size;
+        mif.pc <= mif.pc + 4;
     end
   end
   
@@ -113,227 +111,195 @@ module cpu (
   end
   
   logic[31:0] rdbuffer;
+  logic[31:0] gbuf; // general buffer since select-of-concatenate not supported in vcs2016
   
-  reg[31:0] se32;
-  
-  always_comb begin
-    if(!mif.nreset) begin
-      mif.mem_addr = 0;
-      jump = 1;
-    end
-    else begin
-      case (instruction.name)
-        
-        LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
-          mif.mem_rw = 0;
-          se32 = `SIGN_EXTEND32(12, instruction.i_imm);
-          mif.mem_addr = mif.rx[instruction.rs1] + se32;
-          rdbuffer = mif.mem_rdata;
-          $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        LH: begin //Load 16-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
-          mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-          rdbuffer = `SIGN_EXTEND32(16, mif.mem_rdata);
-          $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        LHU: begin //Load 16-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
-          mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-          rdbuffer = {16'h0000, mif.mem_rdata[15:0]};
-          $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        LB: begin //Load 8-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
-          mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-          rdbuffer = `SIGN_EXTEND32(8, mif.mem_rdata);
-          $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        LBU: begin //Load 8-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
-          mif.mem_rw = 0;
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-          rdbuffer = {24'h000000, mif.mem_rdata[7:0]};
-          $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        SW, SH, SB: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
-          mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
-          mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
-          mif.mem_wdata = mif.rx[instruction.rs2];
-          $display("rd; %X", umem.umemory[mif.mem_addr]);
-        end
-        
-        ADDI: begin
-          rdbuffer = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
-           $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        SLTI: begin
-          rdbuffer = ($signed(mif.rx[instruction.rs1]) < $signed(`SIGN_EXTEND32(12, instruction.i_imm))) ? 32'h00000001 : 32'h00000000;
-           $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        SLTIU: begin
-          rdbuffer = (mif.rx[instruction.rs1] < `SIGN_EXTEND32(12, instruction.i_imm)) ? 32'h00000001 : 32'h00000000;
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], `SIGN_EXTEND32(12, instruction.i_imm));
-        end
-        
-        ANDI: begin
-          rdbuffer = mif.rx[instruction.rs1] & `SIGN_EXTEND32(12, instruction.i_imm);
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], `SIGN_EXTEND32(12, instruction.i_imm));
-        end
-        
-        ORI: begin
-          rdbuffer = mif.rx[instruction.rs1] | `SIGN_EXTEND32(12, instruction.i_imm);          
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], `SIGN_EXTEND32(12, instruction.i_imm));
-        end
-        
-        XORI: begin
-          rdbuffer = mif.rx[instruction.rs1] ^ `SIGN_EXTEND32(12, instruction.i_imm);
-          $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], `SIGN_EXTEND32(12, instruction.i_imm));
-        end
-        
-        ADD: begin
-          rdbuffer = mif.rx[instruction.rs1] + mif.rx[instruction.rs2];
-          $display("rs1: %d, simm: %d", mif.rx[instruction.rs1], mif.rx[instruction.rs2]);
-        end
-        
-        SUB: begin
-          rdbuffer = mif.rx[instruction.rs2] - mif.rx[instruction.rs1];
-          $display("rs1: %x, simm: %x", mif.rx[instruction.rs1], mif.rx[instruction.rs2]);
-        end
-        
-        SLT: begin
-          rdbuffer = $signed(mif.rx[instruction.rs1]) < $signed(mif.rx[instruction.rs2]) ? 32'h00000001 : 32'h00000000;
-           $display("rd; %X", mif.rx[instruction.rd]);
-        end
-        
-        SLTU: begin
-          rdbuffer = (mif.rx[instruction.rs1] < mif.rx[instruction.rs2]) ? 32'h00000001 : 32'h00000000;
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], `SIGN_EXTEND32(12, instruction.i_imm));
-        end
-        
-        AND: begin
-          rdbuffer = mif.rx[instruction.rs1] & mif.rx[instruction.rs2];
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], mif.rx[instruction.rs2]);
-        end
-        
-        OR: begin
-          rdbuffer = mif.rx[instruction.rs1] | mif.rx[instruction.rs2];
-          $display("rs1: %X, simm: %X", mif.rx[instruction.rs1], mif.rx[instruction.rs2]);
-        end
-        
-        XOR: begin
-          rdbuffer = mif.rx[instruction.rs1] ^ mif.rx[instruction.rs2];
-          $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], mif.rx[instruction.rs2]);
-        end
-        
-        SLL: begin
-          rdbuffer = mif.rx[instruction.rs1] << {mif.rx[instruction.rs2]}[4:0];
-          $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], {mif.rx[instruction.rs2]}[4:0]);
-        end
-           
-        SRL: begin
-          rdbuffer = mif.rx[instruction.rs1] >> {mif.rx[instruction.rs2]}[4:0];
-          $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], {mif.rx[instruction.rs2]}[4:0]);
-        end
-                
-        SRA: begin
-          rdbuffer = $signed(mif.rx[instruction.rs1]) >>> {mif.rx[instruction.rs2]}[4:0];
-          $display("rs1: %b, simm: %b", mif.rx[instruction.rs1], {mif.rx[instruction.rs2]}[4:0]);
-        end
-        
-        JAL: begin
-          jump = 2 * `SIGN_EXTEND32(20, instruction.j_imm);
-          rdbuffer = mif.pc + 4;
-          $display("pc:%d, rd: %d jump: %d", mif.pc, mif.rx[instruction.rd], jump);
-        end
-        
-        JALR: begin
-          jump = {{mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm)}[31:1], 1'b0};
-          rdbuffer = mif.pc + 4;
-          $display("pc:%d, rd: %d gump: %d", mif.pc, mif.rx[instruction.rd], {{mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm)}[31:1], 1'b0});
-        end
-        
-        BEQ: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = (mif.rx[instruction.rs1] == mif.rx[instruction.rs2]) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        BNE: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = (mif.rx[instruction.rs1] != mif.rx[instruction.rs2]) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        BLT: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = ($signed(mif.rx[instruction.rs1]) < $signed(mif.rx[instruction.rs2])) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        BLTU: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = (mif.rx[instruction.rs1] < mif.rx[instruction.rs2]) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        BGE: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = ($signed(mif.rx[instruction.rs1]) >= $signed(mif.rx[instruction.rs2])) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        BGEU: begin
-          jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
-          take_branch = (mif.rx[instruction.rs1] >= mif.rx[instruction.rs2]) ? 1 : 0;
-          $display("pc:%d, rx[rs1]:%d, rx[rs2]:%d, bump: %d", mif.pc, mif.rx[instruction.rs1], mif.rx[instruction.rs2], mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm));
-        end
-        
-        SLLI: begin
-          rdbuffer = mif.rx[instruction.rs1] << instruction.rs2;
-          $display("rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
-        end
-           
-        SRLI: begin
-          rdbuffer = mif.rx[instruction.rs1] >> instruction.rs2;
-          $display("rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
-        end
-           
-        SRAI: begin
-          rdbuffer = $signed(mif.rx[instruction.rs1]) >>> instruction.rs2;
-          $display("SRAI: rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
-        end
-        
-        LUI: begin
-          rdbuffer = {instruction.u_imm, 12'b000000000000};
-        end
-        
-        AUIPC: begin
-          rdbuffer = {instruction.u_imm, 12'b000000000000} + mif.pc;
-          $display("SRAI: rs1: %b, sha: %b", mif.rx[instruction.rs1], instruction.rs2);
-        end
-        
-        FENCE: begin
-        end
-          
-        ECALL: begin
-        end
-          
-        EBREAK: begin
-        end
-        
-        C_NOP: begin
-        end
-        
-      endcase
-    end
-  end
+	always_comb begin
+		if(!mif.nreset) begin
+			mif.mem_addr = 0;
+			jump = 1;
+		end
+		else begin
+			case (instruction.name)
+				
+				LW: begin //Load 32-bit val at umem[rx[rs1] + imm] into rd
+					mif.mem_rw = 0;
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = mif.mem_rdata;
+				end
+				
+				LH: begin //Load 16-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
+					mif.mem_rw = 0;
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = `SIGN_EXTEND32(16, mif.mem_rdata);
+				end
+				
+				LHU: begin //Load 16-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
+					mif.mem_rw = 0;
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = {16'h0000, mif.mem_rdata[15:0]};
+				end
+				
+				LB: begin //Load 8-bit val (sign extended to 32-bits) at umem[rx[rs1] + imm] into rd
+					mif.mem_rw = 0;
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = `SIGN_EXTEND32(8, mif.mem_rdata);
+				end
+				
+				LBU: begin //Load 8-bit val (zero extended to 32-bits) at umem[rx[rs1] + imm] into rd
+					mif.mem_rw = 0;
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+					rdbuffer = {24'h000000, mif.mem_rdata[7:0]};
+				end
+				
+				SW, SH, SB: begin //Store 32, 16 or 8 bit val from rs2 into umem[rx[rs1] + imm]
+					mif.mem_rw = 1; //umem controller uses instruction.funct3 to determine write width
+					mif.mem_addr = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.s_imm);
+					mif.mem_wdata = mif.rx[instruction.rs2];
+				end
+				
+				ADDI: begin
+					rdbuffer = mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm);
+				end
+				
+				SLTI: begin
+					rdbuffer = ($signed(mif.rx[instruction.rs1]) < $signed(`SIGN_EXTEND32(12, instruction.i_imm))) ? 32'h00000001 : 32'h00000000;
+				end
+				
+				SLTIU: begin
+					rdbuffer = (mif.rx[instruction.rs1] < `SIGN_EXTEND32(12, instruction.i_imm)) ? 32'h00000001 : 32'h00000000;
+				end
+				
+				ANDI: begin
+					rdbuffer = mif.rx[instruction.rs1] & `SIGN_EXTEND32(12, instruction.i_imm);
+				end
+				
+				ORI: begin
+					rdbuffer = mif.rx[instruction.rs1] | `SIGN_EXTEND32(12, instruction.i_imm);
+				end
+				
+				XORI: begin
+					rdbuffer = mif.rx[instruction.rs1] ^ `SIGN_EXTEND32(12, instruction.i_imm);
+				end
+				
+				ADD: begin
+					rdbuffer = mif.rx[instruction.rs1] + mif.rx[instruction.rs2];
+				end
+				
+				SUB: begin
+					rdbuffer = mif.rx[instruction.rs2] - mif.rx[instruction.rs1];
+				end
+				
+				SLT: begin
+					rdbuffer = $signed(mif.rx[instruction.rs1]) < $signed(mif.rx[instruction.rs2]) ? 32'h00000001 : 32'h00000000;
+				end
+				
+				SLTU: begin
+					rdbuffer = (mif.rx[instruction.rs1] < mif.rx[instruction.rs2]) ? 32'h00000001 : 32'h00000000;
+				end
+				
+				AND: begin
+					rdbuffer = mif.rx[instruction.rs1] & mif.rx[instruction.rs2];
+				end
+				
+				OR: begin
+					rdbuffer = mif.rx[instruction.rs1] | mif.rx[instruction.rs2];
+				end
+				
+				XOR: begin
+					rdbuffer = mif.rx[instruction.rs1] ^ mif.rx[instruction.rs2];
+				end
+				
+				SLL: begin
+					gbuf = mif.rx[instruction.rs2];
+					rdbuffer = mif.rx[instruction.rs1] << gbuf[4:0];
+				end
+					
+				SRL: begin
+					gbuf = mif.rx[instruction.rs2];
+					rdbuffer = mif.rx[instruction.rs1] >> gbuf[4:0];
+				end
+								
+				SRA: begin
+					gbuf = mif.rx[instruction.rs2];
+					rdbuffer = $signed(mif.rx[instruction.rs1]) >>> gbuf[4:0];
+				end
+				
+				JAL: begin
+					jump = 2 * `SIGN_EXTEND32(20, instruction.j_imm);
+					rdbuffer = mif.pc + 4;
+				end
+				
+				JALR: begin
+					gbuf = {mif.rx[instruction.rs1] + `SIGN_EXTEND32(12, instruction.i_imm)};
+					jump = {gbuf[31:1], 1'b0};
+					rdbuffer = mif.pc + 4;
+				end
+				
+				BEQ: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = (mif.rx[instruction.rs1] == mif.rx[instruction.rs2]) ? 1 : 0;
+				end
+				
+				BNE: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = (mif.rx[instruction.rs1] != mif.rx[instruction.rs2]) ? 1 : 0;
+				end
+				
+				BLT: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = ($signed(mif.rx[instruction.rs1]) < $signed(mif.rx[instruction.rs2])) ? 1 : 0;
+				end
+				
+				BLTU: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = (mif.rx[instruction.rs1] < mif.rx[instruction.rs2]) ? 1 : 0;
+				end
+				
+				BGE: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = ($signed(mif.rx[instruction.rs1]) >= $signed(mif.rx[instruction.rs2])) ? 1 : 0;
+				end
+				
+				BGEU: begin
+					jump = mif.pc + 2 * `SIGN_EXTEND32(12, instruction.b_imm);
+					take_branch = (mif.rx[instruction.rs1] >= mif.rx[instruction.rs2]) ? 1 : 0;
+				end
+				
+				SLLI: begin
+					rdbuffer = mif.rx[instruction.rs1] << instruction.rs2;
+				end
+					
+				SRLI: begin
+					rdbuffer = mif.rx[instruction.rs1] >> instruction.rs2;
+				end
+					
+				SRAI: begin
+					rdbuffer = $signed(mif.rx[instruction.rs1]) >>> instruction.rs2;
+				end
+				
+				LUI: begin
+					rdbuffer = {instruction.u_imm, 12'b000000000000};
+				end
+				
+				AUIPC: begin
+					rdbuffer = {instruction.u_imm, 12'b000000000000} + mif.pc;
+				end
+				
+				FENCE: begin
+				end
+					
+				ECALL: begin
+				end
+					
+				EBREAK: begin
+				end
+				
+				C_NOP: begin
+				end
+				
+			endcase
+		end
+	end
   
   always @(posedge clk or negedge mif.nreset) begin
     if(!mif.nreset) begin

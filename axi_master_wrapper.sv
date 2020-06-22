@@ -2,7 +2,7 @@
 
 module axi_master_wrapper(mdriver_int.slave io, aximem.axim mem);
 
-  axilite_int#(32,9) vif();
+  axilite_int#(32,32) vif();
 
 	typedef enum integer {
 		IDLE,

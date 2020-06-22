@@ -3,7 +3,7 @@
 
 interface mdriver_int #(
 		parameter integer C_AXI_DATA_WIDTH	= 32,
-		parameter integer C_AXI_ADDR_WIDTH	= 9
+		parameter integer C_AXI_ADDR_WIDTH	= 32
 )(
  input logic clk,
   input logic nreset

@@ -4,7 +4,7 @@ module soc_top(
 );
   
   
-  mdriver_int#(32,9) vif(.*);
+  mdriver_int#(32,32) vif(.*);
   axi_master_wrapper axi_master_wrapper_inst(.io(vif.slave), .mem(aximem_inst.axim));
   cpu cpu_inst(.*, .io(aximem_inst.mem));
   sindrv sindrv_inst(.io(vif.master));
