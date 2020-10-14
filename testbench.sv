@@ -1,9 +1,25 @@
 module tb();
   logic clk, nreset;
   
+  logic[31:0] instr_bus = 32'h00000013; //32'h00112023;// 32'h0040A003;
+  logic[31:0] pc_out;
+  logic[31:0] out_data_bus;
+  logic[31:0] in_data_bus;
+  wire[31:0] out_data_bus_port2;
+  wire[31:0] out_addr_bus_port2;
+  logic[31:0] adc_in =32'h11111111;
+  logic[31:0] out_addr_bus;
+  wire mem_rw;
+  logic[3:0] mem_wstrobe;
+  
   initial begin
     clk <= 0;
     forever #1 clk <= !clk;
+  end
+  
+  initial begin
+    #3
+  forever #2 adc_in <= adc_in+ 1;
   end
   
   soc_top soc_top_inst(.*);
@@ -17,7 +33,28 @@ module tb();
     #4
     nreset <= 1;
     //vif.nreset <= 1;
-
+    
+    #13
+    instr_bus = 32'h00112023;
+    #2
+    instr_bus = 32'h00000013;
+    /*data_bus = 32'h00112023;
+    #2
+    data_bus = 32'h00312023;
+    #2
+    data_bus = 32'h00112023;
+    #2
+    data_bus = 32'h00312023;
+    #2
+    data_bus = 32'h00112023;
+    #2
+    data_bus = 32'h00312023;
+    #2
+    data_bus = 32'h00112023;
+    #2
+    data_bus = 32'h00312023;
+    #2*/
+    
     //vif.execute_write(0, 'hb4b4b4b4);
 
     //vif.execute_write(0, 'hb4b4b4b4);
@@ -26,7 +63,7 @@ module tb();
     //$display("Read data: %X", vif.so_data);
    
     
-    #200;
+    #80;
     //disp_rx(cpu_inst.mif.rx);
     //disp_umem(cpu_inst.umem_inst.umemory);
     $finish;

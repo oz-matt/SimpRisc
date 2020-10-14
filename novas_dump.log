@@ -1,0 +1,373 @@
+ANF: vcsd_register_1st_RTL_rfn('/home/work/Desktop/simprisc/simv: undefined symbol: vcsd_register_1st_RTL_rfn')
+ANF: vcsd_register_1st_sequential_rfn('/home/work/Desktop/simprisc/simv: undefined symbol: vcsd_register_1st_sequential_rfn')
+ANF: vcsd_register_2nd_RTL_rfn('/home/work/Desktop/simprisc/simv: undefined symbol: vcsd_register_2nd_RTL_rfn')
+ANF: vcsd_register_2nd_sequential_rfn('/home/work/Desktop/simprisc/simv: undefined symbol: vcsd_register_2nd_sequential_rfn')
+ANF: scsd_xprop_is_enabled('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_is_enabled')
+ANF: scsd_xprop_sig_is_promoted('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_sig_is_promoted')
+ANF: scsd_xprop_int_xvalue('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_int_xvalue')
+ANF: scsd_xprop_bool_xvalue('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_bool_xvalue')
+ANF: scsd_xprop_enum_xvalue('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_enum_xvalue')
+ANF: scsd_xprop_register_merge_mode_cb('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_register_merge_mode_cb')
+ANF: scsd_xprop_delete_merge_mode_cb('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_delete_merge_mode_cb')
+ANF: scsd_xprop_get_merge_mode('/home/work/Desktop/simprisc/simv: undefined symbol: scsd_xprop_get_merge_mode')
+ANF: msvEnableDumpingMode('/home/work/Desktop/simprisc/simv: undefined symbol: msvEnableDumpingMode')
+ANF: msvGetVersion('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetVersion')
+ANF: msvGetInstProp('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetInstProp')
+ANF: msvIsSpiceEngineReady('/home/work/Desktop/simprisc/simv: undefined symbol: msvIsSpiceEngineReady')
+ANF: msvSetAddProbeCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetAddProbeCallback')
+ANF: msvGetInstHandle('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetInstHandle')
+ANF: msvGetProbeByInst('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetProbeByInst')
+ANF: msvGetSigHandle('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetSigHandle')
+ANF: msvGetProbeBySig('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetProbeBySig')
+ANF: msvGetProbeInfo('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetProbeInfo')
+ANF: msvRelease('/home/work/Desktop/simprisc/simv: undefined symbol: msvRelease')
+ANF: msvSetVcCallbackFunc('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetVcCallbackFunc')
+ANF: msvCheckVcCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvCheckVcCallback')
+ANF: msvAddVcCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvAddVcCallback')
+ANF: msvRemoveVcCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvRemoveVcCallback')
+ANF: msvGetLatestValue('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetLatestValue')
+ANF: msvSetEndofSimCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetEndofSimCallback')
+ANF: msvIgnoredProbe('/home/work/Desktop/simprisc/simv: undefined symbol: msvIgnoredProbe')
+ANF: msvGetThruNetInfo('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetThruNetInfo')
+ANF: msvFreeThruNetInfo('/home/work/Desktop/simprisc/simv: undefined symbol: msvFreeThruNetInfo')
+ANF: PI_ace_get_output_time_unit('/home/work/Desktop/simprisc/simv: undefined symbol: PI_ace_get_output_time_unit')
+ANF: PI_ace_sim_sync('/home/work/Desktop/simprisc/simv: undefined symbol: PI_ace_sim_sync')
+ANF: msvGetRereadInitFile('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetRereadInitFile')
+ANF: msvSetBeforeRereadCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetBeforeRereadCallback')
+ANF: msvSetAfterRereadCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetAfterRereadCallback')
+ANF: msvSetForceCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetForceCallback')
+ANF: msvSetReleaseCallback('/home/work/Desktop/simprisc/simv: undefined symbol: msvSetReleaseCallback')
+ANF: msvGetForceStatus('/home/work/Desktop/simprisc/simv: undefined symbol: msvGetForceStatus')
+ANF: vhdi_dt_get_type('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_type')
+ANF: vhdi_dt_get_key('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_key')
+ANF: vhdi_dt_get_vhdl_enum_info('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_vhdl_enum_info')
+ANF: vhdi_dt_get_vhdl_physical_info('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_vhdl_physical_info')
+ANF: vhdi_dt_get_vhdl_array_info('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_vhdl_array_info')
+ANF: vhdi_dt_get_vhdl_record_info('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_dt_get_vhdl_record_info')
+ANF: vhdi_def_traverse_module('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_traverse_module')
+ANF: vhdi_def_traverse_scope('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_traverse_scope')
+ANF: vhdi_def_traverse_variable('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_traverse_variable')
+ANF: vhdi_def_get_module_id_by_vhpi('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_get_module_id_by_vhpi')
+ANF: vhdi_def_get_handle_by_module_id('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_get_handle_by_module_id')
+ANF: vhdi_def_free('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_def_free')
+ANF: vhdi_ist_traverse_scope('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_traverse_scope')
+ANF: vhdi_ist_traverse_variable('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_traverse_variable')
+ANF: vhdi_ist_convert_by_vhpi('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_convert_by_vhpi')
+ANF: vhdi_ist_clone('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_clone')
+ANF: vhdi_ist_free('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_free')
+ANF: vhdi_ist_hash_key('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_hash_key')
+ANF: vhdi_ist_compare('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_compare')
+ANF: vhdi_ist_get_value_addr('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_get_value_addr')
+ANF: vhdi_set_scsd_callback('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_set_scsd_callback')
+ANF: vhdi_ist_check_scsd_callback('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_check_scsd_callback')
+ANF: vhdi_ist_add_scsd_callback('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_add_scsd_callback')
+ANF: vhdi_ist_remove_scsd_callback('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_remove_scsd_callback')
+ANF: vhdi_ist_get_scsd_user_data('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_ist_get_scsd_user_data')
+ANF: vhdi_add_time_change_callback('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_add_time_change_callback')
+ANF: vhdi_get_real_value_by_value_addr('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_get_real_value_by_value_addr')
+ANF: vhdi_get_64_value_by_value_addr('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_get_64_value_by_value_addr')
+ANF: vhdi_xprop_inst_is_promoted('/home/work/Desktop/simprisc/simv: undefined symbol: vhdi_xprop_inst_is_promoted')
+VCS compile option:
+ option[0]: /home/work/Desktop/simprisc/simv
+ option[1]: -ucli
+ option[2]: +UVM_CONFIG_DB_TRACE
+ option[3]: +UVM_PHASE_TRACE
+ option[4]: +UVM_OBJECTION_TRACE
+ option[5]: +UVM_RESOURCE_DB_TRACE
+ option[6]: +UVM_LOG_RECORD
+ option[7]: +UVM_VERDI_TRACE=UVM_AWARE
+ option[8]: -ucli2Proc
+ option[9]: -lca
+ option[10]: -l
+ option[11]: /home/work/Desktop/simprisc/verdiLog/sim.log
+ option[12]: /home/work/synopsys/L-2016.06/linux64/bin/vcs1
+ option[13]: -Mcc=gcc
+ option[14]: -Mcplusplus=g++
+ option[15]: -Masflags=
+ option[16]: -Mcfl= -pipe -fPIC -O -I/home/work/synopsys/L-2016.06/include 
+ option[17]: -Mxcflags= -pipe -fPIC -I/home/work/synopsys/L-2016.06/include
+ option[18]: -Mldflags= -rdynamic 
+ option[19]: -Mout=simv
+ option[20]: -Mamsrun=
+ option[21]: -Mvcsaceobjs=
+ option[22]: -Mobjects= /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a 
+ option[23]: -Mexternalobj=
+ option[24]: -Msaverestoreobj=/home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_new.o
+ option[25]: -Mcrt0=
+ option[26]: -Mcrtn=
+ option[27]: -Mcsrc=
+ option[28]: -Msyslibs=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm 
+ option[29]: -l
+ option[30]: comp.log
+ option[31]: -lca
+ option[32]: -debug_access+all
+ option[33]: +vpi
+ option[34]: +vcsd1
+ option[35]: +itf+/home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
+ option[36]: +libext+.v
+ option[37]: -P
+ option[38]: /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+ option[39]: -full64
+ option[40]: +libext+.v+.h+.vh+.vlib
+ option[41]: -kdb
+ option[42]: -Xufe=2steps
+ option[43]: +vcs+vcdpluson
+ option[44]: -timescale=1ns/1ps
+ option[45]: -picarchive
+ option[46]: -P
+ option[47]: /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
+ option[48]: -fsdb
+ option[49]: -sverilog
+ option[50]: -gen_obj
+ option[51]: -y
+ option[52]: /home/work/synopsys/L-2016.06/packages/sva
+ option[53]: +incdir+/home/work/synopsys/L-2016.06/packages/sva
+ option[54]: -F
+ option[55]: files.f
+ option[56]: top_tb.sv
+ option[57]: -load
+ option[58]: /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+ option[59]: timescale=1ns/1ps
+Chronologic Simulation VCS Release L-2016.06_Full64
+Linux 2.6.32-431.el6.x86_64 #1 SMP Sun Nov 10 22:19:54 EST 2013 x86_64
+CPU cores: 1
+Limit information:
+======================================
+cputime			unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		10240 kbytes
+coredumpsize	0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		4096
+memorylocked	64 kbytes
+maxproc			1024
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+SYNOPSYS_HOME=/opt/synopsys
+ORBIT_SOCKETDIR=/tmp/orbit-work
+HOSTNAME=work-eda
+NOVAS_SYNC_MOTIF_DISP=
+UVM_HOME=/home/work/synopsys/L-2016.06/etc/uvm-1.2
+NOVAS_HOME=/home/disk/Verdi3_L-2016.06-1
+TERM=xterm
+SHELL=/bin/bash
+ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
+XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1602633310.755494-1801938554
+HISTSIZE=1000
+XA_HOME=/home/disk/H-2013.03-SP2/
+SPS_FONT_PATH=/home/disk/Verdi3_L-2016.06-1/font
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/work/.gtkrc-1.2-gnome2
+WINDOWID=37749454
+CDS_LOAD_ENV=CSF
+SPS_XFONT_PATH=/home/disk/Verdi3_L-2016.06-1/XFont
+QTDIR=/usr/lib64/qt-3.3
+QSYS_ROOTDIR=/home/disk/intelFPGA/17.0/quartus/sopc_builder/bin
+X_DIR=/home/work/xkit/xkitroot
+VCS_PATHMAP_PRELOAD_DONE=1
+QTINC=/usr/lib64/qt-3.3/include
+NOVAS=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+VERA_HOME=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+LC_ALL=C
+HSP_BIN=/opt/synopsys/Hspice-2015.06-3//hspice/bin
+DVT_HOME=/home/work/Downloads/dvt_eclipse
+USER=work
+HSP_HOME=/opt/synopsys/Hspice-2015.06-3/
+LD_LIBRARY_PATH=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=01;05;37;41:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.lz=01;31:*.xz=01;31:*.bz2=01;31:*.tbz=01;31:*.tbz2=01;31:*.bz=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.jpg=01;35:*.jpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.axv=01;35:*.anx=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=01;36:*.au=01;36:*.flac=01;36:*.mid=01;36:*.midi=01;36:*.mka=01;36:*.mp3=01;36:*.mpc=01;36:*.ogg=01;36:*.ra=01;36:*.wav=01;36:*.axa=01;36:*.oga=01;36:*.spx=01;36:*.xspf=01;36:
+XNLSPATH=/home/disk/Verdi3_L-2016.06-1/etc/access/nls
+CDS=/opt/IC617/
+NOVAS_PLI=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+SSH_AUTH_SOCK=/tmp/keyring-GCCaMJ/socket.ssh
+GNOME_KEYRING_SOCKET=/tmp/keyring-GCCaMJ/socket
+SNPSLMD_LICENSE_FILE=27000@work-eda
+USERNAME=work
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2834,unix/unix:/tmp/.ICE-unix/2834
+MMSIMHOME=/opt/MMSIM151/
+ml_seq_dir=/home/work/INCISIV122/specman/src
+DESKTOP_SESSION=gnome
+MAIL=/var/spool/mail/work
+PATH=/bin:/home/disk/D-2010.03/bin:/home/disk/H-2013.03-SP2/bin:/home/disk/A-2008.03-SP1/bin:/home/work/.local/bin/:/home/disk/D-2010.03/bin:/home/disk/H-2013.03-SP2/bin:/home/disk/A-2008.03-SP1/bin:/home/work/.local/bin/:/etc/env:/opt/synopsys/Hspice-2015.06-3//hspice/bin:/opt/synopsys/cscope64_2011.09.0.0.27_linux_x86/ai_bin:/opt/synopsys/K-2015.06/bin:/opt/synopsys/hsim2015/hsimplus/bin:/opt/calibre2015/aoi_cal_2015.2_36.27/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/local/git/bin:/etc/env/:/opt/synopsys/Hspice-2015.06-3/hspice/bin/:/opt/synopsys/cscope64_2011.09.0.0.27_linux_x86/ai_bin/:/opt/synopsys/K-2015.06/bin/:/opt/synopsys/hsim2015/hsimplus/bin/:/opt/calibre2015/aoi_cal_2015.2_36.27/bin/:/usr/lib64/qt-3.3/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:/home/work/bin/:/home/work/bin:/home/work/xkit/xkitroot/x_all/cadence/xenv/:/etc/env/:/opt/synopsys/Hspice-2015.06-3/hspice/bin/:/opt/synopsys/cscope64_2011.09.0.0.27_linux_x86/ai_bin/:/opt/synopsys/K-2015.06/bin/:/opt/synopsys/hsim2015/hsimplus/bin/:/opt/calibre2015/aoi_cal_2015.2_36.27/bin/:/usr/lib64/qt-3.3/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:/home/work/bin/:/usr/local/git/bin:/home/work/synopsys/L-2016.06/gui/dve/linux64/bin:/home/work/synopsys/L-2016.06/gui/dve/bin:/home/work/synopsys/L-2016.06/linux64/bin:/home/work/synopsys/2016.12/linux64/bin:/home/work/synopsys/2016.12/bin:/home/disk/cadence/installs/GENUS152/bin:/home/work/INCISIV122/tools.lnx86/bin/64bit:/home/work/INCISIV122/tools.lnx86/bin:/home/work/INCISIV122/bin:/home/disk/Verdi3_L-2016.06-1/bin:/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64:/home/work/bin:/usr/local/git/bin:/etc/env/:/opt/synopsys/Hspice-2015.06-3/hspice/bin/:/opt/synopsys/cscope64_2011.09.0.0.27_linux_x86/ai_bin/:/opt/synopsys/K-2015.06/bin/:/opt/synopsys/hsim2015/hsimplus/bin/:/opt/calibre2015/aoi_cal_2015.2_36.27/bin/:/usr/lib64/qt-3.3/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:/home/work/bin/:/home/work/bin:/home/work/xkit/xkitroot/x_all/cadence/xenv/:/etc/env/:/opt/synopsys/Hspice-2015.06-3/hspice/bin/:/opt/synopsys/cscope64_2011.09.0.0.27_linux_x86/ai_bin/:/opt/synopsys/K-2015.06/bin/:/opt/synopsys/hsim2015/hsimplus/bin/:/opt/calibre2015/aoi_cal_2015.2_36.27/bin/:/usr/lib64/qt-3.3/bin/:/usr/local/bin/:/usr/bin/:/usr/local/sbin/:/usr/sbin/:/sbin/:/home/work/bin/:/usr/local/git/bin:/home/work/synopsys/L-2016.06/gui/dve/linux64/bin:/home/work/synopsys/L-2016.06/gui/dve/bin:/home/work/synopsys/L-2016.06/linux64/bin:/home/work/synopsys/2016.12/linux64/bin:/home/work/synopsys/2016.12/bin:/home/disk/cadence/installs/GENUS152/bin:/home/work/INCISIV122/tools.lnx86/bin/64bit:/home/work/INCISIV122/tools.lnx86/bin:/home/work/INCISIV122/bin:/home/disk/Verdi3_L-2016.06-1/bin:/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+VERDI_HOME=/home/disk/Verdi3_L-2016.06-1
+PWD=/home/work/Desktop/simprisc
+XMODIFIERS=@im=none
+VCS_HOME=/home/work/synopsys/L-2016.06
+GDM_KEYBOARD_LAYOUT=us
+SYS_PROG_NAME=verdi
+GNOME_KEYRING_PID=2824
+LANG=C
+KDE_IS_PRELINKED=1
+uvm_home=/home/work/synopsys/L-2016.06/etc/uvm-1.2
+GDM_LANG=en_US.UTF-8
+KDEDIRS=/usr
+SCL_BIN=/opt/synopsys/v11.10/linux64/bin
+SYS_INST_DIR=/home/disk/Verdi3_L-2016.06-1
+CDS_Netlisting_Mode=Analog
+LM_LICENSE_FILE=27000@work-eda
+GDMSESSION=gnome
+XA_64=1
+UVM_REF_HOME=/home/work/dvt_predefined_projects_target/uvm_ref_flow_1.1
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+HISTCONTROL=ignoredups
+SHLVL=2
+HOME=/home/work
+MGC_HOME=/opt/calibre2015/aoi_cal_2015.2_36.27
+VERDI_ORIGNAL_LD_LIBRARY_PATH=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+CDS_AUTO_64BIT=ALL
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+DVT_LICENSE_FILE=/home/work/Downloads/dvt_eclipse/licenses/dvt_MatthewMorra_Academic_20200502_FlexLMLocal.license
+LOGNAME=work
+MGC_LIB_PATH=/lib
+MGLS_LICENSE_FILE=/opt/calibre2015/license.dat
+CVS_RSH=ssh
+QTLIB=/usr/lib64/qt-3.3/lib
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-043zwaMHut,guid=a852f57df0cc1a0fd010ad6e00000056
+NOVASHLPPATH=/home/disk/Verdi3_L-2016.06-1/doc
+SPS_RGB_PATH=/home/disk/Verdi3_L-2016.06-1/etc/rgb
+SOCV_KIT_HOME=/home/work/INCISIV122/kits/VerificationKit
+MOZILLA_HOME=/usr/bin/netscape
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+SCL_HOME=/opt/synopsys/v11.10
+T_DIR=/home/work/xkit/xkitroot/xh035/cadence/v6_2
+WINDOWPATH=1
+LD_NOVERSION=1
+DISPLAY=:0.0
+QT_PLUGIN_PATH=/home/disk/Verdi3_L-2016.06-1/platform/LINUXAMD64/bin/plugins
+G_BROKEN_FILENAMES=1
+CALIBRE_ENABLE_SKILL_PEXBA_MODE=1
+XAUTHORITY=/var/run/gdm/auth-for-work-HNf7C5/database
+COLORTERM=gnome-terminal
+NOVAS_LC_ALL=C
+NOVAS_SIGNAL_BASE_EXTRACTION=1
+SIGNAL_BASE_EXTRACTION=1
+NOVAS_VERDI_SVTB_BETA=1
+VERDI_SVTB_BETA=1
+NOVAS_VERDI_SVTB_ALPHA=1
+VERDI_SVTB_ALPHA=1
+NOVAS_WAVE_REDRAW_ALLVC=1
+WAVE_REDRAW_ALLVC=1
+NOVAS_TCL_LIBRARY=/home/disk/Verdi3_L-2016.06-1/etc/access/tcl86_library
+TCL_LIBRARY=/home/disk/Verdi3_L-2016.06-1/etc/access/tcl86_library
+XKEYSYMDB=/home/disk/Verdi3_L-2016.06-1/etc/access/XKeysymDB2.1
+XLOCALEDIR=/home/disk/Verdi3_L-2016.06-1/etc/access/locale
+NOVAS_SIGNAL_BASED_BA=0
+SIGNAL_BASED_BA=0
+SYNOPSYS_SIM=/home/work/synopsys/L-2016.06
+DISABLE_LIBRARY_MAP_CHECK=1
+SNPS_SIM_DEFAULT_GUI=verdi
+FSDB_FILE=/home/work/Desktop/simprisc/inter.fsdb
+VCS_UCLI_STDIN_BLOCKING=1
+FSDB_RD_IR_ENABLE=1
+FSDB_SVA_STATUS=1
+VCS_STOP_SAFE=1
+DVE_SIM_SELECT_LOOP=on
+VCS_LCAMSG_PRINT_OFF=1
+Runtime command line arguments:
+argv[0]=/home/work/Desktop/simprisc/simv
+argv[1]=-ucli
+argv[2]=+UVM_CONFIG_DB_TRACE
+argv[3]=+UVM_PHASE_TRACE
+argv[4]=+UVM_OBJECTION_TRACE
+argv[5]=+UVM_RESOURCE_DB_TRACE
+argv[6]=+UVM_LOG_RECORD
+argv[7]=+UVM_VERDI_TRACE=UVM_AWARE
+argv[8]=-ucli2Proc
+argv[9]=-lca
+argv[10]=-l
+argv[11]=/home/work/Desktop/simprisc/verdiLog/sim.log
+280 profile - 100
+          CPU/Mem usage: 0.400 sys,  0.110 user,  187.30M sys,  0.00M vm
+281 VC callback profile - scalar:0 vector:0
+282 Wed Oct 14 08:53:35 2020
+283 pliAppInit
+284 ndpGetenv(FSDB_FILE): /home/work/Desktop/simprisc/inter.fsdb
+285 ndpGetenv(FSDB_SVA_STATUS): 1
+286 *Verdi3* : FSDB_GATE is set.
+287 *Verdi3* : FSDB_RTL is set.
+288 *Verdi3* : Enable Parallel Dumping.
+289 pliAppMiscSet: New Sim Round
+290 pliEntryInit
+291 LIBSSCORE=found /home/disk/Verdi3_L-2016.06-1/share/PLI/lib/LINUXAMD64/libsscore_vcs201606.so through $NOVAS_HOME setting.
+292 FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
+293 (C) 1996 - 2016 by Synopsys, Inc.
+294 sps_tcl_fsdbDumpfile
+295 argv[0]: /home/work/Desktop/simprisc/inter.fsdb
+296 *Verdi3* : Create FSDB file '/home/work/Desktop/simprisc/inter.fsdb'
+297 sps_tcl_fsdbDumpflush
+298 *Verdi3* : Flush all FSDB Files at 0 ps.
+299 sps_tcl_fsdbDumpflush
+300 *Verdi3* : Flush all FSDB Files at 0 ps.
+301 sps_tcl_fsdbDumpvars
+302 argv[0]: 1
+303 argv[1]: top_tb.th.clk
+304 *Verdi3* : Dumping the signal (top_tb.th.clk).
+305 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.470 sys,  0.310 user,  276.05M sys,  0.00M vm
+                   incr: 0.020 sys,  0.010 user,  4.93M sys,  0.00M vm
+                   accu: 0.020 sys,  0.010 user,  4.93M sys,  0.00M vm
+              accu incr: 0.020 sys,  0.010 user,  4.93M sys,  0.00M vm
+
+          Count usage: 1 var,  1 idcode,  1 callback
+                 incr: 1 var,  1 idcode,  1 callback
+                 accu: 1 var,  1 idcode,  1 callback
+            accu incr: 1 var,  1 idcode,  1 callback
+306 VC callback profile - scalar:0 vector:0
+307 Wed Oct 14 08:54:00 2020
+308 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.470 sys,  0.310 user,  277.24M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+                   accu: 0.020 sys,  0.010 user,  6.12M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  1.19M sys,  0.00M vm
+
+          Count usage: 1 var,  1 idcode,  1 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 1 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+309 VC callback profile - scalar:1 vector:0
+310 Wed Oct 14 08:54:00 2020
+311 sps_tcl_fsdbDumpflush
+312 *Verdi3* : Flush all FSDB Files at 0 ps.
+313 sps_tcl_fsdbDumpvars
+314 argv[0]: 1
+315 argv[1]: top_tb.th.nreset
+316 *Verdi3* : Dumping the signal (top_tb.th.nreset).
+317 fsdbDumpvars traverse var: profile - 
+          CPU/Mem usage: 0.480 sys,  0.320 user,  278.92M sys,  0.00M vm
+                   incr: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
+                   accu: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
+
+          Count usage: 2 var,  2 idcode,  2 callback
+                 incr: 1 var,  1 idcode,  1 callback
+                 accu: 1 var,  1 idcode,  1 callback
+            accu incr: 1 var,  1 idcode,  1 callback
+318 VC callback profile - scalar:1 vector:0
+319 Wed Oct 14 08:54:07 2020
+320 fsdbDumpvars: profile - 
+          CPU/Mem usage: 0.480 sys,  0.320 user,  278.92M sys,  0.00M vm
+                   incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+                   accu: 0.000 sys,  0.010 user,  0.00M sys,  0.00M vm
+              accu incr: 0.000 sys,  0.000 user,  0.00M sys,  0.00M vm
+
+          Count usage: 2 var,  2 idcode,  2 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 1 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+321 VC callback profile - scalar:2 vector:0
+322 Wed Oct 14 08:54:07 2020
+323 sps_tcl_fsdbDumpflush
+324 *Verdi3* : Flush all FSDB Files at 0 ps.
+325 sps_tcl_fsdbDumpflush
+326 *Verdi3* : Flush all FSDB Files at 0 ps.
+327 sps_tcl_fsdbDumpflush
+328 *Verdi3* : Flush all FSDB Files at 200,000 ps.
+329 End of simulation at 200000
+330 VC callback profile - scalar:23 vector:0
+331 Wed Oct 14 08:54:56 2020
+332 Parallel profile    -  Flush:10 Expand:0 ProduceWait:0 ConsumerWait:0 BlockUsed:0
+333                        ProduceTime:0.970704222 ConsumerTime:0.000000000 Buffer:64MB
+334 SimExit
+335 Sim process exit

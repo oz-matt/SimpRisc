@@ -1,0 +1,73 @@
+@verdi rc file Version 1.0
+[General]
+VerdiVersion = Verdi3_L-2016.06-1
+[KeyNote]
+Line1 = Automatic Backup 0
+[TestBench]
+ConstrViewShow = 0
+InherViewShow = 0
+FSDBMsgShow = 0
+AnnotationShow = 0
+powerDumped = 0
+[hb]
+postSimFile = /home/work/Desktop/simprisc/inter.fsdb
+syncTime = 200000
+viewport = 0 25 1916 851 605 303 228 898
+activeNode = "top_tb.th"
+activeScope = "top_tb.th"
+activeFile = "top_th.sv#inc___vcs_unit__1__1#"
+interactiveMode = False
+viewType = Source
+simulatorMode = False
+sourceBeginLine = 35
+baMode = False
+srcLineNum = True
+syncSignal = False
+traceMode = Hierarchical
+showTraceInSchema = True
+paMode = False
+funcMode = False
+traceCrossHier = True
+DnDtraceCrossHierOnly = True
+traceIncTopPort = False
+leadingZero = False
+signalPane = False
+Scope1 = "top_tb.th"
+Scope2 = "_vcs_unit__3944819586"
+Scope3 = "top_tb"
+rangeSelection = 48 48 1 20 1 1
+sdfCheckUndef = FALSE
+simFlow = FALSE
+[hb.sourceTab.1]
+scope = top_tb.th
+File = /home/work/Desktop/simprisc/top_th.sv#inc___vcs_unit__1__1#
+Line = 36
+[imp.design1]
+dbEnum =  oh
+invokeDir = /home/work/Desktop/simprisc
+design = DebussyLib
+hostCommand = hostCommand -elab ./simv.daidir/kdb.elab++
+topName = top_tb 
+fromLibrary = TRUE
+[nMemoryManager]
+FsdbFile = /home/work/Desktop/simprisc/inter.fsdb
+UserActionNum = 0
+nMemWindowNum = 0
+[wave.0]
+viewPort = 0 28 1269 304 100 65
+SessionFile = /home/work/Desktop/simprisc/verdiLog/novas_autosave.ses.wave.0
+displayGrid = FALSE
+hierarchicalName = FALSE
+snap = TRUE
+displayLeadingZeros = FALSE
+fixDelta = FALSE
+displayCursorMarker = FALSE
+autoUpdate = FALSE
+highlightGlitchs = FALSE
+waveformSync = FALSE
+displayErrors = TRUE
+displayMsgSymbols = TRUE
+showMsgDescriptions = TRUE
+autoFit = FALSE
+displayDeltaY = FALSE
+centerCursor = FALSE

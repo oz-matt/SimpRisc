@@ -1,0 +1,87 @@
+{
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module"
+    ],
+    "memw_if": [
+        "memw_if",
+        "jHAEt",
+        "module"
+    ],
+    "_vcs_unit__3944819586": [
+        "_vcs_unit__3944819586",
+        "VwCWk",
+        "module"
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module"
+    ],
+    "axilite_int": [
+        "axilite_int",
+        "iC1Ix",
+        "module"
+    ],
+    "instruction_parser": [
+        "instruction_parser",
+        "Cepf6",
+        "module"
+    ],
+    "axi_master_wrapper": [
+        "axi_master_wrapper",
+        "fd580",
+        "module"
+    ],
+    "mdriver_int": [
+        "mdriver_int",
+        "eizcd",
+        "module"
+    ],
+    "masterif": [
+        "masterif",
+        "g4MBa",
+        "module"
+    ],
+    "memslave": [
+        "memslave",
+        "xL5KA",
+        "module"
+    ],
+    "umem": [
+        "umem",
+        "bibN3",
+        "module"
+    ],
+    "aximem": [
+        "aximem",
+        "rqyFU",
+        "module"
+    ],
+    "insgen_if": [
+        "insgen_if",
+        "JCj13",
+        "module"
+    ],
+    "cpu": [
+        "cpu",
+        "D7Gce",
+        "module"
+    ],
+    "sindrv_0000": [
+        "sindrv_0000",
+        "mjxYt",
+        "module"
+    ],
+    "soc_top": [
+        "soc_top",
+        "RaPkC",
+        "module"
+    ],
+    "top_tb": [
+        "top_tb",
+        "W0eJz",
+        "module"
+    ]
+}

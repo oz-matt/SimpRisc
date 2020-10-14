@@ -1,0 +1,197 @@
+{
+    "MlibObjs": {},
+    "Misc": {
+        "cwd": "/home/work/Desktop/simprisc",
+        "csrc_abs": "/home/work/Desktop/simprisc/csrc",
+        "csrc": "csrc",
+        "archive_dir": "archive.0",
+        "daidir": "simv.daidir",
+        "daidir_abs": "/home/work/Desktop/simprisc/simv.daidir",
+        "default_output_dir": "csrc"
+    },
+    "PrevCompiledModules": {},
+    "CurCompileUdps": {},
+    "NameTable": {
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
+        ],
+        "memw_if": [
+            "memw_if",
+            "jHAEt",
+            "module"
+        ],
+        "_vcs_unit__3944819586": [
+            "_vcs_unit__3944819586",
+            "VwCWk",
+            "module"
+        ],
+        "std": [
+            "std",
+            "reYIK",
+            "module"
+        ],
+        "axilite_int": [
+            "axilite_int",
+            "iC1Ix",
+            "module"
+        ],
+        "instruction_parser": [
+            "instruction_parser",
+            "Cepf6",
+            "module"
+        ],
+        "axi_master_wrapper": [
+            "axi_master_wrapper",
+            "fd580",
+            "module"
+        ],
+        "mdriver_int": [
+            "mdriver_int",
+            "eizcd",
+            "module"
+        ],
+        "masterif": [
+            "masterif",
+            "g4MBa",
+            "module"
+        ],
+        "memslave": [
+            "memslave",
+            "xL5KA",
+            "module"
+        ],
+        "umem": [
+            "umem",
+            "bibN3",
+            "module"
+        ],
+        "aximem": [
+            "aximem",
+            "rqyFU",
+            "module"
+        ],
+        "insgen_if": [
+            "insgen_if",
+            "JCj13",
+            "module"
+        ],
+        "cpu": [
+            "cpu",
+            "D7Gce",
+            "module"
+        ],
+        "sindrv_0000": [
+            "sindrv_0000",
+            "mjxYt",
+            "module"
+        ],
+        "soc_top": [
+            "soc_top",
+            "RaPkC",
+            "module"
+        ],
+        "top_tb": [
+            "top_tb",
+            "W0eJz",
+            "module"
+        ]
+    },
+    "SIMBData": {
+        "out": "amcQwB.o",
+        "bytes": 119448
+    },
+    "CompileStrategy": "fullobj",
+    "LVLData": [
+        "SIM"
+    ],
+    "stat": {
+        "ru_self_cgstart": {
+            "ru_utime_sec": 1.741735,
+            "ru_majflt": 865,
+            "ru_stime_sec": 2.1346750000000001,
+            "ru_maxrss_kb": 80320,
+            "ru_minflt": 21009,
+            "ru_nvcsw": 921,
+            "ru_nivcsw": 395
+        },
+        "quadSpeed": 12309.119591640208,
+        "nQuads": 6289,
+        "ru_childs_cgstart": {
+            "ru_utime_sec": 0.005999,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.16997399999999999,
+            "ru_maxrss_kb": 34360,
+            "ru_minflt": 2378,
+            "ru_nvcsw": 5,
+            "ru_nivcsw": 22
+        },
+        "mopSpeed": 34600.193375896903,
+        "nMops": 17678,
+        "ru_self_end": {
+            "ru_utime_sec": 2.2526570000000001,
+            "ru_majflt": 915,
+            "ru_stime_sec": 2.1346750000000001,
+            "ru_maxrss_kb": 90516,
+            "ru_minflt": 24431,
+            "ru_nvcsw": 971,
+            "ru_nivcsw": 448
+        },
+        "mop/quad": 2.8109397360470663,
+        "totalObjSize": 514600,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.005999,
+            "ru_majflt": 0,
+            "ru_stime_sec": 0.16997399999999999,
+            "ru_maxrss_kb": 34360,
+            "ru_minflt": 2378,
+            "ru_nvcsw": 5,
+            "ru_nivcsw": 22
+        },
+        "outputSizePerQuad": 81.0,
+        "Frontend(%)": 77.319139132144826,
+        "CodeGen(%)": 22.680860867855163
+    },
+    "CurCompileModules": [
+        "...MASTER...",
+        "...MASTER...",
+        "_vcs_unit__3944819586",
+        "_vcs_unit__3944819586",
+        "std",
+        "std",
+        "axilite_int",
+        "axilite_int",
+        "mdriver_int",
+        "mdriver_int",
+        "masterif",
+        "masterif",
+        "umem",
+        "umem",
+        "axi_master_wrapper",
+        "axi_master_wrapper",
+        "instruction_parser",
+        "instruction_parser",
+        "aximem",
+        "aximem",
+        "memslave",
+        "memslave",
+        "cpu",
+        "cpu",
+        "sindrv_0000",
+        "sindrv_0000",
+        "soc_top",
+        "soc_top",
+        "memw_if",
+        "memw_if",
+        "insgen_if",
+        "insgen_if",
+        "top_tb",
+        "top_tb"
+    ],
+    "PEModules": [],
+    "CompileProcesses": [
+        "cgproc.10208.json"
+    ],
+    "CompileStatus": "Successful"
+}

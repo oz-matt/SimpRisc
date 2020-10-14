@@ -1,0 +1,279 @@
+{
+    "Modules": {
+        "...MASTER...": {},
+        "memw_if": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "_vcs_unit__3944819586": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "instruction_parser": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "axilite_int": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "axi_master_wrapper": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "mdriver_int": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "masterif": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "memslave": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "umem": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "aximem": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "insgen_if": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "cpu": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "sindrv_0000": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "soc_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        },
+        "top_tb": {
+            "Compiled": "Yes",
+            "Compiled Times": 1
+        }
+    },
+    "CompUnits": {
+        "rqyFU_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "aximem",
+            "mode": 4,
+            "out": "rqyFU_d.o",
+            "bytes": 7376,
+            "checksum": 0
+        },
+        "fd580_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "axi_master_wrapper",
+            "mode": 4,
+            "out": "fd580_d.o",
+            "bytes": 32089,
+            "checksum": 0
+        },
+        "eizcd_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "mdriver_int",
+            "mode": 4,
+            "out": "eizcd_d.o",
+            "bytes": 15978,
+            "checksum": 0
+        },
+        "reYIK_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "std",
+            "mode": 4,
+            "out": "reYIK_d.o",
+            "bytes": 41566,
+            "checksum": 0
+        },
+        "amcQw_d": {
+            "mod": "...MASTER...",
+            "mode": 4,
+            "out": "objs/amcQw_d.o",
+            "bytes": 7742,
+            "checksum": 0
+        },
+        "bibN3_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "umem",
+            "mode": 4,
+            "out": "bibN3_d.o",
+            "bytes": 18761,
+            "checksum": 0
+        },
+        "xL5KA_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "memslave",
+            "mode": 4,
+            "out": "xL5KA_d.o",
+            "bytes": 24894,
+            "checksum": 0
+        },
+        "jHAEt_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "memw_if",
+            "mode": 4,
+            "out": "jHAEt_d.o",
+            "bytes": 9519,
+            "checksum": 0
+        },
+        "VwCWk_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "_vcs_unit__3944819586",
+            "mode": 4,
+            "out": "VwCWk_d.o",
+            "bytes": 16731,
+            "checksum": 0
+        },
+        "iC1Ix_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "axilite_int",
+            "mode": 4,
+            "out": "iC1Ix_d.o",
+            "bytes": 10305,
+            "checksum": 0
+        },
+        "mjxYt_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "sindrv_0000",
+            "mode": 4,
+            "out": "mjxYt_d.o",
+            "bytes": 31972,
+            "checksum": 0
+        },
+        "g4MBa_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "masterif",
+            "mode": 4,
+            "out": "g4MBa_d.o",
+            "bytes": 12430,
+            "checksum": 0
+        },
+        "RaPkC_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "soc_top",
+            "mode": 4,
+            "out": "RaPkC_d.o",
+            "bytes": 17473,
+            "checksum": 0
+        },
+        "Cepf6_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "instruction_parser",
+            "mode": 4,
+            "out": "Cepf6_d.o",
+            "bytes": 30333,
+            "checksum": 0
+        },
+        "D7Gce_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "cpu",
+            "mode": 4,
+            "out": "D7Gce_d.o",
+            "bytes": 73113,
+            "checksum": 0
+        },
+        "JCj13_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "insgen_if",
+            "mode": 4,
+            "out": "JCj13_d.o",
+            "bytes": 7719,
+            "checksum": 0
+        },
+        "W0eJz_d": {
+            "archive": "archive.0/_10208_archive_1.a",
+            "mod": "top_tb",
+            "mode": 4,
+            "out": "W0eJz_d.o",
+            "bytes": 37151,
+            "checksum": 0
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_10208_archive_1.a",
+            "objects": [
+                [
+                    "VwCWk_d.o",
+                    16731
+                ],
+                [
+                    "reYIK_d.o",
+                    41566
+                ],
+                [
+                    "iC1Ix_d.o",
+                    10305
+                ],
+                [
+                    "eizcd_d.o",
+                    15978
+                ],
+                [
+                    "g4MBa_d.o",
+                    12430
+                ],
+                [
+                    "bibN3_d.o",
+                    18761
+                ],
+                [
+                    "fd580_d.o",
+                    32089
+                ],
+                [
+                    "Cepf6_d.o",
+                    30333
+                ],
+                [
+                    "rqyFU_d.o",
+                    7376
+                ],
+                [
+                    "xL5KA_d.o",
+                    24894
+                ],
+                [
+                    "D7Gce_d.o",
+                    73113
+                ],
+                [
+                    "mjxYt_d.o",
+                    31972
+                ],
+                [
+                    "RaPkC_d.o",
+                    17473
+                ],
+                [
+                    "jHAEt_d.o",
+                    9519
+                ],
+                [
+                    "JCj13_d.o",
+                    7719
+                ],
+                [
+                    "W0eJz_d.o",
+                    37151
+                ]
+            ],
+            "size": 387410
+        }
+    ]
+}

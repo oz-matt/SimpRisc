@@ -1,0 +1,154 @@
+0 
+44
++incdir+/home/work/synopsys/L-2016.06/packages/sva
++itf+/home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
++libext+.v
++libext+.v+.h+.vh+.vlib
++vcs+vcdpluson
++vcsd1
++vpi
+-F files.f
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/home/work/synopsys/L-2016.06/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a
+-Mout=simv
+-Msaverestoreobj=/home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/home/work/synopsys/L-2016.06/include
+-P
+-P
+-Xufe=2steps
+-debug_access+all
+-fsdb
+-full64
+-gen_obj
+-kdb
+-l
+-lca
+-picarchive
+-sverilog
+-timescale=1ns/1ps
+-y
+/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
+/home/work/synopsys/L-2016.06/linux64/bin/vcs1
+/home/work/synopsys/L-2016.06/packages/sva
+comp.log
+top_tb.sv
+76
+uvm_home=/home/work/synopsys/L-2016.06/etc/uvm-1.2
+sysc_uni_pwd=/home/work/Desktop/simprisc
+ml_seq_dir=/home/work/INCISIV122/specman/src
+X_DIR=/home/work/xkit/xkitroot
+XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1602633310.755494-1801938554
+XA_HOME=/home/disk/H-2013.03-SP2/
+XA_64=1
+XAUTHORITY=/var/run/gdm/auth-for-work-HNf7C5/database
+WINDOWPATH=1
+VMR_MODE_FLAG=64
+VERDI_HOME=/home/disk/Verdi3_L-2016.06-1
+VERA_HOME=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=comp.log
+VCS_LCAMSG_PRINT_OFF=1
+VCS_HOME=/home/work/synopsys/L-2016.06
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+UVM_REF_HOME=/home/work/dvt_predefined_projects_target/uvm_ref_flow_1.1
+UVM_HOME=/home/work/synopsys/L-2016.06/etc/uvm-1.2
+USERNAME=work
+UNAME=/bin/uname
+T_DIR=/home/work/xkit/xkitroot/xh035/cadence/v6_2
+TURBO_LOG_DIR=/tmp/vcs_20201014005238_9689
+TOOL_HOME=/home/work/synopsys/L-2016.06/linux64
+SYNOPSYS_HOME=/opt/synopsys
+SSH_AUTH_SOCK=/tmp/keyring-GCCaMJ/socket.ssh
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SOCV_KIT_HOME=/home/work/INCISIV122/kits/VerificationKit
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2834,unix/unix:/tmp/.ICE-unix/2834
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+SCL_HOME=/opt/synopsys/v11.10
+SCL_BIN=/opt/synopsys/v11.10/linux64/bin
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+QSYS_ROOTDIR=/home/disk/intelFPGA/17.0/quartus/sopc_builder/bin
+OVA_UUM=0
+ORBIT_SOCKETDIR=/tmp/orbit-work
+NOVAS_PLI=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+NOVAS_HOME=/home/disk/Verdi3_L-2016.06-1
+NOVAS=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
+MOZILLA_HOME=/usr/bin/netscape
+MMSIMHOME=/opt/MMSIM151/
+MGLS_LICENSE_FILE=/opt/calibre2015/license.dat
+MGC_LIB_PATH=/lib
+MGC_HOME=/opt/calibre2015/aoi_cal_2015.2_36.27
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+LC_ALL=C
+KDEDIRS=/usr
+HSP_HOME=/opt/synopsys/Hspice-2015.06-3/
+HSP_BIN=/opt/synopsys/Hspice-2015.06-3//hspice/bin
+HISTCONTROL=ignoredups
+G_BROKEN_FILENAMES=1
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/work/.gtkrc-1.2-gnome2
+GNOME_KEYRING_SOCKET=/tmp/keyring-GCCaMJ/socket
+GNOME_KEYRING_PID=2824
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+GDM_LANG=en_US.UTF-8
+GDM_KEYBOARD_LAYOUT=us
+GDMSESSION=gnome
+DVT_LICENSE_FILE=/home/work/Downloads/dvt_eclipse/licenses/dvt_MatthewMorra_Academic_20200502_FlexLMLocal.license
+DVT_HOME=/home/work/Downloads/dvt_eclipse
+DESKTOP_SESSION=gnome
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-043zwaMHut,guid=a852f57df0cc1a0fd010ad6e00000056
+CVS_RSH=ssh
+COLORTERM=gnome-terminal
+CDS_Netlisting_Mode=Analog
+CDS_LOAD_ENV=CSF
+CDS_AUTO_64BIT=ALL
+CDS=/opt/IC617/
+CALIBRE_ENABLE_SKILL_PEXBA_MODE=1
+ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
+0
+22
+1602636602 top_th.sv
+1602635989 top_tb.sv
+1602635527 insgen_if.sv
+1602635516 memw_if.sv
+1602635589 soc_top.sv
+1602636078 design.sv
+1602636640 sindrv.sv
+1597974810 cpu.sv
+1595790529 memslave.sv
+1595790207 axi_mem.sv
+1594769994 lfsr5.sv
+1594769994 instruction_parser.sv
+1594769994 axi_master_wrapper.sv
+1595730912 umem.sv
+1595790962 masterif.sv
+1594769994 mdriver_int.sv
+1594769994 axil_int.sv
+1594769994 defines.sv
+1602636455 files.f
+1468145700 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
+1468145700 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
+1464145466 /home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
+5
+0 
+1464147802 /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so
+1464147272 /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
+1464147248 /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
+1468144468 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a
+1602636777 simv.daidir

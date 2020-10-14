@@ -22,7 +22,7 @@ interface instruction_parser (
   wire[1:0] c_umbits;
   wire[1:0] c_lmbits;
   
-  rv32i_t name;
+  integer name;
   byte size;
   
   always_comb begin
