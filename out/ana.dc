@@ -1,0 +1,36 @@
+* "simulator" "XA" 
+* "format" "HSP" 
+* time = 0 
+*** BEGIN: DC Convergence Report 
+********************************************
+* Nodes that Failed to Converge 
+* Nodes name = node value $ node DCI | node DCV| instance Contributing the biggest current 
+********************************************
+* Nodes that were normally converged 
+* Nodes name = node value $ node DCI | node DCV| instance Contributing the biggest current 
+.nodeset 
++v(vramp.vout) = -1.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.fm.freq) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.fm.snps_devent_2) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.fm.snps_aevent_5) = 1.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.dr) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.o1) = 1.63589e+00 $ -4.90766e-12 | -1.39546e-16 | top_tb.amstop.i3cd (i=-6.46106e-04)
++v(top_tb.amstop.o2) = 1.63589e+00 $ 4.63999e-19 | -1.39546e-16 | top_tb.amstop.i3c2d (i=-6.46106e-04)
++v(top_tb.amstop.cin) = 0.00000e+00 $ 1.63589e-12 | 0.00000e+00 | top_tb.amstop.vpd (i=1.63589e-12)
++v(top_tb.amstop.cme) = 1.94135e-01 $ 5.22346e-12 | 1.37207e-18 | top_tb.amstop.i34d (i=9.35288e-04)
++v(top_tb.amstop.cup) = 3.00000e+00 $ -1.50000e-12 | 0.00000e+00 | top_tb.amstop.dff1d (i=-1.50000e-12)
++v(top_tb.amstop.qbu) = 3.00000e+00 $ -3.00000e-12 | 0.00000e+00 | top_tb.amstop.dff2d (i=-3.00300e-09)
++v(top_tb.amstop.qdn) = 0.00000e+00 $ 1.50000e-12 | 0.00000e+00 | top_tb.amstop.dff2d (i=1.50000e-12)
++v(top_tb.amstop.qup) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.vdd) = 3.00000e+00 $ -4.32529e-11 | 0.00000e+00 | top_tb.amstop.v0d (i=-3.12955e-03)
++v(top_tb.amstop.cmid) = 1.50000e+00 $ 6.88773e-18 | 9.98975e-07 | top_tb.amstop.pfdm1d (i=-1.00000e-14)
++v(top_tb.amstop.ondc) = 1.50000e+00 $ 0.00000e+00 | 2.65075e-14 | 
++v(top_tb.amstop.tmid) = 1.50000e+00 $ 3.55578e-19 | -1.27071e-12 | top_tb.amstop.cn1d (i=9.02045e-04)
++v(top_tb.amstop.clkout) = 3.00000e+00 $ -3.00000e-12 | 0.00000e+00 | top_tb.amstop.fdivd (i=-3.00000e-12)
++v(top_tb.amstop.vcovgnd) = 2.71775e-01 $ 1.30976e-11 | -4.60359e-18 | top_tb.amstop.i33d (i=1.29221e-03)
++v(top_tb.amstop.vctrl) = 1.50000e+00 $ -6.88773e-18 | 9.98975e-07 | top_tb.amstop.rlpfd (i=-6.88773e-18)
++v(top_tb.amstop.clkin) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.snps_dummy_4) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.snps_dummy_5) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.snps_dummy_6) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 
++v(top_tb.amstop.fm.rep) = 0.00000e+00 $ 0.00000e+00 | 0.00000e+00 | 

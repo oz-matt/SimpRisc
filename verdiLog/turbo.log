@@ -1,3 +1,3 @@
 Command Line: /home/disk/Verdi3_L-2016.06-1/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./simv -simOpt  
 uname(Linux work-eda 2.6.32-431.el6.x86_64 #1 SMP Sun Nov 10 22:19:54 EST 2013 x86_64)
-au time 96.816917 18.586175 5.473168 delta 266592256 266592256 total 643096576 643096576
+au time 23.094165 6.482014 2.945552 delta 268832768 268832768 total 645337088 645337088

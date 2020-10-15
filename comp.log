@@ -1,9 +1,12 @@
-Command: vcs -sverilog -lca -debug_access+all -y /home/work/synopsys/L-2016.06/packages/sva \
-+libext+.v +incdir+/home/work/synopsys/L-2016.06/packages/sva -P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
-/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -full64 +libext+.v+.h+.vh+.vlib \
--kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps -F files.f top_tb.sv
+Command: vcs -ams +ad -ams_discipline logic +systemverilogext+.sv -lca -debug_access+all \
+-y /home/work/synopsys/L-2016.06/packages/sva +libext+.v +incdir+/home/work/synopsys/L-2016.06/packages/sva \
+-P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a \
+-full64 +libext+.v+.h+.vh+.vlib -kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps \
++incdir+ams_src/ams-models -F sv_src/files.f -F ams_src/files.f -adopt absdelta top_tb.sv \
+
+*** Using c compiler /home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version L-2016.06_Full64 -- Wed Oct 14 08:52:41 2020
+         Version L-2016.06_Full64 -- Fri Oct 16 03:59:03 2020
                Copyright (c) 1991-2016 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -392,82 +395,223 @@ Warning-[UFTMD] User function/task multiply defined
   table(s).
   
 
-Parsing design file 'defines.sv'
-Parsing design file 'axil_int.sv'
-Parsing design file 'mdriver_int.sv'
-Parsing design file 'masterif.sv'
-Parsing design file 'umem.sv'
-Parsing design file 'axi_master_wrapper.sv'
-Parsing design file 'instruction_parser.sv'
-Parsing design file 'lfsr5.sv'
-Parsing design file 'axi_mem.sv'
-Parsing design file 'memslave.sv'
-Parsing design file 'cpu.sv'
-Parsing design file 'sindrv.sv'
-Parsing design file 'design.sv'
-Parsing design file 'soc_top.sv'
-Parsing design file 'memw_if.sv'
-Parsing design file 'insgen_if.sv'
+  TIMESTAMP: Aug 14 2013 19:01:19
+
+
+  TIMESTAMP: Aug 14 2013 19:01:19
+
+   VCS_HOME: /home/work/synopsys/L-2016.06
+   VCS_ARCH: linux64
+   XA_HOME: /home/disk/H-2013.03-SP2
+   XA_ARCH: amd64
+WORKING-DIR: work-eda:/home/work/Desktop/simprisc
+
+Begin Analog Netlist Compilation ...
+
+***** Warning: Netlist compilation will be case sensitive.
+      Using "set_sim_case -case lower|upper|sensitive" in 'cfg.cfg' file to set a case.
+***** Warning: No transistor-level netlist found.
+
+
+Begin Digital Netlist Compilation ...
+
+
+Generating KDB database with Verdi spicom...
+
+/home/work/synopsys/L-2016.06/linux64/bin/elabcom -SPICOM -simvdaidir simv.daidir -simflow -ad vcsAD.init -logdir simv.daidir/spicomLog  -lib simv.daidir/work
+
+Parsing design file 'sv_src/defines.sv'
+Parsing design file 'sv_src/axil_int.sv'
+Parsing design file 'sv_src/mdriver_int.sv'
+Parsing design file 'sv_src/masterif.sv'
+Parsing design file 'sv_src/umem.sv'
+Parsing design file 'sv_src/axi_master_wrapper.sv'
+Parsing design file 'sv_src/instruction_parser.sv'
+Parsing design file 'sv_src/lfsr5.sv'
+Parsing design file 'sv_src/axi_mem.sv'
+Parsing design file 'sv_src/memslave.sv'
+Parsing design file 'sv_src/cpu.sv'
+Parsing design file 'sv_src/sindrv.sv'
+Parsing design file 'sv_src/design.sv'
+Parsing design file 'sv_src/soc_top.sv'
+Parsing design file 'sv_src/memw_if.sv'
+Parsing design file 'sv_src/insgen_if.sv'
+Parsing design file 'ams_src/freqdivider.va'
+Parsing included file '/home/disk/H-2013.03-SP2/include/discipline.h'.
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file '/home/disk/H-2013.03-SP2/include/discipline.h'.
+Back to file 'ams_src/freqdivider.va'.
+Parsing included file 'ams_src/ams-models/constants.h'.
+Back to file 'ams_src/freqdivider.va'.
+Parsing design file 'ams_src/freqmeasure.vams'
+Parsing design file 'ams_src/top.vams'
+Parsing included file 'ams_src/ams-models/res.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/mos_level1.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/mos_level1p.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/cap.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/ind.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/varactor.va'.
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/ams-models/varactor.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/and_gate.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/d_ff_r.va'.
+Back to file 'ams_src/top.vams'.
+Parsing design file 'ams_src/vclkgen.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vclkgen.va'.
+Parsing design file 'ams_src/vpulse.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vpulse.va'.
+Parsing design file 'ams_src/vramp.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vramp.va'.
+Parsing design file 'ams_src/vsrc.vams'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vsrc.vams'.
 Parsing design file 'top_tb.sv'
 Parsing included file 'top_th.sv'.
 Back to file 'top_tb.sv'.
 Top Level Modules:
+       vramp
        top_tb
 TimeScale is 1 ns / 1 ps
+  TIMESTAMP: Aug 14 2013 19:01:19
+
+
+  TIMESTAMP: Aug 14 2013 19:01:19
+
+   VCS_HOME: /home/work/synopsys/L-2016.06
+   VCS_ARCH: linux64
+   XA_HOME: /home/disk/H-2013.03-SP2
+   XA_ARCH: amd64
+WORKING-DIR: work-eda:/home/work/Desktop/simprisc
+
+Begin Analog Netlist Compilation ...
+
+***** Warning: Netlist compilation will be case sensitive.
+      Using "set_sim_case -case lower|upper|sensitive" in 'cfg.cfg' file to set a case.
+***** Warning: No transistor-level netlist found.
+
+
+Begin Digital Netlist Compilation ...
+
+
+Generating KDB database with Verdi spicom...
+
+/home/work/synopsys/L-2016.06/linux64/bin/elabcom -SPICOM -simvdaidir simv.daidir -simflow -ad vcsAD.init -logdir simv.daidir/spicomLog  -lib simv.daidir/work
+
+Parsing design file 'sv_src/defines.sv'
+Parsing design file 'sv_src/axil_int.sv'
+Parsing design file 'sv_src/mdriver_int.sv'
+Parsing design file 'sv_src/masterif.sv'
+Parsing design file 'sv_src/umem.sv'
+Parsing design file 'sv_src/axi_master_wrapper.sv'
+Parsing design file 'sv_src/instruction_parser.sv'
+Parsing design file 'sv_src/lfsr5.sv'
+Parsing design file 'sv_src/axi_mem.sv'
+Parsing design file 'sv_src/memslave.sv'
+Parsing design file 'sv_src/cpu.sv'
+Parsing design file 'sv_src/sindrv.sv'
+Parsing design file 'sv_src/design.sv'
+Parsing design file 'sv_src/soc_top.sv'
+Parsing design file 'sv_src/memw_if.sv'
+Parsing design file 'sv_src/insgen_if.sv'
+Parsing design file 'ams_src/freqdivider.va'
+Parsing included file '/home/disk/H-2013.03-SP2/include/discipline.h'.
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file '/home/disk/H-2013.03-SP2/include/discipline.h'.
+Back to file 'ams_src/freqdivider.va'.
+Parsing included file 'ams_src/ams-models/constants.h'.
+Back to file 'ams_src/freqdivider.va'.
+Parsing design file 'ams_src/freqmeasure.vams'
+Parsing design file 'ams_src/top.vams'
+Parsing included file 'ams_src/ams-models/res.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/mos_level1.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/mos_level1p.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/cap.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/ind.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/varactor.va'.
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/ams-models/varactor.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/and_gate.va'.
+Back to file 'ams_src/top.vams'.
+Parsing included file 'ams_src/ams-models/d_ff_r.va'.
+Back to file 'ams_src/top.vams'.
+Parsing design file 'ams_src/vclkgen.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vclkgen.va'.
+Parsing design file 'ams_src/vpulse.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vpulse.va'.
+Parsing design file 'ams_src/vramp.va'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vramp.va'.
+Parsing design file 'ams_src/vsrc.vams'
+Parsing included file 'ams_src/ams-models/disciplines.vams'.
+Back to file 'ams_src/vsrc.vams'.
+Parsing design file 'top_tb.sv'
+Parsing included file 'top_th.sv'.
+Back to file 'top_tb.sv'.
+Top Level Modules:
+       vramp
+       top_tb
+TimeScale is 1 ns / 1 ps
+Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
-Parsing design file 'defines.sv'
-Parsing design file 'axil_int.sv'
-Parsing design file 'mdriver_int.sv'
-Parsing design file 'masterif.sv'
-Parsing design file 'umem.sv'
-Parsing design file 'axi_master_wrapper.sv'
-Parsing design file 'instruction_parser.sv'
-Parsing design file 'lfsr5.sv'
-Parsing design file 'axi_mem.sv'
-Parsing design file 'memslave.sv'
-Parsing design file 'cpu.sv'
-Parsing design file 'sindrv.sv'
-Parsing design file 'design.sv'
-Parsing design file 'soc_top.sv'
-Parsing design file 'memw_if.sv'
-Parsing design file 'insgen_if.sv'
-Parsing design file 'top_tb.sv'
-Parsing included file 'top_th.sv'.
-Back to file 'top_tb.sv'.
-Top Level Modules:
-       top_tb
-TimeScale is 1 ns / 1 ps
-16 unique modules to generate
-16 modules and 0 UDP read. 
-recompiling package _vcs_unit__3944819586
+24 unique modules to generate
+24 modules and 0 UDP read. 
+recompiling package _vcs_unit__3606502047
 recompiling package std
-recompiling module axilite_int
-recompiling module mdriver_int
-recompiling module masterif
 recompiling module umem
 recompiling module axi_master_wrapper
-recompiling module instruction_parser
-recompiling module aximem
 recompiling module memslave
 recompiling module cpu
 recompiling module sindrv
-recompiling module soc_top
-recompiling module memw_if
-recompiling module insgen_if
+recompiling module freqdivider
+recompiling module freqmeasure
+recompiling module res
+recompiling module mos_level1
+recompiling module mos_level1p
+recompiling module cap
+recompiling module ind
+recompiling module varactor
+recompiling module and_gate
+recompiling module d_ff_r
+recompiling module top
+recompiling module vclkgen
+recompiling module vpulse
+recompiling module vramp
+recompiling module vsrc
+recompiling module top_th
 recompiling module top_tb
-All of 16 modules done
+All of 24 modules done
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
-g++  -o ../simv   -Wl,-rpath-link=./ -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ \
--Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir  -rdynamic   amcQwB.o objs/amcQw_d.o \
-_10208_archive_1.so  SIM_l.o       rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o \
-rmar_llvm_0_0.o          /home/work/synopsys/L-2016.06/linux64/lib/libzerosoft_rt_stubs.so \
+/home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/g++  -o ../simv   -Wl,-rpath-link=./ \
+-Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir \
+-Wl,-rpath=/home/disk/H-2013.03-SP2/amd64/interfaces -Wl,-E -rdynamic   amcQwB.o \
+objs/amcQw_d.o   _9506_archive_1.so  SIM_l.o   /home/disk/H-2013.03-SP2/amd64/interfaces/libxa_cosim.so \
+rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/work/synopsys/L-2016.06/linux64/lib/libzerosoft_rt_stubs.so \
 /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so \
 /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a \
 /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so /home/work/synopsys/L-2016.06/linux64/lib/libsimprofile.so \
 /home/work/synopsys/L-2016.06/linux64/lib/libuclinative.so   -Wl,-whole-archive /home/work/synopsys/L-2016.06/linux64/lib/libvcsucli.so \
--Wl,-no-whole-archive        _vcs_pli_stub_.o   /home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_new.o \
+-Wl,-no-whole-archive    /home/work/synopsys/L-2016.06/linux64/lib/libcosimAD.a  \
+_vcs_pli_stub_.o   /home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_new.o \
 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc -lpthread \
 -ldl 
 ../simv up to date
-CPU time: 7.473 seconds to compile + .923 seconds to elab + .416 seconds to link
+CPU time: 1.267 seconds to compile + .599 seconds to elab + .437 seconds to link

@@ -1,32 +1,60 @@
-0 
-44
+10       
+0 discipline.h
+0 /home/work/synopsys/L-2016.06/etc/systemverilog/discipline.h
+0 /home/work/synopsys/L-2016.06/packages/sva/discipline.h
+0 ams_src/ams-models/discipline.h
+0 disciplines.vams
+0 /home/work/synopsys/L-2016.06/etc/systemverilog/disciplines.vams
+0 /home/work/synopsys/L-2016.06/packages/sva/disciplines.vams
+0 constants.h
+0 /home/work/synopsys/L-2016.06/etc/systemverilog/constants.h
+0 /home/work/synopsys/L-2016.06/packages/sva/constants.h
+63
++ad=simv.daidir/ams.init
++bidir+1
++epicVerStr=2009.06
++incdir+/home/disk/H-2013.03-SP2/include
 +incdir+/home/work/synopsys/L-2016.06/packages/sva
++incdir+ams_src/ams-models
 +itf+/home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
 +libext+.v
 +libext+.v+.h+.vh+.vlib
++systemverilogext+.sv
++v2k
 +vcs+vcdpluson
++vcsBaseVer=VCS10.1
 +vcsd1
++verilogams
 +vpi
--F files.f
--Mamsrun=
++xbi+1
+-F ams_src/files.f
+-F sv_src/files.f
+-Mamsrun=/home/work/synopsys/L-2016.06/linux64/lib/libcosimAD.a
 -Masflags=
--Mcc=gcc
--Mcfl= -pipe -fPIC -O -I/home/work/synopsys/L-2016.06/include
--Mcplusplus=g++
+-Mcc=/home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/gcc
+-Mcfl= -pipe -fPIC -m64 -O -I/home/work/synopsys/L-2016.06/include
+-Mcplusplus=/home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/g++
 -Mcrt0=
 -Mcrtn=
 -Mcsrc=
 -Mexternalobj=
--Mldflags= -rdynamic
+-Mldflags= -Wl,-E -rdynamic
 -Mobjects= /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a
 -Mout=simv
 -Msaverestoreobj=/home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_new.o
 -Msyslibs=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm
--Mvcsaceobjs=
+-Mvcsaceobjs=/home/disk/H-2013.03-SP2/amd64/interfaces/libxa_cosim.so
 -Mxcflags= -pipe -fPIC -I/home/work/synopsys/L-2016.06/include
 -P
 -P
+-XepicAms=0x1
 -Xufe=2steps
+-ad_comp_lib=/home/disk/H-2013.03-SP2/amd64/interfaces/libgenie_ams.so
+-ad_config_dr
+-ad_new_dr
+-ad_xa
+-adopt
+-ams_discipline
 -debug_access+all
 -fsdb
 -full64
@@ -35,48 +63,51 @@
 -l
 -lca
 -picarchive
--sverilog
 -timescale=1ns/1ps
 -y
 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
 /home/work/synopsys/L-2016.06/linux64/bin/vcs1
 /home/work/synopsys/L-2016.06/packages/sva
+absdelta
 comp.log
+logic
 top_tb.sv
-76
+83
 uvm_home=/home/work/synopsys/L-2016.06/etc/uvm-1.2
 sysc_uni_pwd=/home/work/Desktop/simprisc
 ml_seq_dir=/home/work/INCISIV122/specman/src
 X_DIR=/home/work/xkit/xkitroot
-XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1602633310.755494-1801938554
-XA_HOME=/home/disk/H-2013.03-SP2/
+XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1602790592.489745-626984281
+XA_HOME=/home/disk/H-2013.03-SP2
+XA_ARCH=amd64
 XA_64=1
-XAUTHORITY=/var/run/gdm/auth-for-work-HNf7C5/database
+XAUTHORITY=/var/run/gdm/auth-for-work-qyVXc1/database
 WINDOWPATH=1
 VMR_MODE_FLAG=64
 VERDI_HOME=/home/disk/Verdi3_L-2016.06-1
 VERA_HOME=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
 VCS_MX_HOME_INTERNAL=1
-VCS_MODE_FLAG=64
+VCS_MODE_FLAG=1
 VCS_LOG_FILE=comp.log
 VCS_LCAMSG_PRINT_OFF=1
 VCS_HOME=/home/work/synopsys/L-2016.06
 VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
+VCSACE_GENIE=1
 UVM_REF_HOME=/home/work/dvt_predefined_projects_target/uvm_ref_flow_1.1
 UVM_HOME=/home/work/synopsys/L-2016.06/etc/uvm-1.2
 USERNAME=work
 UNAME=/bin/uname
 T_DIR=/home/work/xkit/xkitroot/xh035/cadence/v6_2
-TURBO_LOG_DIR=/tmp/vcs_20201014005238_9689
+TURBO_LOG_DIR=/tmp/vcs_20201015195859_7612
 TOOL_HOME=/home/work/synopsys/L-2016.06/linux64
 SYNOPSYS_HOME=/opt/synopsys
-SSH_AUTH_SOCK=/tmp/keyring-GCCaMJ/socket.ssh
+SSH_AUTH_SOCK=/tmp/keyring-fAfmSo/socket.ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SOCV_KIT_HOME=/home/work/INCISIV122/kits/VerificationKit
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2834,unix/unix:/tmp/.ICE-unix/2834
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2769,unix/unix:/tmp/.ICE-unix/2769
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 SCL_HOME=/opt/synopsys/v11.10
@@ -85,6 +116,7 @@ QTLIB=/usr/lib64/qt-3.3/lib
 QTINC=/usr/lib64/qt-3.3/include
 QTDIR=/usr/lib64/qt-3.3
 QSYS_ROOTDIR=/home/disk/intelFPGA/17.0/quartus/sopc_builder/bin
+PVA_VAAN=1
 OVA_UUM=0
 ORBIT_SOCKETDIR=/tmp/orbit-work
 NOVAS_PLI=/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64
@@ -103,16 +135,19 @@ HSP_BIN=/opt/synopsys/Hspice-2015.06-3//hspice/bin
 HISTCONTROL=ignoredups
 G_BROKEN_FILENAMES=1
 GTK_RC_FILES=/etc/gtk/gtkrc:/home/work/.gtkrc-1.2-gnome2
-GNOME_KEYRING_SOCKET=/tmp/keyring-GCCaMJ/socket
-GNOME_KEYRING_PID=2824
+GNOME_KEYRING_SOCKET=/tmp/keyring-fAfmSo/socket
+GNOME_KEYRING_PID=2759
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GDM_LANG=en_US.UTF-8
 GDM_KEYBOARD_LAYOUT=us
 GDMSESSION=gnome
+EPIC_HOME=__$XA_HOME__
+EPIC_ARCH=__$XA_ARCH__
 DVT_LICENSE_FILE=/home/work/Downloads/dvt_eclipse/licenses/dvt_MatthewMorra_Academic_20200502_FlexLMLocal.license
 DVT_HOME=/home/work/Downloads/dvt_eclipse
+DISABLE_NIV_CODEC=1
 DESKTOP_SESSION=gnome
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-043zwaMHut,guid=a852f57df0cc1a0fd010ad6e00000056
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xh3ALbgtFS,guid=c330a58f8411b47746076cdb0000005a
 CVS_RSH=ssh
 COLORTERM=gnome-terminal
 CDS_Netlisting_Mode=Analog
@@ -120,28 +155,50 @@ CDS_LOAD_ENV=CSF
 CDS_AUTO_64BIT=ALL
 CDS=/opt/IC617/
 CALIBRE_ENABLE_SKILL_PEXBA_MODE=1
+AMS_HVA=1
 ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 0
-22
+43
 1602636602 top_th.sv
-1602635989 top_tb.sv
-1602635527 insgen_if.sv
-1602635516 memw_if.sv
-1602635589 soc_top.sv
-1602636078 design.sv
-1602636640 sindrv.sv
-1597974810 cpu.sv
-1595790529 memslave.sv
-1595790207 axi_mem.sv
-1594769994 lfsr5.sv
-1594769994 instruction_parser.sv
-1594769994 axi_master_wrapper.sv
-1595730912 umem.sv
-1595790962 masterif.sv
-1594769994 mdriver_int.sv
-1594769994 axil_int.sv
-1594769994 defines.sv
-1602636455 files.f
+1602375052 ams_src/ams-models/d_ff_r.va
+1602432181 ams_src/ams-models/and_gate.va
+1602357373 ams_src/ams-models/varactor.va
+906608658 ams_src/ams-models/ind.va
+906608658 ams_src/ams-models/cap.va
+1602342550 ams_src/ams-models/mos_level1p.va
+1602342568 ams_src/ams-models/mos_level1.va
+1601310881 ams_src/ams-models/res.va
+1600987118 ams_src/ams-models/constants.h
+1601757476 ams_src/ams-models/disciplines.vams
+1371792340 /home/disk/H-2013.03-SP2/include/discipline.h
+0 simv.daidir/spicelib
+1602791832 top_tb.sv
+1601323521 ams_src/vsrc.vams
+1602186949 ams_src/vramp.va
+1601622332 ams_src/vpulse.va
+1602204727 ams_src/vclkgen.va
+1602790952 ams_src/top.vams
+1602360504 ams_src/freqmeasure.vams
+1602563234 ams_src/freqdivider.va
+1602635527 sv_src/insgen_if.sv
+1602635516 sv_src/memw_if.sv
+1602635589 sv_src/soc_top.sv
+1602636078 sv_src/design.sv
+1602636640 sv_src/sindrv.sv
+1602715329 sv_src/cpu.sv
+1595790529 sv_src/memslave.sv
+1595790207 sv_src/axi_mem.sv
+1594769994 sv_src/lfsr5.sv
+1594769994 sv_src/instruction_parser.sv
+1594769994 sv_src/axi_master_wrapper.sv
+1595730912 sv_src/umem.sv
+1595790962 sv_src/masterif.sv
+1594769994 sv_src/mdriver_int.sv
+1594769994 sv_src/axil_int.sv
+1594769994 sv_src/defines.sv
+1594769994 sv_src/defines.sv
+1602709448 ams_src/files.f
+1602706351 sv_src/files.f
 1468145700 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
 1468145700 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
 1464145466 /home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
@@ -151,4 +208,4 @@ ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 1464147272 /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
 1464147248 /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
 1468144468 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1602636777 simv.daidir
+1602791946 simv.daidir

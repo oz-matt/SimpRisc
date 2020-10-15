@@ -1,4 +1,6 @@
 *design* DebussyLib (btIdent Verdi3_L-2016.06-1)
-Command arguments:  -elab  ./simv.daidir/kdb.elab++ 
+Command arguments:  -elab  ./simv.daidir/kdb.elab++  -msv  -msvdir  ./simv.msv 
+-- Loading package STANDARD.
+-- Loading package TEXTIO.
 *design* DebussyLib (btIdent Verdi3_L-2016.06-1)
 Total	0 error(s),   0 warning(s)

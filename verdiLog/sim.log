@@ -3,239 +3,50 @@ Warning-[LCA_FEATURES_ENABLED] Usage warning
   LCA features enabled by '-lca' argument on the command line.  For more 
   information regarding list of LCA features please refer to Chapter "LCA 
   features" in the VCS/VCS-MX Release Notes
-Chronologic VCS simulator copyright 1991-2016
-Contains Synopsys proprietary information.
-Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Oct 14 08:53 2020
-
-ucli% synUtils::getArch
-linux64
-ucli% loaddl -simv /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUXAMD64/libnovas.so LoadFSDBDumpCmd;LoadFSDBDumpCmd
-LoadFSDBDumpCmd success
-ucli% config ckptfsdbcheck off;config endofsim noexit;config onfail {enable all};catch {setUcliVerdiConnected};cbug::config pretty_print auto;fsdbDumpfile {/home/work/Desktop/simprisc/inter.fsdb}; fsdbDumpflush;
-*Verdi3* Loading libsscore_vcs201606.so
-*Verdi3* : FSDB_GATE is set.
-*Verdi3* : FSDB_RTL is set.
-*Verdi3* : Enable Parallel Dumping.
-FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
-(C) 1996 - 2016 by Synopsys, Inc.
-*Verdi3* : Create FSDB file '/home/work/Desktop/simprisc/inter.fsdb'
-*Verdi3* : Flush all FSDB Files at 0 ps.
-
-ucli% sps_interactive
-*Verdi3* : Enable RPC Server(10459)
-
-ucli% ucliCore::getToolPID
-10459
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% puts $ucliCore::nativeUcliMode
-0
-
-ucli% ucliCore::getToolTopPID
-10459
-ucli% pid
-10476
-ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.work.10459 }
-
-ucli% if { [info vars watch::vcbp_str_len_limit_of_get_value] != ""} {set watch::vcbp_str_len_limit_of_get_value 1024}
-1024
-ucli% info command stateVerdiChangeCB
-
-ucli% proc stateVerdiChangeCB args { if {$ucliGUI::state eq "terminated"} {puts "\nVERDI_SIM_Terminated\n";catch {setVerdiSimTerminated}}}
-
-ucli% trace variable ucliGUI::state wu stateVerdiChangeCB
-
-ucli% if {[catch {rename synopsys::restore verdiHack::restore} ]} {puts "0"}
-
-ucli% proc synopsys::restore {args} { verdiHack::restore $args; puts "\nVERDI_SIM_RESTORE\n"}
-
-ucli% if {[catch {rename quit verdiHack::quit} ]} {puts "0"}
-
-ucli% proc quit {args} { if {[string length $args] == 0} { verdiHack::quit; } elseif {([string equal "-h" $args] == 1)||([string equal "-he" $args] == 1)||([string equal "-hel" $args] == 1)||([string equal "-help" $args] == 1)} { puts "\n quit           # Exit the simulation.\n \[-noprompt\]        (Exit the simulation and Verdi.)\n"} elseif {([string equal "-n" $args] == 1)||([string equal "-no" $args] == 1)||([string equal "-nop" $args] == 1)||([string equal "-nopr" $args] == 1)||([string equal "-nopro" $args] == 1)||([string equal "-noprom" $args] == 1)||([string equal "-nopromp" $args] == 1)||([string equal "-noprompt" $args] == 1)} { puts "\nVERDI_EXIT_N\n" } else { verdiHack::quit $args; } }
-
-ucli% if {[catch {rename exit verdiHack::exit} ]} {puts "0"}
-
-ucli% proc exit {args} { if {[string length $args] == 0} { verdiHack::exit; } elseif {([string equal "-h" $args] == 1)||([string equal "-he" $args] == 1)||([string equal "-hel" $args] == 1)||([string equal "-help" $args] == 1)} { puts "\n exit           # Exit the simulation.\n \[-noprompt\]        (Exit the simulation and Verdi.)\n"} elseif {([string equal "-n" $args] == 1)||([string equal "-no" $args] == 1)||([string equal "-nop" $args] == 1)||([string equal "-nopr" $args] == 1)||([string equal "-nopro" $args] == 1)||([string equal "-noprom" $args] == 1)||([string equal "-nopromp" $args] == 1)||([string equal "-noprompt" $args] == 1)} { puts "\nVERDI_EXIT_N\n" } else { verdiHack::exit $args; } }
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpflush 
-*Verdi3* : Flush all FSDB Files at 0 ps.
-
-ucli% senv
-activeDomain: Verilog
-activeFile: defines.sv
-activeFrame: -1
-activeLine: 1
-activeScope: _vcs_unit__3944819586
-activeThread: 0
-endCol: 0
-file: defines.sv
-frame: -1
-fsdbFilename: 
-fsdbNewFlow: 1
-hasTB: 1
-inputFilename: 
-keyFilename: ucli.key
-line: 1
-logFilename: /home/work/Desktop/simprisc/verdiLog/sim.log
-macroIndex: -1
-macroOffset: -1
-pid: 10459
-scope: _vcs_unit__3944819586
-startCol: 0
-state: stopped
-thread: 0
-time: 0
-timePrecision: 1 ps
-vcdFilename: 
-vpdFilename:
-ucli% synUtils::resolveSourceFilename defines.sv
-defines.sv
-ucli% puts $::ucliCore::cbug_active
-0
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% checkpoint -list -all
-There are no checkpoints present.
-ucli% stop
-No stop points are set
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 {top_tb.th.clk} ;fsdbDumpflush
-*Verdi3* : Dumping the signal (top_tb.th.clk).
-*Verdi3* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 {top_tb.th.nreset} ;fsdbDumpflush
-*Verdi3* : Dumping the signal (top_tb.th.nreset).
-*Verdi3* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% run 100n
-
-Error-[UCLI-RUN-INCORRECT-RELATIVE] Relative time incorrect
-  Attempting to set an incorrect relative time '100n'.
-  Please use a relative time >= 0.
-
-ucli% ucliCore::getToolPID
-10459
-ucli% synEnv::isFinished
-0
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpflush 
-*Verdi3* : Flush all FSDB Files at 0 ps.
-
-ucli% senv
-activeDomain: Verilog
-activeFile: defines.sv
-activeFrame: -1
-activeLine: 1
-activeScope: _vcs_unit__3944819586
-activeThread: 0
-endCol: 0
-file: defines.sv
-frame: -1
-fsdbFilename: 
-fsdbNewFlow: 1
-hasTB: 1
-inputFilename: 
-keyFilename: ucli.key
-line: 1
-logFilename: /home/work/Desktop/simprisc/verdiLog/sim.log
-macroIndex: -1
-macroOffset: -1
-pid: 10459
-scope: _vcs_unit__3944819586
-startCol: 0
-state: stopped
-thread: 0
-time: 0
-timePrecision: 1 ps
-vcdFilename: 
-vpdFilename:
-ucli% synUtils::resolveSourceFilename defines.sv
-defines.sv
-ucli% puts $::ucliCore::cbug_active
-0
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% checkpoint -list -all
-There are no checkpoints present.
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% stop
-No stop points are set
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% run
-VCD+ Writer L-2016.06_Full64 Copyright (c) 1991-2016 by Synopsys Inc.
-done!!!!!!!!!!
-$finish called from file "top_tb.sv", line 37.
-$finish at simulation time               200000
-Simulation complete, time is 200000 ps.
-top_th.sv, 48 :   			if(memw_if_0.mem_wstrobe & 'b0001) memw_if_0.in_data_bus[7:0] <= ram[memw_if_0.out_addr_bus];
-
-ucli% ucliCore::getToolPID
-10459
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpflush 
-*Verdi3* : Flush all FSDB Files at 200,000 ps.
-
-ucli% senv
-activeDomain: Verilog
-activeFile: top_th.sv
-activeFrame: 0
-activeLine: 48
-activeScope: top_tb.th
-activeThread: 18
-endCol: 0
-file: top_th.sv
-frame: 0
-fsdbFilename: 
-fsdbNewFlow: 1
-hasTB: 1
-inputFilename: 
-keyFilename: ucli.key
-line: 48
-logFilename: /home/work/Desktop/simprisc/verdiLog/sim.log
-macroIndex: -1
-macroOffset: -1
-pid: 10459
-scope: top_tb.th
-startCol: 0
-state: stopped
-thread: 18
-time: 200000
-timePrecision: 1 ps
-vcdFilename: 
-vpdFilename:
-ucli% synUtils::resolveSourceFilename top_th.sv
-top_th.sv
-ucli% puts $::ucliCore::cbug_active
-0
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% checkpoint -list -all
-There are no checkpoints present.
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% stop
-No stop points are set
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% finish; quit
-           V C S   S i m u l a t i o n   R e p o r t 
-Time: 200000 ps
-CPU Time:      0.960 seconds;       Data structure size:   0.0Mb
-Wed Oct 14 08:54:56 2020
-
-VERDI_SIM_Terminated
-
+Command line: /home/work/Desktop/simprisc/simv -ucli +UVM_CONFIG_DB_TRACE +UVM_PHASE_TRACE +UVM_OBJECTION_TRACE +UVM_RESOURCE_DB_TRACE +UVM_LOG_RECORD +UVM_VERDI_TRACE=UVM_AWARE -ucli2Proc -lca -l /home/work/Desktop/simprisc/verdiLog/sim.log
+--- Stack trace follows:
+Dumping VCS Annotated Stack:
+#0  0x0000003a7ace16a3 in select () from /lib64/libc.so.6
+#1  0x00007f36f80df486 in SNPSle_b02289328df49303f3b4519c267d5333d96dbee786bb4738d40b1e9a96418477 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#2  0x0000003a7b007aa1 in start_thread () from /lib64/libpthread.so.0
+#3  0x0000003a7ace8c4d in clone () from /lib64/libc.so.6
+#0  0x0000003a7acac8dd in waitpid () from /lib64/libc.so.6
+#1  0x0000003a7ac3e4e9 in do_system () from /lib64/libc.so.6
+#2  0x0000003a7ac3e820 in system () from /lib64/libc.so.6
+#3  0x00007f36fcf294d5 in system () from /home/disk/H-2013.03-SP2/amd64/interfaces/libxa_cosim.so
+#4  0x00007f36fae466f8 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313e639d2928478c79b3f673f99203bcf8be64600612100082236bffb2007f1e0ef9 () from /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
+#5  0x00007f36fae47de5 in SNPSle_10ee25eff68cd8461c9146fa1d0b35e87067f3c8015b313efba706aab251478fa49e66610e453774633a6c152e7ef778f2202cda681f3d4e () from /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
+#6  0x00007f36fae40f15 in SNPSle_d35ca1ff70d465c2b9b1a72eee90a506fdd009d3de3db1de () from /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
+#7  0x00007f36f860e088 in SNPSle_64133461705005bb725549e2e6fa1b3f () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#8  0x00007f36f84b7266 in SNPSle_82244d58c54c18c70d63edc9becab634 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#10 0x00007f36fabfb202 in mem_page_get_descr () from /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
+#11 0x00007f36fac03a2e in mem_free () from /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
+#12 0x00007f36fabee944 in snpsCheckFreeFunc () from /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
+#13 0x00007f36f831d727 in SNPSle_77e776236473f4bc83d28b2811172395 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#14 0x00007f36f831855f in SNPSle_4e2b4bf1677349c165275718f4085a72 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#15 0x00007f36f818ecc1 in SNPSle_e08561af70b15158c1effee38014f2e6 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#16 0x00007f36f818edce in SNPSle_6a600e65c1e59889d2167a3056e08869 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#17 0x00007f36f818ee24 in SNPSle_79019f86c02f3a7a4fc861b56b22e07a449f142e33a64a009cd88060dca82713b97bc310751f5b0c () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#18 0x0000003a7b007aa1 in start_thread () from /lib64/libpthread.so.0
+#19 0x0000003a7ace8c4d in clone () from /lib64/libc.so.6
+#0  0x0000003a7acaccbd in nanosleep () from /lib64/libc.so.6
+#1  0x0000003a7acacb30 in sleep () from /lib64/libc.so.6
+#2  0x00007f36f80db83e in SNPSle_95ae9cc2e78cc668673c60b8d88c4908 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#3  0x00007f36f80db9c9 in SNPSle_92de4d0d4cf0d6931bc37e8d42a01d93 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#4  0x00007f36f80da22a in SNPSle_b76ef993ee82b3d58a5cadddbec8b67c () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#5  0x00007f36f80da4d6 in SNPSle_f28f24b8c84ac8f6e02e0b03bcd33aa8 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#6  0x00007f36f80a39e6 in SNPSle_b02289328df49303de0a4a986839ba718c1b162de585ec41 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#7  0x00007f36f80a433f in SNPSle_b02289328df493035a8cfe7a2a96e3f1 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#8  0x00007f36f80a5fe0 in SNPSle_7309f02bf869c35a32837a6e487da0db () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#9  0x00007f36f80a6adb in SNPSle_b02289328df493035a8cfe7a2a96e3f14356a2494eb82428 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#10 0x00007f36f80a7f1e in SNPSle_b02289328df493035a8cfe7a2a96e3f105a2510afcb822b0f2351f16fde66779 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#11 0x00007f36f80a87ac in SNPSle_ba11b1edbd04051f5bb81b1861cdf84a () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#12 0x00007f36f8096bc4 in SNPSle_2e65c0794628fc5af60953149776c29b () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#13 0x00007f36f808e1a3 in SNPSle_541f757be362289a7c9e5618c0ff28327846f8d3cc02839f () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#14 0x00007f36f8088d5c in SNPSle_c0de1345d5ab80930e06dd2b68f214c3 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#15 0x00007f36f8088e6d in SNPSle_25cd5712eacded5feaee03dc3430943e () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#16 0x00007f36f8626487 in SNPSle_490598bfebcc8e8183ad3550288b1f82 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#17 0x00007f36f8631553 in SNPSle_490598bfebcc8e81 () from /home/work/synopsys/L-2016.06/linux64/lib/libvcsnew.so
+#18 0x000000000041c78c in ?? ()
+#19 0x0000000000000000 in ?? ()
+No context available

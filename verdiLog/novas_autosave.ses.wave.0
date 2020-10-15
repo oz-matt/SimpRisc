@@ -2,11 +2,11 @@ Magic 271485
 Revision Verdi3_L-2016.06-1
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 28 1269 304 100 65
+viewPort 0 28 1431 230 100 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/home/work/Desktop/simprisc/inter.fsdb"
+openDirFile -d / "" "/home/work/Desktop/simprisc/novas.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 202000.000000
-cursor 200000.000000
+zoom 0.000000 20200.000000
+cursor 0.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 2
+markerPos 0
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,10 +46,6 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/home/work/Desktop/simprisc/inter.fsdb"
-addSignal -h 15 /top_tb/th/clk
-addSignal -h 15 /top_tb/th/nreset
-addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

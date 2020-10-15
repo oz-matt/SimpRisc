@@ -20,7 +20,13 @@ module top_tb;
   timeunit      1ns;
   timeprecision 1ps;
 
+  integer i;
+
+  real s, maxv, vwr;
+
   top_th th();
+
+  top amstop(s, maxv, vwr);
 
   // You can insert code here by setting tb_inc_inside_module in file common.tpl
 
@@ -29,12 +35,17 @@ module top_tb;
   initial
   begin
     $dumpfile("dump.vcd");
-    $dumpvars;    
-
-    #200;
+    $dumpvars;
+    //$fsdbDumpfile("novas.fsdb");
+    //$fsdbDumpvars();
+    //$fsdbDumpon;
+    //#200;
     $display("done!!!!!!!!!!");
-
-    $finish;
+for(i=0;i<100;i=i+1) begin
+    #1;
+    $display("freq s: %e, mag : %e, vramp: %e", s, maxv, vwr);
+  end
+  $finish;
 
   end
 

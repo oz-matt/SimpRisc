@@ -6,35 +6,8 @@ Warning-[LCA_FEATURES_ENABLED] Usage warning
   information regarding list of LCA features please refer to Chapter "LCA 
   features" in the VCS/VCS-MX Release Notes
 
-Chronologic VCS simulator copyright 1991-2016
-Contains Synopsys proprietary information.
-Compiler version L-2016.06_Full64; Runtime version L-2016.06_Full64;  Oct 14 08:53 2020
+Command line: /home/work/Desktop/simprisc/simv -ucli +UVM_CONFIG_DB_TRACE +UVM_PHASE_TRACE +UVM_OBJECTION_TRACE +UVM_RESOURCE_DB_TRACE +UVM_LOG_RECORD +UVM_VERDI_TRACE=UVM_AWARE -ucli2Proc -lca -l /home/work/Desktop/simprisc/verdiLog/sim.log
 
-*Verdi3* Loading libsscore_vcs201606.so
+--- Stack trace follows:
 
-*Verdi3* : FSDB_GATE is set.
-
-*Verdi3* : FSDB_RTL is set.
-*Verdi3* : Enable Parallel Dumping.
-FSDB Dumper for VCS, Release Verdi3_L-2016.06-1, Linux x86_64/64bit, 07/10/2016
-(C) 1996 - 2016 by Synopsys, Inc.
-
-SimCMD>run 100n
-Error-[UCLI-RUN-INCORRECT-RELATIVE] Relative time incorrect
-  Attempting to set an incorrect relative time '100n'.
-  Please use a relative time >= 0.
-
-SimCMD>run
-VCD+ Writer L-2016.06_Full64 Copyright (c) 1991-2016 by Synopsys Inc.
-done!!!!!!!!!!
-$finish called from file "top_tb.sv", line 37.
-$finish at simulation time               200000
-Simulation complete, time is 200000 ps.
-top_th.sv, 48 :   			if(memw_if_0.mem_wstrobe & 'b0001) memw_if_0.in_data_bus[7:0] <= ram[memw_if_0.out_addr_bus];
-           V C S   S i m u l a t i o n   R e p o r t 
-Time: 200000 ps
-CPU Time:      0.960 seconds;       Data structure size:   0.0Mb
-Wed Oct 14 08:54:56 2020
-
-VERDI_SIM_Terminated
-
+Waiting for Verdi design importing...

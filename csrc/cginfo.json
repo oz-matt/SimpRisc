@@ -1,30 +1,27 @@
 {
     "MlibObjs": {},
-    "Misc": {
-        "cwd": "/home/work/Desktop/simprisc",
-        "csrc_abs": "/home/work/Desktop/simprisc/csrc",
-        "csrc": "csrc",
-        "archive_dir": "archive.0",
-        "daidir": "simv.daidir",
-        "daidir_abs": "/home/work/Desktop/simprisc/simv.daidir",
-        "default_output_dir": "csrc"
+    "SIMBData": {
+        "bytes": 121831,
+        "out": "amcQwB.o"
     },
     "PrevCompiledModules": {},
-    "CurCompileUdps": {},
+    "CompileProcesses": [
+        "cgproc.9506.json"
+    ],
     "NameTable": {
-        "...MASTER...": [
-            "SIM",
-            "amcQw",
+        "_vcs_unit__3606502047": [
+            "_vcs_unit__3606502047",
+            "VUMBy",
             "module"
         ],
-        "memw_if": [
-            "memw_if",
-            "jHAEt",
+        "mos_level1p": [
+            "mos_level1p",
+            "wcv8z",
             "module"
         ],
-        "_vcs_unit__3944819586": [
-            "_vcs_unit__3944819586",
-            "VwCWk",
+        "varactor": [
+            "varactor",
+            "eIZWb",
             "module"
         ],
         "std": [
@@ -32,34 +29,9 @@
             "reYIK",
             "module"
         ],
-        "axilite_int": [
-            "axilite_int",
-            "iC1Ix",
-            "module"
-        ],
-        "instruction_parser": [
-            "instruction_parser",
-            "Cepf6",
-            "module"
-        ],
-        "axi_master_wrapper": [
-            "axi_master_wrapper",
-            "fd580",
-            "module"
-        ],
-        "mdriver_int": [
-            "mdriver_int",
-            "eizcd",
-            "module"
-        ],
-        "masterif": [
-            "masterif",
-            "g4MBa",
-            "module"
-        ],
-        "memslave": [
-            "memslave",
-            "xL5KA",
+        "freqdivider": [
+            "freqdivider",
+            "SBirA",
             "module"
         ],
         "umem": [
@@ -67,14 +39,29 @@
             "bibN3",
             "module"
         ],
-        "aximem": [
-            "aximem",
-            "rqyFU",
+        "d_ff_r": [
+            "d_ff_r",
+            "IK3bE",
             "module"
         ],
-        "insgen_if": [
-            "insgen_if",
-            "JCj13",
+        "axi_master_wrapper": [
+            "axi_master_wrapper",
+            "fd580",
+            "module"
+        ],
+        "mos_level1": [
+            "mos_level1",
+            "rGLgM",
+            "module"
+        ],
+        "memslave": [
+            "memslave",
+            "xL5KA",
+            "module"
+        ],
+        "and_gate": [
+            "and_gate",
+            "qLGac",
             "module"
         ],
         "cpu": [
@@ -82,116 +69,185 @@
             "D7Gce",
             "module"
         ],
+        "vsrc": [
+            "vsrc",
+            "dVM4n",
+            "module"
+        ],
         "sindrv_0000": [
             "sindrv_0000",
             "mjxYt",
             "module"
         ],
-        "soc_top": [
-            "soc_top",
-            "RaPkC",
+        "cap": [
+            "cap",
+            "n9ajL",
+            "module"
+        ],
+        "freqmeasure": [
+            "freqmeasure",
+            "BJhE4",
+            "module"
+        ],
+        "ind": [
+            "ind",
+            "NAtM8",
+            "module"
+        ],
+        "res": [
+            "res",
+            "Fz3wN",
+            "module"
+        ],
+        "top": [
+            "top",
+            "Emx8S",
+            "module"
+        ],
+        "vclkgen": [
+            "vclkgen",
+            "JfEMr",
+            "module"
+        ],
+        "vpulse": [
+            "vpulse",
+            "eEj46",
+            "module"
+        ],
+        "vramp": [
+            "vramp",
+            "fP8B5",
+            "module"
+        ],
+        "top_th": [
+            "top_th",
+            "xgLQZ",
             "module"
         ],
         "top_tb": [
             "top_tb",
             "W0eJz",
             "module"
+        ],
+        "...MASTER...": [
+            "SIM",
+            "amcQw",
+            "module"
         ]
     },
-    "SIMBData": {
-        "out": "amcQwB.o",
-        "bytes": 119448
-    },
+    "CompileStatus": "Successful",
     "CompileStrategy": "fullobj",
-    "LVLData": [
-        "SIM"
-    ],
+    "PEModules": [],
     "stat": {
+        "Frontend(%)": 56.292085082664322,
         "ru_self_cgstart": {
-            "ru_utime_sec": 1.741735,
-            "ru_majflt": 865,
-            "ru_stime_sec": 2.1346750000000001,
-            "ru_maxrss_kb": 80320,
-            "ru_minflt": 21009,
-            "ru_nvcsw": 921,
-            "ru_nivcsw": 395
+            "ru_utime_sec": 0.50092300000000001,
+            "ru_stime_sec": 0.094985,
+            "ru_maxrss_kb": 107104,
+            "ru_minflt": 27905,
+            "ru_majflt": 0,
+            "ru_nvcsw": 42,
+            "ru_nivcsw": 209
         },
-        "quadSpeed": 12309.119591640208,
-        "nQuads": 6289,
+        "totalObjSize": 628862,
+        "CodeGen(%)": 43.707914917335678,
+        "mopSpeed": 53851.355346954937,
+        "mop/quad": 2.5274526366598287,
         "ru_childs_cgstart": {
-            "ru_utime_sec": 0.005999,
+            "ru_utime_sec": 0.13697899999999999,
+            "ru_stime_sec": 0.094985,
+            "ru_maxrss_kb": 55604,
+            "ru_minflt": 23396,
             "ru_majflt": 0,
-            "ru_stime_sec": 0.16997399999999999,
-            "ru_maxrss_kb": 34360,
-            "ru_minflt": 2378,
-            "ru_nvcsw": 5,
-            "ru_nivcsw": 22
+            "ru_nvcsw": 30,
+            "ru_nivcsw": 80
         },
-        "mopSpeed": 34600.193375896903,
-        "nMops": 17678,
+        "nMops": 20945,
+        "nQuads": 8287,
         "ru_self_end": {
-            "ru_utime_sec": 2.2526570000000001,
-            "ru_majflt": 915,
-            "ru_stime_sec": 2.1346750000000001,
-            "ru_maxrss_kb": 90516,
-            "ru_minflt": 24431,
-            "ru_nvcsw": 971,
-            "ru_nivcsw": 448
-        },
-        "mop/quad": 2.8109397360470663,
-        "totalObjSize": 514600,
-        "ru_childs_end": {
-            "ru_utime_sec": 0.005999,
+            "ru_utime_sec": 0.88986399999999999,
+            "ru_stime_sec": 0.112982,
+            "ru_maxrss_kb": 117280,
+            "ru_minflt": 31171,
             "ru_majflt": 0,
-            "ru_stime_sec": 0.16997399999999999,
-            "ru_maxrss_kb": 34360,
-            "ru_minflt": 2378,
-            "ru_nvcsw": 5,
-            "ru_nivcsw": 22
+            "ru_nvcsw": 42,
+            "ru_nivcsw": 241
         },
-        "outputSizePerQuad": 81.0,
-        "Frontend(%)": 77.319139132144826,
-        "CodeGen(%)": 22.680860867855163
+        "quadSpeed": 21306.573490580835,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.13697899999999999,
+            "ru_stime_sec": 0.094985,
+            "ru_maxrss_kb": 55604,
+            "ru_minflt": 23396,
+            "ru_majflt": 0,
+            "ru_nvcsw": 30,
+            "ru_nivcsw": 80
+        },
+        "outputSizePerQuad": 75.0
     },
+    "CurCompileUdps": {},
     "CurCompileModules": [
         "...MASTER...",
         "...MASTER...",
-        "_vcs_unit__3944819586",
-        "_vcs_unit__3944819586",
+        "_vcs_unit__3606502047",
+        "_vcs_unit__3606502047",
         "std",
         "std",
-        "axilite_int",
-        "axilite_int",
-        "mdriver_int",
-        "mdriver_int",
-        "masterif",
-        "masterif",
         "umem",
         "umem",
         "axi_master_wrapper",
         "axi_master_wrapper",
-        "instruction_parser",
-        "instruction_parser",
-        "aximem",
-        "aximem",
         "memslave",
         "memslave",
         "cpu",
         "cpu",
         "sindrv_0000",
         "sindrv_0000",
-        "soc_top",
-        "soc_top",
-        "memw_if",
-        "memw_if",
-        "insgen_if",
-        "insgen_if",
+        "freqdivider",
+        "freqdivider",
+        "freqmeasure",
+        "freqmeasure",
+        "res",
+        "res",
+        "mos_level1",
+        "mos_level1",
+        "mos_level1p",
+        "mos_level1p",
+        "cap",
+        "cap",
+        "ind",
+        "ind",
+        "varactor",
+        "varactor",
+        "and_gate",
+        "and_gate",
+        "d_ff_r",
+        "d_ff_r",
+        "top",
+        "top",
+        "vclkgen",
+        "vclkgen",
+        "vpulse",
+        "vpulse",
+        "vramp",
+        "vramp",
+        "vsrc",
+        "vsrc",
+        "top_th",
+        "top_th",
         "top_tb",
         "top_tb"
     ],
-    "PEModules": [],
-    "CompileProcesses": [
-        "cgproc.10208.json"
+    "LVLData": [
+        "SIM"
     ],
-    "CompileStatus": "Successful"
+    "Misc": {
+        "cwd": "/home/work/Desktop/simprisc",
+        "archive_dir": "archive.0",
+        "csrc": "csrc",
+        "daidir": "simv.daidir",
+        "csrc_abs": "/home/work/Desktop/simprisc/csrc",
+        "daidir_abs": "/home/work/Desktop/simprisc/simv.daidir",
+        "default_output_dir": "csrc"
+    }
 }

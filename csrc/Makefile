@@ -31,17 +31,18 @@ VCS_CC=gcc
 # Internal CC for gen_c flow:
 CC_CG=gcc
 # User overrode default CC: 
-VCS_CC=gcc
+VCS_CC=/home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/gcc
 # Loader
 LD=g++
 
 # Strip Flags for target product
 STRIPFLAGS= 
 # Loader Flags
-LDFLAGS= -rdynamic 
+LDFLAGS= -Wl,-E -rdynamic 
 # Picarchive Flags
 PICLDFLAGS=-Wl,-rpath-link=./ -Wl,-rpath='$$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$$ORIGIN'/simv.daidir//scsim.db.dir 
 
+PICLDFLAGS+=-Wl,-rpath=/home/disk/H-2013.03-SP2/amd64/interfaces
 # C run time startup
 CRT0=
 # C run time startup
@@ -63,7 +64,7 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=-w  -pipe -fPIC -O -I/home/work/synopsys/L-2016.06/include   
+CFLAGS=-w  -pipe -fPIC -m64 -O -I/home/work/synopsys/L-2016.06/include   
 
 CFLAGS_CG=-w   -pipe -fPIC -I/home/work/synopsys/L-2016.06/include -O  
 
@@ -102,11 +103,11 @@ product_order : $(PRODUCT)
 
 $(PRODUCT_TIMESTAMP) : product_clean_order
 	-if [ -x $(PRODUCT) ]; then chmod -x $(PRODUCT); fi
-	$(LD) $(CRT0) -o $(PRODUCT) $(STRIPFLAGS) $(PCLDFLAGS) $(PICLDFLAGS) $(LDFLAGS) $(OBJS)  $(LIBS)   $(RUNTIME) -Wl,-whole-archive $(VCSUCLI) -Wl,-no-whole-archive     $(LINK_TB) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
+	$(LD) $(CRT0) -o $(PRODUCT) $(STRIPFLAGS) $(PCLDFLAGS) $(PICLDFLAGS) $(LDFLAGS) $(OBJS)  $(LIBS)   $(RUNTIME) -Wl,-whole-archive $(VCSUCLI) -Wl,-no-whole-archive    $(AMS_RUNTIME)  $(LINK_TB) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
 	@rm -f csrc[0-9]*.o
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(RUNTIME)  $(VCSUCLI)  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(RUNTIME)  $(VCSUCLI)  $(AMS_RUNTIME)  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

@@ -10,7 +10,7 @@ TARGET_ARCH=
 VCS_CC=gcc
 
 # User overrode default CC: 
-VCS_CC=gcc
+VCS_CC=/home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/gcc
 # Loader
 LD=g++
 # Loader Flags
@@ -30,7 +30,7 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=-w  -pipe -fPIC -O -I/home/work/synopsys/L-2016.06/include    
+CFLAGS=-w  -pipe -fPIC -m64 -O -I/home/work/synopsys/L-2016.06/include    
 
 CFLAGS_CG=-w  -pipe -fPIC -I/home/work/synopsys/L-2016.06/include -O  
 

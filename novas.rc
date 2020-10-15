@@ -216,9 +216,12 @@ prefKey_Link-LineWidth = 1
 Selection-LineColor = ID_BLUE2
 Selection-LineWidth = 1
 [FSM_Dlg-Print]
-Orientation = Landscape       
+Orientation = Landscape 
+[FileBrowser]
+nWaveOpenFsdbDirHistory = "\"/home/work/Desktop/simprisc/novas.fsdb\"" "\"/home/work/Desktop/simprisc\""
 [Form]
 version = Verdi3_L-2016.06-1
+wave/openWFile.fm = 100,100,823,696
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
@@ -273,7 +276,7 @@ CellNameToCase =
 PinNameToCase = 
 [InteractiveDebug]
 tbvLocalWatchArrayLimit = 50
-Watch_0 = 150 80 80 0
+Watch_0 = 150 80 281 0
 Watch_1 = 150 80 80 309
 Watch_2 = 150 80 80 200
 Watch_3 = 150 80 80 200
@@ -357,7 +360,8 @@ saveFsdbStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwUserAskDlg = 796,381,324,134
+importDesignForm = 643,171,634,611
+QwUserAskDlg = 818,667,324,130
 [Relationship]
 hideRecursiceNode = FALSE
 [Session Cache]
@@ -438,8 +442,8 @@ vcs_svOption =
 uvmAware = TRUE
 smartlog = FALSE
 [SimulationPlus2]
-eventDumpUnfinish = FALSE
 dumpPowerRoot = FALSE
+eventDumpUnfinish = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -547,7 +551,7 @@ pdmlCommand = ID_BLACK
 pdmlMacro = ID_BLACK
 font = COURIER12
 [Text.1]
-viewport = -2 25 1916 851 45
+viewport = 0 25 1916 851 45
 [TextPrinter]
 Orientation = Landscape
 Indicator = FALSE
@@ -645,8 +649,11 @@ ovaForbidSuccessColor = -c ID_GREEN5
 SigGroupRuleFile = 
 DisplayFileName = FALSE
 waveform_vertical_scroll_bar = TRUE
+scope_to_save_with_macro
+open_file_dir
+open_rc_file_dir
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 28 1269 304 100 65
+viewPort = 0 28 1431 230 100 65
 signalSpacing = 5
 digitalSignalHeight = 15
 analogSignalHeight = 98
@@ -819,7 +826,6 @@ ResolveSymbolicLink = TRUE
 signal_rc_abspath = TRUE
 signal_rc_no_natural_bus_range = FALSE
 save_scope_with_macro = FALSE
-scope_to_save_with_macro
 TipInSignalWin = FALSE
 DisplaySignalTypeAheadOfSignalName = TRUE ICON
 TipInCurveWin = FALSE
@@ -895,10 +901,9 @@ curveWindow_Drag&Drop_Mode = TRUE
 hspiceIncOpenMode = TRUE
 pcSelectMode = TRUE
 hierarchyDelimiter = /
-RecentFile1 = "\"/home/work/Desktop/simprisc/inter.fsdb\""
+RecentFile1 = "\"/home/work/Desktop/simprisc/novas.fsdb\""
+RecentFile2 = "\"/home/work/Desktop/simprisc/inter.fsdb\""
 open_file_time_range = FALSE
-open_file_dir
-open_rc_file_dir
 value_window_aligment = Right
 signal_window_alignment = Auto
 ShowDeltaTime = TRUE
@@ -909,16 +914,16 @@ group_name_font = -f COURIER12 -c ID_GREEN5
 ruler_value_font = -f COURIER12 -c ID_CYAN5
 analog_ruler_value_font = -f COURIER12 -c ID_CYAN5
 comment_string_font = -f COURIER12 -c ID_RED5
-getsignal_form_font = -f COURIER12
+getsignal_form_font = -f COURIER12 
 SigsCheckNum = on 1000
 filter_synthesized_net = off n
 filterOutNet = on
-filter_synthesized_instance = off
+filter_synthesized_instance = off 
 filterOutInstance = on
 showGroupTree = TRUE
 hierGroupDelim = /
 MsgSeverityColor = {y \"Severity\"==\"1\" ID_RED5} {y \"Severity\"==\"2\" ID_RED6} {y \"Severity\"==\"3\" ID_RED7} {y \"Severity\"==\"4\" ID_RED8} {y \"Severity\"==\"5\" ID_ORANGE5} {y \"Severity\"==\"6\" ID_ORANGE6} {y \"Severity\"==\"7\" ID_ORANGE7} {y \"Severity\"==\"8\" \
-ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5}
+ID_GREEN7} {y \"Severity\"==\"9\" ID_GREEN6} {y \"Severity\"==\"10\" ID_GREEN5} 
 AutoApplySeverityColor = TRUE
 AutoAdjustMsgWidthByLabel = off
 verilogStrengthDispType = type1
@@ -973,6 +978,7 @@ HvpMergeTool =
 ShowMergeMenuItem = FALSE
 fsmScoreMode = transition
 [eco]
+NameRule = 
 IsFreezeSilicon = FALSE
 cellQuantityManagement = FALSE
 ManageMode = INSTANCE_NAME
@@ -980,11 +986,10 @@ SpareCellsPinsManagement = TRUE
 LogCommitReport = FALSE
 InputPinStatus = 1
 OutputPinStatus = 2
-NameRule = 
 RevisedComponentColor = ID_BLUE5
 SpareCellColor = ID_RED5
 UserName = work
-CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time}
+CommentFormat = Novas ECO updated by ${UserName} ${Date} ${Time} 
 PrefixN = eco_n
 PrefixP = eco_p
 PrefixI = eco_i
@@ -1110,9 +1115,9 @@ Selection = darkblue
 Standard = black
 Keyword = blue
 Comment = gray25
-Number = black  
-String = black  
-Identifier = darkred  
+Number = black
+String = black
+Identifier = darkred
 Inline = green
 colorIdentifier = green
 Value = darkgreen
@@ -1148,7 +1153,7 @@ AddImportArgument = TRUE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -tcl
 [turboSchema_Printer_Options]
-Orientation = Landscape       
+Orientation = Landscape 
 [turbo_library]
 bdb_load_scope = 
 [verisity]
@@ -1160,7 +1165,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 28 1269 304 100 65
+viewPort = 0 28 1431 230 100 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

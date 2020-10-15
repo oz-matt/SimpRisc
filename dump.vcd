@@ -1,5 +1,5 @@
 $date
-	Wed Oct 14 08:54:34 2020
+	Fri Oct 16 03:59:23 2020
 $end
 
 $version
@@ -10,18 +10,28 @@ $timescale
 	1ps
 $end
 
-$comment Csum: 1 f4ef945fc9b0fd51 $end
+$comment Csum: 1 916f29e3c2d783a2 $end
 
 
 $scope module $unit $end
 $upscope $end
 
 
+$scope module vramp $end
+$var real 64 ! wrout $end
+$var real 64 " wror $end
+$upscope $end
+
+
 $scope module top_tb $end
+$var integer 32 # i $end
+$var real 64 $ s $end
+$var real 64 % maxv $end
+$var real 64 & vwr $end
 
 $scope module th $end
-$var reg 1 ! clk $end
-$var reg 1 " nreset $end
+$var reg 1 ' clk $end
+$var reg 1 ( nreset $end
 
 $scope begin unnamed$$_vcs_0 $end
 $upscope $end
@@ -40,239 +50,367 @@ $upscope $end
 
 
 $scope module insgen_if_0 $end
-$var reg 1 # clk $end
-$var reg 1 $ nreset $end
-$var reg 32 % instr_bus [31:0] $end
-$var reg 32 & pc_out [31:0] $end
-$var reg 32 ' adc_in [31:0] $end
+$var reg 1 ) clk $end
+$var reg 1 * nreset $end
+$var reg 32 + instr_bus [31:0] $end
+$var reg 32 , pc_out [31:0] $end
+$var reg 32 - adc_in [31:0] $end
 $upscope $end
 
 
 $scope module memw_if_0 $end
-$var reg 1 ( clk $end
-$var reg 1 ) nreset $end
-$var reg 1 * mem_rw $end
-$var reg 1 + memclk $end
-$var reg 4 , mem_wstrobe [3:0] $end
-$var reg 32 - out_data_bus [31:0] $end
-$var reg 32 . out_addr_bus [31:0] $end
-$var reg 32 / out_data_bus_port2 [31:0] $end
-$var reg 32 0 out_addr_bus_port2 [31:0] $end
-$var reg 32 1 in_data_bus [31:0] $end
+$var reg 1 . clk $end
+$var reg 1 / nreset $end
+$var reg 1 0 mem_rw $end
+$var reg 1 1 memclk $end
+$var reg 4 2 mem_wstrobe [3:0] $end
+$var reg 32 3 out_data_bus [31:0] $end
+$var reg 32 4 out_addr_bus [31:0] $end
+$var reg 32 5 out_data_bus_port2 [31:0] $end
+$var reg 32 6 out_addr_bus_port2 [31:0] $end
+$var reg 32 7 in_data_bus [31:0] $end
 $upscope $end
 
 
 $scope module uut $end
-$var reg 1 2 clk $end
-$var reg 1 3 nreset $end
-$var reg 32 4 instr_bus [31:0] $end
-$var reg 32 5 in_data_bus [31:0] $end
-$var reg 32 6 adc_in [31:0] $end
-$var reg 1 7 mem_rw $end
-$var reg 4 8 mem_wstrobe [3:0] $end
-$var reg 1 9 memclk $end
-$var reg 32 : pc_out [31:0] $end
-$var reg 32 ; out_data_bus [31:0] $end
-$var reg 32 < out_addr_bus [31:0] $end
-$var reg 32 = out_data_bus_port2 [31:0] $end
-$var reg 32 > out_addr_bus_port2 [31:0] $end
+$var reg 1 8 clk $end
+$var reg 1 9 nreset $end
+$var reg 32 : instr_bus [31:0] $end
+$var reg 32 ; in_data_bus [31:0] $end
+$var reg 32 < adc_in [31:0] $end
+$var reg 1 = mem_rw $end
+$var reg 4 > mem_wstrobe [3:0] $end
+$var reg 1 ? memclk $end
+$var reg 32 @ pc_out [31:0] $end
+$var reg 32 A out_data_bus [31:0] $end
+$var reg 32 B out_addr_bus [31:0] $end
+$var reg 32 C out_data_bus_port2 [31:0] $end
+$var reg 32 D out_addr_bus_port2 [31:0] $end
 
 $scope module dut_top_inst $end
-$var reg 1 ? clk $end
-$var reg 1 @ nreset $end
-$var reg 32 A instr_bus [31:0] $end
-$var reg 32 B in_data_bus [31:0] $end
-$var reg 32 C pc_out [31:0] $end
-$var reg 1 D mem_rw $end
-$var reg 4 E mem_wstrobe [3:0] $end
-$var reg 1 F memclk $end
-$var reg 32 G adc_in [31:0] $end
-$var reg 32 H out_data_bus [31:0] $end
-$var reg 32 I out_addr_bus [31:0] $end
-$var reg 32 J out_data_bus_port2 [31:0] $end
-$var reg 32 K out_addr_bus_port2 [31:0] $end
+$var reg 1 E clk $end
+$var reg 1 F nreset $end
+$var reg 32 G instr_bus [31:0] $end
+$var reg 32 H in_data_bus [31:0] $end
+$var reg 32 I pc_out [31:0] $end
+$var reg 1 J mem_rw $end
+$var reg 4 K mem_wstrobe [3:0] $end
+$var reg 1 L memclk $end
+$var reg 32 M adc_in [31:0] $end
+$var reg 32 N out_data_bus [31:0] $end
+$var reg 32 O out_addr_bus [31:0] $end
+$var reg 32 P out_data_bus_port2 [31:0] $end
+$var reg 32 Q out_addr_bus_port2 [31:0] $end
 
 $scope module vif $end
-$var reg 1 L clk $end
-$var reg 1 M nreset $end
-$var reg 32 N si_address [31:0] $end
-$var reg 32 O si_data [31:0] $end
-$var reg 32 P so_data [31:0] $end
-$var reg 1 Q we $end
-$var reg 1 R exec $end
-$var reg 1 S fin $end
+$var reg 1 R clk $end
+$var reg 1 S nreset $end
+$var reg 32 T si_address [31:0] $end
+$var reg 32 U si_data [31:0] $end
+$var reg 32 V so_data [31:0] $end
+$var reg 1 W we $end
+$var reg 1 X exec $end
+$var reg 1 Y fin $end
 
 $scope task execute_write $end
-$var reg 8 T addr [7:0] $end
-$var reg 32 U data [31:0] $end
+$var reg 8 Z addr [7:0] $end
+$var reg 32 [ data [31:0] $end
 $upscope $end
 
 
 $scope task execute_read $end
-$var reg 8 V addr [7:0] $end
+$var reg 8 \ addr [7:0] $end
 $upscope $end
 
 $upscope $end
 
 
 $scope module axi_master_wrapper_inst $end
-$var integer 32 W pstate $end
-$var reg 32 X adcdata [31:0] $end
-$var integer 32 Y local_data $end
-$var reg 1 Z ready_for_data $end
-$var reg 1 [ ready_for_write_response $end
-$var reg 1 \ valid_read_data_received $end
-$var reg 1 ] valid_write_response_received $end
-$var reg 1 ^ finread $end
-$var reg 1 _ finwrite $end
+$var integer 32 ] pstate $end
+$var reg 32 ^ adcdata [31:0] $end
+$var integer 32 _ local_data $end
+$var reg 1 ` ready_for_data $end
+$var reg 1 a ready_for_write_response $end
+$var reg 1 b valid_read_data_received $end
+$var reg 1 c valid_write_response_received $end
+$var reg 1 d finread $end
+$var reg 1 e finwrite $end
 
 $scope module vif $end
-$var reg 1 ` AXI_ACLK $end
-$var reg 1 a AXI_ARESETN $end
-$var reg 32 b AXI_ARADDR [31:0] $end
-$var reg 1 c AXI_ARVALID $end
-$var reg 1 d AXI_ARREADY $end
-$var reg 32 e AXI_RDATA [31:0] $end
-$var reg 1 f AXI_RVALID $end
-$var reg 1 g AXI_RREADY $end
-$var reg 32 h AXI_AWADDR [31:0] $end
-$var reg 1 i AXI_AWVALID $end
-$var reg 1 j AXI_AWREADY $end
-$var reg 32 k AXI_WDATA [31:0] $end
-$var reg 1 l AXI_WVALID $end
-$var reg 1 m AXI_WREADY $end
-$var reg 1 n AXI_BVALID $end
-$var reg 1 o AXI_BREADY $end
-$var reg 3 p AXI_ARPROT [2:0] $end
-$var reg 2 q AXI_RRESP [1:0] $end
-$var reg 3 r AXI_AWPROT [2:0] $end
-$var reg 4 s AXI_WSTRB [3:0] $end
-$var reg 2 t AXI_BRESP [1:0] $end
+$var reg 1 f AXI_ACLK $end
+$var reg 1 g AXI_ARESETN $end
+$var reg 32 h AXI_ARADDR [31:0] $end
+$var reg 1 i AXI_ARVALID $end
+$var reg 1 j AXI_ARREADY $end
+$var reg 32 k AXI_RDATA [31:0] $end
+$var reg 1 l AXI_RVALID $end
+$var reg 1 m AXI_RREADY $end
+$var reg 32 n AXI_AWADDR [31:0] $end
+$var reg 1 o AXI_AWVALID $end
+$var reg 1 p AXI_AWREADY $end
+$var reg 32 q AXI_WDATA [31:0] $end
+$var reg 1 r AXI_WVALID $end
+$var reg 1 s AXI_WREADY $end
+$var reg 1 t AXI_BVALID $end
+$var reg 1 u AXI_BREADY $end
+$var reg 3 v AXI_ARPROT [2:0] $end
+$var reg 2 w AXI_RRESP [1:0] $end
+$var reg 3 x AXI_AWPROT [2:0] $end
+$var reg 4 y AXI_WSTRB [3:0] $end
+$var reg 2 z AXI_BRESP [1:0] $end
 $upscope $end
 
 
 $scope module memslave_inst $end
-$var reg 1 u valid_read_received $end
-$var reg 1 v write_request_permitted $end
+$var reg 1 { valid_read_received $end
+$var reg 1 | write_request_permitted $end
 $upscope $end
 
 $upscope $end
 
 
 $scope module cpu_inst $end
-$var wire 1 w clk $end
-$var wire 1 x nreset $end
-$var reg 32 y instr_bus [31:0] $end
-$var reg 32 z in_data_bus [31:0] $end
-$var reg 1 { mem_rw $end
-$var reg 4 | mem_wstrobe [3:0] $end
-$var reg 1 } memclk $end
-$var reg 32 ~ pc_out [31:0] $end
-$var reg 32 "! out_data_bus [31:0] $end
-$var reg 32 "" out_addr_bus [31:0] $end
-$var reg 32 "# out_data_bus_port2 [31:0] $end
-$var reg 32 "$ out_addr_bus_port2 [31:0] $end
-$var reg 32 "% pc [31:0] $end
-$var reg 32 "& jump [31:0] $end
-$var reg 1 "' take_branch $end
-$var reg 1 "( rd_w_en $end
-$var reg 1 ") on_branch_instrution $end
-$var wire 1 "* on_branch_instruction $end
-$var reg 32 "+ rdbuffer [31:0] $end
-$var reg 32 ", gbuf [31:0] $end
+$var wire 1 } clk $end
+$var wire 1 ~ nreset $end
+$var reg 32 "! instr_bus [31:0] $end
+$var reg 32 "" in_data_bus [31:0] $end
+$var reg 1 "# mem_rw $end
+$var reg 4 "$ mem_wstrobe [3:0] $end
+$var reg 1 "% memclk $end
+$var reg 32 "& pc_out [31:0] $end
+$var reg 32 "' out_data_bus [31:0] $end
+$var reg 32 "( out_addr_bus [31:0] $end
+$var reg 32 ") out_data_bus_port2 [31:0] $end
+$var reg 32 "* out_addr_bus_port2 [31:0] $end
+$var reg 32 "+ pc [31:0] $end
+$var reg 32 ", jump [31:0] $end
+$var reg 1 "- take_branch $end
+$var reg 1 ". rd_w_en $end
+$var reg 1 "/ on_branch_instrution $end
+$var wire 1 "0 on_branch_instruction $end
+$var reg 32 "1 rdbuffer [31:0] $end
+$var reg 32 "2 gbuf [31:0] $end
 
 $scope module mif $end
-$var reg 1 "- nreset $end
-$var reg 32 ". out_data_bus_port2 [31:0] $end
-$var reg 32 "/ out_addr_bus_port2 [31:0] $end
-$var reg 32 "0 mem_wdata [31:0] $end
-$var reg 32 "1 mem_rdata [31:0] $end
-$var reg 1 "2 mem_rw $end
-$var reg 1 "3 clk $end
-$var reg 1 "4 memclk $end
-$var wire 32 "5 rx0 [31:0] $end
-$var wire 32 "6 rx1 [31:0] $end
-$var wire 32 "7 rx2 [31:0] $end
-$var wire 32 "8 rx3 [31:0] $end
-$var reg 32 "9 mem_addr [31:0] $end
+$var reg 1 "3 nreset $end
+$var reg 32 "4 out_data_bus_port2 [31:0] $end
+$var reg 32 "5 out_addr_bus_port2 [31:0] $end
+$var reg 32 "6 mem_wdata [31:0] $end
+$var reg 32 "7 mem_rdata [31:0] $end
+$var reg 1 "8 mem_rw $end
+$var reg 1 "9 clk $end
+$var reg 1 ": memclk $end
+$var wire 32 "; rx0 [31:0] $end
+$var wire 32 "< rx1 [31:0] $end
+$var wire 32 "= rx2 [31:0] $end
+$var wire 32 "> rx3 [31:0] $end
+$var reg 32 "? mem_addr [31:0] $end
 $upscope $end
 
 
 $scope module instruction $end
-$var wire 7 ": opcode [6:0] $end
-$var wire 5 "; rd [4:0] $end
-$var wire 5 "< rs1 [4:0] $end
-$var wire 5 "= rs2 [4:0] $end
-$var wire 3 "> funct3 [2:0] $end
-$var wire 12 "? i_imm [11:0] $end
-$var wire 12 "@ s_imm [11:0] $end
-$var wire 12 "A b_imm [11:0] $end
-$var wire 20 "B u_imm [19:0] $end
-$var wire 20 "C j_imm [19:0] $end
-$var wire 1 "D aluc $end
-$var wire 1 "E ebit $end
-$var integer 32 "F name $end
-$var reg 32 "G instruction [31:0] $end
-$var wire 7 "H funct7 [6:0] $end
-$var wire 3 "I c_ubits [2:0] $end
-$var wire 2 "J c_lbits [1:0] $end
-$var wire 1 "K c_12bit [0:0] $end
-$var wire 2 "L c_umbits [1:0] $end
-$var wire 2 "M c_lmbits [1:0] $end
-$var reg 8 "N size [7:0] $end
+$var wire 7 "@ opcode [6:0] $end
+$var wire 5 "A rd [4:0] $end
+$var wire 5 "B rs1 [4:0] $end
+$var wire 5 "C rs2 [4:0] $end
+$var wire 3 "D funct3 [2:0] $end
+$var wire 12 "E i_imm [11:0] $end
+$var wire 12 "F s_imm [11:0] $end
+$var wire 12 "G b_imm [11:0] $end
+$var wire 20 "H u_imm [19:0] $end
+$var wire 20 "I j_imm [19:0] $end
+$var wire 1 "J aluc $end
+$var wire 1 "K ebit $end
+$var integer 32 "L name $end
+$var reg 32 "M instruction [31:0] $end
+$var wire 7 "N funct7 [6:0] $end
+$var wire 3 "O c_ubits [2:0] $end
+$var wire 2 "P c_lbits [1:0] $end
+$var wire 1 "Q c_12bit [0:0] $end
+$var wire 2 "R c_umbits [1:0] $end
+$var wire 2 "S c_lmbits [1:0] $end
+$var reg 8 "T size [7:0] $end
 $upscope $end
 
 
 $scope module umem_inst $end
-$var wire 3 "> insf3 [2:0] $end
-$var reg 32 "O odb [31:0] $end
-$var reg 32 "P odb2 [31:0] $end
-$var reg 32 "Q fixed_addr1 [31:0] $end
-$var reg 32 "R fixed_addr2 [31:0] $end
-$var reg 32 "S fixed_addr3 [31:0] $end
-$var reg 32 "T fixed_addr4 [31:0] $end
+$var wire 3 "D insf3 [2:0] $end
+$var reg 32 "U odb [31:0] $end
+$var reg 32 "V odb2 [31:0] $end
+$var reg 32 "W fixed_addr1 [31:0] $end
+$var reg 32 "X fixed_addr2 [31:0] $end
+$var reg 32 "Y fixed_addr3 [31:0] $end
+$var reg 32 "Z fixed_addr4 [31:0] $end
 $upscope $end
 
 $upscope $end
 
 
 $scope module sindrv_inst $end
-$var reg 32 "U adc_in [31:0] $end
-$var reg 8 "V raddr [7:0] $end
-$var reg 1 "W wstate $end
-$var reg 1 "X loop_finished $end
-$var wire 8 "Y rand_byte [7:0] $end
-$var reg 8 "Z curr_addr [7:0] $end
-$var reg 8 "[ target_addr [7:0] $end
-$var reg 32 "\ curr_data [31:0] $end
-$var reg 8 "] curr_data_loop_addr [7:0] $end
+$var reg 32 "[ adc_in [31:0] $end
+$var reg 8 "\ raddr [7:0] $end
+$var reg 1 "] wstate $end
+$var reg 1 "^ loop_finished $end
+$var wire 8 "_ rand_byte [7:0] $end
+$var reg 8 "` curr_addr [7:0] $end
+$var reg 8 "a target_addr [7:0] $end
+$var reg 32 "b curr_data [31:0] $end
+$var reg 8 "c curr_data_loop_addr [7:0] $end
 
 $scope module genblk1[0].lfsr_insta $end
-$var reg 1 "^ clk $end
-$var reg 1 "_ nreset $end
-$var reg 5 "` data [4:0] $end
-$var reg 5 "a data_next [4:0] $end
+$var reg 1 "d clk $end
+$var reg 1 "e nreset $end
+$var reg 5 "f data [4:0] $end
+$var reg 5 "g data_next [4:0] $end
 $upscope $end
 
 
 $scope module genblk1[1].lfsr_insta $end
-$var reg 1 "b clk $end
-$var reg 1 "c nreset $end
-$var reg 5 "d data [4:0] $end
-$var reg 5 "e data_next [4:0] $end
+$var reg 1 "h clk $end
+$var reg 1 "i nreset $end
+$var reg 5 "j data [4:0] $end
+$var reg 5 "k data_next [4:0] $end
 $upscope $end
 
 $upscope $end
 
 
 $scope module aximem_inst $end
-$var reg 32 "f axi_mem_data [31:0] $end
-$var reg 32 "g axi_mem_addr [31:0] $end
-$var reg 1 "h axi_mem_w $end
+$var reg 32 "l axi_mem_data [31:0] $end
+$var reg 32 "m axi_mem_addr [31:0] $end
+$var reg 1 "n axi_mem_w $end
 $upscope $end
 
 $upscope $end
 
+$upscope $end
+
+$upscope $end
+
+
+$scope module amstop $end
+$var real 64 "o s $end
+$var real 64 "p maxv $end
+$var real 64 "q vwr $end
+$var reg 1 "r clk $end
+$var integer 32 "s i $end
+
+$scope module fm $end
+$var wire 1 "t clk $end
+$var real 64 "u freq $end
+$var real 64 "v maxv $end
+$var real 64 "w o $end
+$var real 64 "x m $end
+$var real 64 "y te $end
+$var integer 32 "z ti $end
+$var integer 32 "{ snps_aevent_5_int $end
+$upscope $end
+
+
+$scope module v0 $end
+$upscope $end
+
+
+$scope module i4 $end
+$upscope $end
+
+
+$scope module i3 $end
+$upscope $end
+
+
+$scope module i3c $end
+$upscope $end
+
+
+$scope module i3c2 $end
+$upscope $end
+
+
+$scope module vr1 $end
+$upscope $end
+
+
+$scope module vr2 $end
+$upscope $end
+
+
+$scope module i6 $end
+$upscope $end
+
+
+$scope module dcblock $end
+$upscope $end
+
+
+$scope module i33 $end
+$upscope $end
+
+
+$scope module i34 $end
+$upscope $end
+
+
+$scope module i35 $end
+$upscope $end
+
+
+$scope module i32 $end
+$upscope $end
+
+
+$scope module vp $end
+$var real 64 "| Vout $end
+$var real 64 "} tend $end
+$var real 64 "~ rst $end
+$upscope $end
+
+
+$scope module cp1 $end
+$upscope $end
+
+
+$scope module cn1 $end
+$upscope $end
+
+
+$scope module dff1 $end
+$upscope $end
+
+
+$scope module dff2 $end
+$upscope $end
+
+
+$scope module runused $end
+$upscope $end
+
+
+$scope module ag1 $end
+$upscope $end
+
+
+$scope module pfdm1 $end
+$upscope $end
+
+
+$scope module pfdm2 $end
+$upscope $end
+
+
+$scope module rlpf $end
+$upscope $end
+
+
+$scope module clpf $end
+$upscope $end
+
+
+$scope module vref $end
+$upscope $end
+
+
+$scope module fdiv $end
 $upscope $end
 
 $upscope $end
@@ -283,684 +421,1655 @@ $enddefinitions $end
 
 #0
 $dumpvars
-0!
-0"
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx '
-b10000000000000000000000000000000 &
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx %
-b00000000000000000000000000000000 1
-b00000000000000000000000000000000 0
-b00000000000000000000000000000000 /
-b00000000000000000000000000000000 .
-b00000000000000000000000000000000 -
-b0000 ,
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 6
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx G
-b00000000000000000000000000000000 B
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx A
-b0000 E
-b00000000000000000000000000000000 I
-b00000000000000000000000000000000 K
-b00000000000000000000000000000000 H
-b00000000000000000000000000000000 J
-b10000000000000000000000000000000 C
-b00000000000000000000000000000000 5
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 4
-b0000 8
-b00000000000000000000000000000000 <
-b00000000000000000000000000000000 >
-b00000000000000000000000000000000 ;
-b00000000000000000000000000000000 =
-b10000000000000000000000000000000 :
-b00000000000000000000000000000000 P
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx O
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx N
-b00000000 V
-b00000000 T
-b00000000000000000000000000000000 U
-0^
-0_
-0Z
-0[
-0\
-0]
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx X
-b00000000000000000000000000000000 Y
-b00000000000000000000000000000000 W
-bxx t
-bxxxx s
-b00000000000000000000000000000000 k
-bxxx r
-b00000000000000000000000000000000 h
-bxx q
-b00000000000000000000000000000000 e
-bxxx p
-b00000000000000000000000000000000 b
-0u
-0v
-0"*
-0")
-0"(
-0"'
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ",
-b00000000000000000000000000000000 z
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx y
-b00000000000000000000000000000001 "&
-b0000 |
-b00000000000000000000000000000000 ""
-b00000000000000000000000000000000 "$
-b00000000000000000000000000000000 "!
-b00000000000000000000000000000000 "#
-b10000000000000000000000000000000 "%
-b10000000000000000000000000000000 ~
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "+
-b00000000000000000000000000000000 "1
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "0
-b00000000000000000000000000000000 "/
-b00000000000000000000000000000000 ".
-b00000000000000000000000000000000 "9
-b00000000000000000000000000101000 "F
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "G
-b00000010 "N
-b00000000000000000000000000000000 "O
-b00000000000000000000000000000000 "P
-b00000000000000000000000000000000 "Q
-b00000000000000000000000000000001 "R
-b00000000000000000000000000000010 "S
-b00000000000000000000000000000011 "T
-0"c
-0"_
-0"X
-0"W
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "U
-bxxxxxxxx "Z
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "\
-bxxxxxxxx "]
-b11111 "`
-b00110 "a
-b11111 "d
-b00110 "e
-b00000000 "V
-b11111111 "Y
-bxxxxxxxx "[
-b00000000000000000000000000000000 "g
-b00000000000000000000000000000000 "f
-02
-0?
-0L
-0"^
-0"b
-0`
-03
-0@
-0M
-0"3
-0"4
-0}
-0F
-09
-0+
-0"2
-0{
-0D
-07
+r0.000000000000000  "
+r0.000000000000000  !
+b00000000000000000000000000000000 #
+r0.000000000000000  %
+r0.000000000000000  $
+r0.000000000000000  &
+0"n
+0'
+xX
+0Y
 0*
-0"D
-0"E
-x"K
-0#
-0$
+0=
+00
+0/
 0(
-0)
-0w
-0x
-xR
+0R
 0S
-xQ
-0a
-0d
-0c
-0j
-0i
-0o
-0n
-0g
+xW
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -
+b00000000000000000000000000000000 "m
+b00000000000000000000000000000000 "l
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx M
+b00000000000000000000000000000000 H
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx G
+b0000 K
+b00000000000000000000000000000000 O
+b00000000000000000000000000000000 Q
+b00000000000000000000000000000000 N
+b00000000000000000000000000000000 P
+b10000000000000000000000000000000 I
+b00000000000000000000000000000000 ;
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx +
+b0000 >
+b00000000000000000000000000000000 7
+b0000 2
+b00000000000000000000000000000000 4
+b00000000000000000000000000000000 6
+b00000000000000000000000000000000 3
+b00000000000000000000000000000000 5
+b00000000000000000000000000000000 B
+b00000000000000000000000000000000 D
+b00000000000000000000000000000000 A
+b00000000000000000000000000000000 C
+b10000000000000000000000000000000 ,
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx T
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx U
+b00000000000000000000000000000000 V
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx :
+b10000000000000000000000000000000 @
+b00000000 \
+b00000000 Z
+b00000000000000000000000000000000 [
 0f
-0m
-0l
-0"-
-b00000000000000000000000000000000 "5
-b00000000000000000000000000000000 "6
-b00000000000000000000000000000000 "7
-b00000000000000000000000000000000 "8
-b000000000000 "A
-bxx "J
-bxx "M
-bxxx "I
-bxx "L
-b000 ">
-b0000000 "H
-b000000000000 "?
-b00000000000000000000 "C
-b0000000 ":
-b00000 ";
-b00000 "<
-b00000 "=
-b000000000000 "@
-b00000000000000000000 "B
-0"h
-$end
-#10000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b00000000 "Z
-b00000000 "[
-b00000000 "]
-1"X
-b10001011100010001000010110000010 "\
-#15000
-1"
-1$
-1)
-13
-1@
-1M
-1x
-1"-
-1"c
-1"_
-1a
-#20000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#30000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b00110 "`
-b01101111 "Y
-b00110 "d
-b01100110 "Y
-b10000000000000000000000000000100 "%
-b10000000000000000000000000000100 ~
-b10000000000000000000000000000100 C
-b10000000000000000000000000000100 :
-b10000000000000000000000000000100 &
-b00000001 "V
-1"W
-1Q
-b10100000000000000000000000000000 N
-1R
-1Z
-1g
-1[
-1o
-b10010 "a
-b10010 "e
-#40000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#50000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b10010 "`
-b00100110 "Y
-b10010 "d
-b00100010 "Y
-b10000000000000000000000000001000 "%
-b10000000000000000000000000001000 ~
-b10000000000000000000000000001000 C
-b10000000000000000000000000001000 :
-b10000000000000000000000000001000 &
-b00000010 "V
-b01100110 "Z
-b01100110 "[
-0"X
-0R
-b00000000000000000000000000000010 W
-b00010 "a
-b00010 "e
-#60000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#70000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b00010 "`
-b00010 "d
-b10000000000000000000000000001100 "%
-b10000000000000000000000000001100 ~
-b10000000000000000000000000001100 C
-b10000000000000000000000000001100 :
-b10000000000000000000000000001100 &
-b00000011 "V
-1i
-1l
-b10111 "a
-b10111 "e
-b10100000000000000000000000000000 h
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx k
-#80000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#90000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b10111 "`
-b01110010 "Y
-b10111 "d
-b01110111 "Y
-b10000000000000000000000000010000 "%
-b10000000000000000000000000010000 ~
-b10000000000000000000000000010000 C
-b10000000000000000000000000010000 :
-b10000000000000000000000000010000 &
-b00000100 "V
-1j
-1m
-b01100 "a
-b01100 "e
-1v
-1"h
-b10100000000000000000000000000000 "g
-b10100000000000000000000000000000 "$
-b10100000000000000000000000000000 K
-b10100000000000000000000000000000 >
-b10100000000000000000000000000000 0
-b10100000000000000000000000000000 "/
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "f
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "P
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "#
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx J
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx =
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx /
-bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ".
-b10100000000000000000000000000011 "T
-b10100000000000000000000000000010 "S
-b10100000000000000000000000000001 "R
-b10100000000000000000000000000000 "Q
-#100000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#110000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b01100 "`
-b11000111 "Y
-b01100 "d
-b11001100 "Y
-b10000000000000000000000000010100 "%
-b10000000000000000000000000010100 ~
-b10000000000000000000000000010100 C
-b10000000000000000000000000010100 :
-b10000000000000000000000000010100 &
-b00000101 "V
-0i
-0l
-b00000000000000000000000000000100 W
+0g
 0j
-0m
-1n
-b01111 "a
-b01111 "e
-b00000000000000000000000000000000 h
-0v
-b00000000000000000000000000000000 k
-1]
-#120000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#130000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b01111 "`
-b11111100 "Y
-b01111 "d
-b11111111 "Y
-b10000000000000000000000000011000 "%
-b10000000000000000000000000011000 ~
-b10000000000000000000000000011000 C
-b10000000000000000000000000011000 :
-b10000000000000000000000000011000 &
-b00000110 "V
-0[
+0i
+0p
 0o
-1_
-0n
-b10011 "a
-b10011 "e
-0]
-1S
-#140000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
+0u
+0t
+0m
+0l
+0s
+0r
+0d
+0e
 0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#150000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
-19
-1+
-b10011 "`
-b00111111 "Y
-b10011 "d
-b00110011 "Y
-b10000000000000000000000000011100 "%
-b10000000000000000000000000011100 ~
-b10000000000000000000000000011100 C
-b10000000000000000000000000011100 :
-b10000000000000000000000000011100 &
-b00000111 "V
-0"W
-b00000000000000000000000000000000 W
-1[
-1o
-0_
-b01001 "a
-b01001 "e
-0S
-#160000
-0!
-0#
-0(
-02
-0?
-0L
+0a
+0b
+0c
+b00000000000000000000000000000000 h
+bxxx v
+b00000000000000000000000000000000 n
+bxxx x
+bxx z
+b00000000000000000000000000000000 k
+bxx w
+b00000000000000000000000000000000 q
+bxxxx y
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ^
+b00000000000000000000000000000000 _
+b00000000000000000000000000000000 ]
+0{
+0|
+0"J
+x"Q
+0"K
+0"8
+0"0
+0"/
+0".
+0"-
+b000000000000 "G
+bxx "P
+bxx "S
+bxxx "O
+bxx "R
+b0000000 "N
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "2
+b000000000000 "E
+b00000000000000000000000000000000 ""
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "!
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "M
+b00000000000000000000 "I
+b00000000000000000000000000000001 ",
+b00000000000000000000000000000000 "7
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "6
+b0000 "$
+b00000000000000000000000000000000 "5
+b00000000000000000000000000000000 "4
+b00000000000000000000000000101000 "L
+b0000000 "@
+b00000000000000000000000000000000 "(
+b00000000000000000000000000000000 "*
+b00000000000000000000000000000000 "'
+b00000000000000000000000000000000 ")
+b10000000000000000000000000000000 "+
+b10000000000000000000000000000000 "&
+b00000 "A
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "1
+b00000 "B
+b00000 "C
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ";
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "<
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "=
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ">
+b000000000000 "F
+b00000000000000000000 "H
+b00000000000000000000000000000000 "?
+b00000010 "T
+b00000000000000000000000000000000 "U
+b00000000000000000000000000000000 "V
+b00000000000000000000000000000000 "W
+b00000000000000000000000000000001 "X
+b00000000000000000000000000000010 "Y
+b00000000000000000000000000000011 "Z
+0"i
+0"e
 0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
+0"]
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "[
+bxxxxxxxx "`
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "b
+bxxxxxxxx "c
+b11111 "f
+b00110 "g
+b11111 "j
+b00110 "k
+b00000000 "\
+b11111111 "_
+bxxxxxxxx "a
+0"r
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "s
+r0.000000000000000  "p
+r0.000000000000000  "o
+r0.000000000000000  "q
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "{
+b00000000000000000000000000000000 "z
+r0.000000000000000  "u
+r0.000000000000000  "x
+r0.000000000000000  "v
+r0.000000000000000  "w
+r0.000000000000000  "y
+r0.000000000000000  "|
+r0.000000000000000  "~
+r0.000000000000000  "}
 09
-0+
-#170000
-1!
-1#
-1(
-12
-1?
-1L
-1"^
-1"b
-1`
-1w
-1"3
-1"4
+0F
+08
+0E
+0"9
+0":
+0"%
+0L
+0?
+01
+0"#
+0J
+0)
+0.
+0}
+0~
+0"3
+b000 "D
+0"d
+0"h
+0"t
+$end
+#1000
+r-0.8002040758166719  "
+r-0.8002040758166719  !
+b00000000000000000000000000000001 #
+1"r
+1"t
+#2000
+r-0.6002040758166711  "
+r-0.6002040758166711  !
+b00000000000000000000000000000010 #
+0"r
+0"t
+#3000
+r-0.4001907749331040  "
+r-0.4001907749331040  !
+r1.158061061733135  "x
+r1.158061061733135  "v
+r1.158061061733135  "p
+r1.158061061733135  %
+b00000000000000000000000000000011 #
+1"r
+1"t
+#4000
+r-0.2001907749331024  "
+r-0.2001907749331024  !
+r2777017189.847626  "w
+r2777017189.847626  "u
+r2777017189.847626  "o
+r2777017189.847626  $
+r1.162846354766818  "x
+r1.162846354766818  "v
+r1.162846354766818  "p
+r1.162846354766818  %
+b00000000000000000000000000000100 #
+0"r
+0"t
+r2777017189.847626  "y
+#5000
+r-0.0001907749331031361  "
+r-0.0001907749331031361  !
+r4706274590.713956  "w
+r4706274590.713956  "u
+r4706274590.713956  "o
+r4706274590.713956  $
+r1.433704513050288  "x
+r1.433704513050288  "v
+r1.433704513050288  "p
+r1.433704513050288  %
+b00000000000000000000000000000101 #
+1"r
+1"t
+r4706274590.713956  "y
+#6000
+r0.1998092250668934  "
+r0.1998092250668934  !
+r4868440678.369300  "w
+r4868440678.369300  "u
+r4868440678.369300  "o
+r4868440678.369300  $
+r1.549159350141604  "x
+r1.549159350141604  "v
+r1.549159350141604  "p
+r1.549159350141604  %
+b00000000000000000000000000000110 #
+0"r
+0"t
+r4868440678.369300  "y
+#7000
+r0.3997972876707108  "
+r0.3997972876707108  !
+r4950218765.205236  "w
+r4950218765.205236  "u
+r4950218765.205236  "o
+r4950218765.205236  $
+r1.640849766530013  "x
+r1.640849766530013  "v
+r1.640849766530013  "p
+r1.640849766530013  %
+b00000000000000000000000000000111 #
+1"r
+1"t
+r4950218765.205236  "y
+#8000
+r0.5997972876707096  "
+r0.5997972876707096  !
+r4970633807.843538  "w
+r4970633807.843538  "u
+r4970633807.843538  "o
+r4970633807.843538  $
+r1.671269470319614  "x
+r1.671269470319614  "v
+r1.671269470319614  "p
+r1.671269470319614  %
+b00000000000000000000000000001000 #
+0"r
+0"t
+#9000
+r0.7997972876707103  "
+r0.7997972876707103  !
+r4962783643.160775  "w
+r4962783643.160775  "u
+r4962783643.160775  "o
+r4962783643.160775  $
+r1.677421140621751  "x
+r1.677421140621751  "v
+r1.677421140621751  "p
+r1.677421140621751  %
+b00000000000000000000000000001001 #
+1"r
+1"t
+#10000
+1'
+18
+1E
 1}
-1F
-19
-1+
-b01001 "`
-b10010011 "Y
-b01001 "d
-b10011001 "Y
-b10000000000000000000000000100000 "%
-b10000000000000000000000000100000 ~
-b10000000000000000000000000100000 C
-b10000000000000000000000000100000 :
-b10000000000000000000000000100000 &
-b00001000 "V
-1"W
-b10100000000000000000000001100110 N
+1"9
+1":
+1"%
+1L
+1?
+11
 1R
-b00001 "a
-b00001 "e
-#180000
-0!
-0#
-0(
-02
-0?
-0L
-0"^
-0"b
-0`
-0w
-0"3
-0"4
-0}
-0F
-09
-0+
-#190000
-1!
-1#
-1(
-12
-1?
-1L
+1"d
+1"h
+1f
+1.
+1)
+r0.9997972876707124  "
+r0.9997972876707124  !
+r4939751861.039740  "w
+r4939751861.039740  "u
+r4939751861.039740  "o
+r4939751861.039740  $
+r1.660157555656385  "x
+r1.660157555656385  "v
+r1.660157555656385  "p
+r1.660157555656385  %
+b00000000000000000000000000001010 #
+0"r
+0"t
+b00000000 "`
+b00000000 "a
+b00000000 "c
 1"^
-1"b
-1`
-1w
-1"3
-1"4
-1}
-1F
+#11000
+r1.000000000000000  "
+r1.000000000000000  !
+r4926555611.828483  "w
+r4926555611.828483  "u
+r4926555611.828483  "o
+r4926555611.828483  $
+r1.659990886700498  "x
+r1.659990886700498  "v
+r1.659990886700498  "p
+r1.659990886700498  %
+b00000000000000000000000000001011 #
+1"r
+1"t
+#12000
+r4920226278.714781  "w
+r4920226278.714781  "u
+r4920226278.714781  "o
+r4920226278.714781  $
+r1.653918242487663  "x
+r1.653918242487663  "v
+r1.653918242487663  "p
+r1.653918242487663  %
+b00000000000000000000000000001100 #
+0"r
+0"t
+#13000
+r4917475917.449926  "w
+r4917475917.449926  "u
+r4917475917.449926  "o
+r4917475917.449926  $
+r1.654224245616091  "x
+r1.654224245616091  "v
+r1.654224245616091  "p
+r1.654224245616091  %
+b00000000000000000000000000001101 #
+1"r
+1"t
+#14000
+r4915462775.740064  "w
+r4915462775.740064  "u
+r4915462775.740064  "o
+r4915462775.740064  $
+r1.656940093159438  "x
+r1.656940093159438  "v
+r1.656940093159438  "p
+r1.656940093159438  %
+b00000000000000000000000000001110 #
+0"r
+0"t
+#15000
+1(
 19
-1+
-b00001 "`
-b00011001 "Y
-b00001 "d
-b00010001 "Y
-b10000000000000000000000000100100 "%
-b10000000000000000000000000100100 ~
-b10000000000000000000000000100100 C
-b10000000000000000000000000100100 :
-b10000000000000000000000000100100 &
-b00001001 "V
-b01101010 "Z
-b00000100 "]
+1F
+1~
+1"3
+1S
+1"e
+1"i
+1g
+1/
+1*
+r4912805897.969193  "w
+r4912805897.969193  "u
+r4912805897.969193  "o
+r4912805897.969193  $
+r1.655081522754109  "x
+r1.655081522754109  "v
+r1.655081522754109  "p
+r1.655081522754109  %
+b00000000000000000000000000001111 #
+1"r
+1"t
+#16000
+r4912461063.783092  "w
+r4912461063.783092  "u
+r4912461063.783092  "o
+r4912461063.783092  $
+r1.656116516518796  "x
+r1.656116516518796  "v
+r1.656116516518796  "p
+r1.656116516518796  %
+b00000000000000000000000000010000 #
+0"r
+0"t
+#17000
+r4912342484.921013  "w
+r4912342484.921013  "u
+r4912342484.921013  "o
+r4912342484.921013  $
+r1.657941788024269  "x
+r1.657941788024269  "v
+r1.657941788024269  "p
+r1.657941788024269  %
+b00000000000000000000000000010001 #
+1"r
+1"t
+#18000
+r4911779342.778204  "w
+r4911779342.778204  "u
+r4911779342.778204  "o
+r4911779342.778204  $
+r1.666594760969068  "x
+r1.666594760969068  "v
+r1.666594760969068  "p
+r1.666594760969068  %
+b00000000000000000000000000010010 #
+0"r
+0"t
+#19000
+r4912194787.589180  "w
+r4912194787.589180  "u
+r4912194787.589180  "o
+r4912194787.589180  $
+r1.661455848748722  "x
+r1.661455848748722  "v
+r1.661455848748722  "p
+r1.661455848748722  %
+b00000000000000000000000000010011 #
+1"r
+1"t
+#20000
+0'
+08
+0E
+0}
+0"9
+0":
+0"%
+0L
+0?
+01
 0R
-b00000000000000000000000000000010 W
-b01011 "a
-b01011 "e
-b10011000100101011001001010001111 "\
+0"d
+0"h
+0f
+0.
+0)
+r4911689541.040437  "w
+r4911689541.040437  "u
+r4911689541.040437  "o
+r4911689541.040437  $
+r1.670340429761653  "x
+r1.670340429761653  "v
+r1.670340429761653  "p
+r1.670340429761653  %
+b00000000000000000000000000010100 #
+0"r
+0"t
+#21000
+r4924125897.828186  "w
+r4924125897.828186  "u
+r4924125897.828186  "o
+r4924125897.828186  $
+r1.670004927675171  "x
+r1.670004927675171  "v
+r1.670004927675171  "p
+r1.670004927675171  %
+b00000000000000000000000000010101 #
+1"r
+1"t
+#22000
+r4910723689.028440  "w
+r4910723689.028440  "u
+r4910723689.028440  "o
+r4910723689.028440  $
+r1.666451260282888  "x
+r1.666451260282888  "v
+r1.666451260282888  "p
+r1.666451260282888  %
+b00000000000000000000000000010110 #
+0"r
+0"t
+#23000
+r4910215053.786170  "w
+r4910215053.786170  "u
+r4910215053.786170  "o
+r4910215053.786170  $
+r1.674226165419358  "x
+r1.674226165419358  "v
+r1.674226165419358  "p
+r1.674226165419358  %
+b00000000000000000000000000010111 #
+1"r
+1"t
+#24000
+r4910998281.067553  "w
+r4910998281.067553  "u
+r4910998281.067553  "o
+r4910998281.067553  $
+r1.671503197187314  "x
+r1.671503197187314  "v
+r1.671503197187314  "p
+r1.671503197187314  %
+b00000000000000000000000000011000 #
+0"r
+0"t
+#25000
+r4909842822.882875  "w
+r4909842822.882875  "u
+r4909842822.882875  "o
+r4909842822.882875  $
+r1.666064031951091  "x
+r1.666064031951091  "v
+r1.666064031951091  "p
+r1.666064031951091  %
+b00000000000000000000000000011001 #
+1"r
+1"t
+#26000
+r4909591347.792702  "w
+r4909591347.792702  "u
+r4909591347.792702  "o
+r4909591347.792702  $
+r1.668827521744626  "x
+r1.668827521744626  "v
+r1.668827521744626  "p
+r1.668827521744626  %
+b00000000000000000000000000011010 #
+0"r
+0"t
+#27000
+r4910595134.349744  "w
+r4910595134.349744  "u
+r4910595134.349744  "o
+r4910595134.349744  $
+r1.674358046884479  "x
+r1.674358046884479  "v
+r1.674358046884479  "p
+r1.674358046884479  %
+b00000000000000000000000000011011 #
+1"r
+1"t
+#28000
+r4910118032.343856  "w
+r4910118032.343856  "u
+r4910118032.343856  "o
+r4910118032.343856  $
+r1.669643297978573  "x
+r1.669643297978573  "v
+r1.669643297978573  "p
+r1.669643297978573  %
+b00000000000000000000000000011100 #
+0"r
+0"t
+#29000
+r4909608423.785967  "w
+r4909608423.785967  "u
+r4909608423.785967  "o
+r4909608423.785967  $
+r1.669653471806947  "x
+r1.669653471806947  "v
+r1.669653471806947  "p
+r1.669653471806947  %
+b00000000000000000000000000011101 #
+1"r
+1"t
+#30000
+1'
+18
+1E
+1}
+1"9
+1":
+1"%
+1L
+1?
+11
+1R
+1"d
+1"h
+1f
+1.
+1)
+r4909751204.051226  "w
+r4909751204.051226  "u
+r4909751204.051226  "o
+r4909751204.051226  $
+r1.668145108962174  "x
+r1.668145108962174  "v
+r1.668145108962174  "p
+r1.668145108962174  %
+b00000000000000000000000000011110 #
+0"r
+0"t
+b10000000000000000000000000000100 "+
+b10000000000000000000000000000100 "&
+b10000000000000000000000000000100 I
+b10000000000000000000000000000100 @
+b10000000000000000000000000000100 ,
+b00110 "f
+b01101111 "_
+b00110 "j
+b01100110 "_
+b00000001 "\
+1"]
+1W
+b10100000000000000000000000000000 T
+1X
+1`
+1m
+1a
+1u
+b10010 "g
+b10010 "k
+#31000
+r4909304764.729018  "w
+r4909304764.729018  "u
+r4909304764.729018  "o
+r4909304764.729018  $
+r1.655299884386007  "x
+r1.655299884386007  "v
+r1.655299884386007  "p
+r1.655299884386007  %
+b00000000000000000000000000011111 #
+1"r
+1"t
+#32000
+r4909313929.677431  "w
+r4909313929.677431  "u
+r4909313929.677431  "o
+r4909313929.677431  $
+r1.659714289322606  "x
+r1.659714289322606  "v
+r1.659714289322606  "p
+r1.659714289322606  %
+b00000000000000000000000000100000 #
+0"r
+0"t
+#33000
+r4910946438.552406  "w
+r4910946438.552406  "u
+r4910946438.552406  "o
+r4910946438.552406  $
+r1.662018144531389  "x
+r1.662018144531389  "v
+r1.662018144531389  "p
+r1.662018144531389  %
+b00000000000000000000000000100001 #
+1"r
+1"t
+#34000
+r4910247106.492136  "w
+r4910247106.492136  "u
+r4910247106.492136  "o
+r4910247106.492136  $
+r1.663040387372200  "x
+r1.663040387372200  "v
+r1.663040387372200  "p
+r1.663040387372200  %
+b00000000000000000000000000100010 #
+0"r
+0"t
+#35000
+r4909777728.133727  "w
+r4909777728.133727  "u
+r4909777728.133727  "o
+r4909777728.133727  $
+r1.662029990142091  "x
+r1.662029990142091  "v
+r1.662029990142091  "p
+r1.662029990142091  %
+b00000000000000000000000000100011 #
+1"r
+1"t
+#36000
+r4910606423.505013  "w
+r4910606423.505013  "u
+r4910606423.505013  "o
+r4910606423.505013  $
+r1.670928800334765  "x
+r1.670928800334765  "v
+r1.670928800334765  "p
+r1.670928800334765  %
+b00000000000000000000000000100100 #
+0"r
+0"t
+#37000
+r4910756449.843631  "w
+r4910756449.843631  "u
+r4910756449.843631  "o
+r4910756449.843631  $
+r1.668663251155081  "x
+r1.668663251155081  "v
+r1.668663251155081  "p
+r1.668663251155081  %
+b00000000000000000000000000100101 #
+1"r
+1"t
+#38000
+r4909932319.916821  "w
+r4909932319.916821  "u
+r4909932319.916821  "o
+r4909932319.916821  $
+r1.666525122373796  "x
+r1.666525122373796  "v
+r1.666525122373796  "p
+r1.666525122373796  %
+b00000000000000000000000000100110 #
+0"r
+0"t
+#39000
+r4909417327.314029  "w
+r4909417327.314029  "u
+r4909417327.314029  "o
+r4909417327.314029  $
+r1.665523310865779  "x
+r1.665523310865779  "v
+r1.665523310865779  "p
+r1.665523310865779  %
+b00000000000000000000000000100111 #
+1"r
+1"t
+#40000
+0'
+08
+0E
+0}
+0"9
+0":
+0"%
+0L
+0?
+01
+0R
+0"d
+0"h
+0f
+0.
+0)
+r4909609246.854342  "w
+r4909609246.854342  "u
+r4909609246.854342  "o
+r4909609246.854342  $
+r1.657208118018114  "x
+r1.657208118018114  "v
+r1.657208118018114  "p
+r1.657208118018114  %
+b00000000000000000000000000101000 #
+0"r
+0"t
+#41000
+r4909729130.905940  "w
+r4909729130.905940  "u
+r4909729130.905940  "o
+r4909729130.905940  $
+r1.660681213013975  "x
+r1.660681213013975  "v
+r1.660681213013975  "p
+r1.660681213013975  %
+b00000000000000000000000000101001 #
+1"r
+1"t
+#42000
+r4909426270.890960  "w
+r4909426270.890960  "u
+r4909426270.890960  "o
+r4909426270.890960  $
+r1.661737648827206  "x
+r1.661737648827206  "v
+r1.661737648827206  "p
+r1.661737648827206  %
+b00000000000000000000000000101010 #
+0"r
+0"t
+#43000
+r4910083090.044077  "w
+r4910083090.044077  "u
+r4910083090.044077  "o
+r4910083090.044077  $
+r1.661762949165450  "x
+r1.661762949165450  "v
+r1.661762949165450  "p
+r1.661762949165450  %
+b00000000000000000000000000101011 #
+1"r
+1"t
+#44000
+r4909478678.409668  "w
+r4909478678.409668  "u
+r4909478678.409668  "o
+r4909478678.409668  $
+r1.660076275809070  "x
+r1.660076275809070  "v
+r1.660076275809070  "p
+r1.660076275809070  %
+b00000000000000000000000000101100 #
+0"r
+0"t
+#45000
+r4909340233.410031  "w
+r4909340233.410031  "u
+r4909340233.410031  "o
+r4909340233.410031  $
+r1.664803384260758  "x
+r1.664803384260758  "v
+r1.664803384260758  "p
+r1.664803384260758  %
+b00000000000000000000000000101101 #
+1"r
+1"t
+#46000
+r4910171664.318944  "w
+r4910171664.318944  "u
+r4910171664.318944  "o
+r4910171664.318944  $
+r1.665177067901489  "x
+r1.665177067901489  "v
+r1.665177067901489  "p
+r1.665177067901489  %
+b00000000000000000000000000101110 #
+0"r
+0"t
+#47000
+r4909577084.636644  "w
+r4909577084.636644  "u
+r4909577084.636644  "o
+r4909577084.636644  $
+r1.658976939375099  "x
+r1.658976939375099  "v
+r1.658976939375099  "p
+r1.658976939375099  %
+b00000000000000000000000000101111 #
+1"r
+1"t
+#48000
+r4908087620.095716  "w
+r4908087620.095716  "u
+r4908087620.095716  "o
+r4908087620.095716  $
+r1.653602623129385  "x
+r1.653602623129385  "v
+r1.653602623129385  "p
+r1.653602623129385  %
+b00000000000000000000000000110000 #
+0"r
+0"t
+#49000
+r4909199403.654703  "w
+r4909199403.654703  "u
+r4909199403.654703  "o
+r4909199403.654703  $
+r1.660014523235937  "x
+r1.660014523235937  "v
+r1.660014523235937  "p
+r1.660014523235937  %
+b00000000000000000000000000110001 #
+1"r
+1"t
+#50000
+1'
+18
+1E
+1}
+1"9
+1":
+1"%
+1L
+1?
+11
+1R
+1"d
+1"h
+1f
+1.
+1)
+r4910157572.257091  "w
+r4910157572.257091  "u
+r4910157572.257091  "o
+r4910157572.257091  $
+r1.659713375318830  "x
+r1.659713375318830  "v
+r1.659713375318830  "p
+r1.659713375318830  %
+b00000000000000000000000000110010 #
+0"r
+0"t
+b10000000000000000000000000001000 "+
+b10000000000000000000000000001000 "&
+b10000000000000000000000000001000 I
+b10000000000000000000000000001000 @
+b10000000000000000000000000001000 ,
+b10010 "f
+b00100110 "_
+b10010 "j
+b00100010 "_
+b00000010 "\
+b01100110 "`
+b01100110 "a
+0"^
+0X
+b00000000000000000000000000000010 ]
+b00010 "g
+b00010 "k
+#51000
+r4909892523.273990  "w
+r4909892523.273990  "u
+r4909892523.273990  "o
+r4909892523.273990  $
+r1.667934723294615  "x
+r1.667934723294615  "v
+r1.667934723294615  "p
+r1.667934723294615  %
+b00000000000000000000000000110011 #
+1"r
+1"t
+#52000
+r4909713440.721299  "w
+r4909713440.721299  "u
+r4909713440.721299  "o
+r4909713440.721299  $
+r1.668249298881848  "x
+r1.668249298881848  "v
+r1.668249298881848  "p
+r1.668249298881848  %
+b00000000000000000000000000110100 #
+0"r
+0"t
+#53000
+r4908760213.783665  "w
+r4908760213.783665  "u
+r4908760213.783665  "o
+r4908760213.783665  $
+r1.664672922486303  "x
+r1.664672922486303  "v
+r1.664672922486303  "p
+r1.664672922486303  %
+b00000000000000000000000000110101 #
+1"r
+1"t
+#54000
+r4909023280.568772  "w
+r4909023280.568772  "u
+r4909023280.568772  "o
+r4909023280.568772  $
+r1.672249334650594  "x
+r1.672249334650594  "v
+r1.672249334650594  "p
+r1.672249334650594  %
+b00000000000000000000000000110110 #
+0"r
+0"t
+#55000
+r4909377336.193377  "w
+r4909377336.193377  "u
+r4909377336.193377  "o
+r4909377336.193377  $
+r1.675295572296670  "x
+r1.675295572296670  "v
+r1.675295572296670  "p
+r1.675295572296670  %
+b00000000000000000000000000110111 #
+1"r
+1"t
+#56000
+r4908269646.425145  "w
+r4908269646.425145  "u
+r4908269646.425145  "o
+r4908269646.425145  $
+r1.667748488839291  "x
+r1.667748488839291  "v
+r1.667748488839291  "p
+r1.667748488839291  %
+b00000000000000000000000000111000 #
+0"r
+0"t
+#57000
+r4907705318.292859  "w
+r4907705318.292859  "u
+r4907705318.292859  "o
+r4907705318.292859  $
+r1.669632727368402  "x
+r1.669632727368402  "v
+r1.669632727368402  "p
+r1.669632727368402  %
+b00000000000000000000000000111001 #
+1"r
+1"t
+#58000
+r4908141130.162034  "w
+r4908141130.162034  "u
+r4908141130.162034  "o
+r4908141130.162034  $
+r1.669321376118841  "x
+r1.669321376118841  "v
+r1.669321376118841  "p
+r1.669321376118841  %
+b00000000000000000000000000111010 #
+0"r
+0"t
+#59000
+r4908442724.570323  "w
+r4908442724.570323  "u
+r4908442724.570323  "o
+r4908442724.570323  $
+r1.670934487098020  "x
+r1.670934487098020  "v
+r1.670934487098020  "p
+r1.670934487098020  %
+b00000000000000000000000000111011 #
+1"r
+1"t
+#60000
+0'
+08
+0E
+0}
+0"9
+0":
+0"%
+0L
+0?
+01
+0R
+0"d
+0"h
+0f
+0.
+0)
+r4908928933.011269  "w
+r4908928933.011269  "u
+r4908928933.011269  "o
+r4908928933.011269  $
+r1.667859835360607  "x
+r1.667859835360607  "v
+r1.667859835360607  "p
+r1.667859835360607  %
+b00000000000000000000000000111100 #
+0"r
+0"t
+#61000
+r4907998385.141938  "w
+r4907998385.141938  "u
+r4907998385.141938  "o
+r4907998385.141938  $
+r1.664849092908862  "x
+r1.664849092908862  "v
+r1.664849092908862  "p
+r1.664849092908862  %
+b00000000000000000000000000111101 #
+1"r
+1"t
+#62000
+r4907278151.321721  "w
+r4907278151.321721  "u
+r4907278151.321721  "o
+r4907278151.321721  $
+r1.661137678754789  "x
+r1.661137678754789  "v
+r1.661137678754789  "p
+r1.661137678754789  %
+b00000000000000000000000000111110 #
+0"r
+0"t
+#63000
+r4907638929.472431  "w
+r4907638929.472431  "u
+r4907638929.472431  "o
+r4907638929.472431  $
+r1.651452645152625  "x
+r1.651452645152625  "v
+r1.651452645152625  "p
+r1.651452645152625  %
+b00000000000000000000000000111111 #
+1"r
+1"t
+#64000
+r4907901207.782742  "w
+r4907901207.782742  "u
+r4907901207.782742  "o
+r4907901207.782742  $
+r1.657220087867532  "x
+r1.657220087867532  "v
+r1.657220087867532  "p
+r1.657220087867532  %
+b00000000000000000000000001000000 #
+0"r
+0"t
+#65000
+r4909180260.741144  "w
+r4909180260.741144  "u
+r4909180260.741144  "o
+r4909180260.741144  $
+r1.654068342202454  "x
+r1.654068342202454  "v
+r1.654068342202454  "p
+r1.654068342202454  %
+b00000000000000000000000001000001 #
+1"r
+1"t
+#66000
+r4908625218.729198  "w
+r4908625218.729198  "u
+r4908625218.729198  "o
+r4908625218.729198  $
+r1.656606356007204  "x
+r1.656606356007204  "v
+r1.656606356007204  "p
+r1.656606356007204  %
+b00000000000000000000000001000010 #
+0"r
+0"t
+#67000
+r4908156950.664569  "w
+r4908156950.664569  "u
+r4908156950.664569  "o
+r4908156950.664569  $
+r1.657731044496036  "x
+r1.657731044496036  "v
+r1.657731044496036  "p
+r1.657731044496036  %
+b00000000000000000000000001000011 #
+1"r
+1"t
+#68000
+r4908861965.987939  "w
+r4908861965.987939  "u
+r4908861965.987939  "o
+r4908861965.987939  $
+r1.660676985990216  "x
+r1.660676985990216  "v
+r1.660676985990216  "p
+r1.660676985990216  %
+b00000000000000000000000001000100 #
+0"r
+0"t
+#69000
+r4908204162.213066  "w
+r4908204162.213066  "u
+r4908204162.213066  "o
+r4908204162.213066  $
+r1.659947943151938  "x
+r1.659947943151938  "v
+r1.659947943151938  "p
+r1.659947943151938  %
+b00000000000000000000000001000101 #
+1"r
+1"t
+#70000
+1'
+18
+1E
+1}
+1"9
+1":
+1"%
+1L
+1?
+11
+1R
+1"d
+1"h
+1f
+1.
+1)
+r4908088992.245707  "w
+r4908088992.245707  "u
+r4908088992.245707  "o
+r4908088992.245707  $
+r1.668448346003487  "x
+r1.668448346003487  "v
+r1.668448346003487  "p
+r1.668448346003487  %
+b00000000000000000000000001000110 #
+0"r
+0"t
+b10000000000000000000000000001100 "+
+b10000000000000000000000000001100 "&
+b10000000000000000000000000001100 I
+b10000000000000000000000000001100 @
+b10000000000000000000000000001100 ,
+b00010 "f
+b00010 "j
+b00000011 "\
+1o
+1r
+b10111 "g
+b10111 "k
+b10100000000000000000000000000000 n
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx q
+#71000
+r4908382462.383839  "w
+r4908382462.383839  "u
+r4908382462.383839  "o
+r4908382462.383839  $
+r1.672328141695189  "x
+r1.672328141695189  "v
+r1.672328141695189  "p
+r1.672328141695189  %
+b00000000000000000000000001000111 #
+1"r
+1"t
+#72000
+r4907990024.798888  "w
+r4907990024.798888  "u
+r4907990024.798888  "o
+r4907990024.798888  $
+r1.667447100371062  "x
+r1.667447100371062  "v
+r1.667447100371062  "p
+r1.667447100371062  %
+b00000000000000000000000001001000 #
+0"r
+0"t
+#73000
+r4907673122.112956  "w
+r4907673122.112956  "u
+r4907673122.112956  "o
+r4907673122.112956  $
+r1.671140541763387  "x
+r1.671140541763387  "v
+r1.671140541763387  "p
+r1.671140541763387  %
+b00000000000000000000000001001001 #
+1"r
+1"t
+#74000
+r4906178957.837928  "w
+r4906178957.837928  "u
+r4906178957.837928  "o
+r4906178957.837928  $
+r1.663064647643271  "x
+r1.663064647643271  "v
+r1.663064647643271  "p
+r1.663064647643271  %
+b00000000000000000000000001001010 #
+0"r
+0"t
+#75000
+r4905946372.635468  "w
+r4905946372.635468  "u
+r4905946372.635468  "o
+r4905946372.635468  $
+r1.659185273274935  "x
+r1.659185273274935  "v
+r1.659185273274935  "p
+r1.659185273274935  %
+b00000000000000000000000001001011 #
+1"r
+1"t
+#76000
+r4906852594.589098  "w
+r4906852594.589098  "u
+r4906852594.589098  "o
+r4906852594.589098  $
+r1.658741424026675  "x
+r1.658741424026675  "v
+r1.658741424026675  "p
+r1.658741424026675  %
+b00000000000000000000000001001100 #
+0"r
+0"t
+#77000
+r4907271110.371900  "w
+r4907271110.371900  "u
+r4907271110.371900  "o
+r4907271110.371900  $
+r1.659932719150380  "x
+r1.659932719150380  "v
+r1.659932719150380  "p
+r1.659932719150380  %
+b00000000000000000000000001001101 #
+1"r
+1"t
+#78000
+r4908662101.231510  "w
+r4908662101.231510  "u
+r4908662101.231510  "o
+r4908662101.231510  $
+r1.671295884410291  "x
+r1.671295884410291  "v
+r1.671295884410291  "p
+r1.671295884410291  %
+b00000000000000000000000001001110 #
+0"r
+0"t
+#79000
+r4907746231.029182  "w
+r4907746231.029182  "u
+r4907746231.029182  "o
+r4907746231.029182  $
+r1.668675097388044  "x
+r1.668675097388044  "v
+r1.668675097388044  "p
+r1.668675097388044  %
+b00000000000000000000000001001111 #
+1"r
+1"t
+#80000
+0'
+08
+0E
+0}
+0"9
+0":
+0"%
+0L
+0?
+01
+0R
+0"d
+0"h
+0f
+0.
+0)
+r4905853887.434468  "w
+r4905853887.434468  "u
+r4905853887.434468  "o
+r4905853887.434468  $
+r1.661834185449091  "x
+r1.661834185449091  "v
+r1.661834185449091  "p
+r1.661834185449091  %
+b00000000000000000000000001010000 #
+0"r
+0"t
+#81000
+r4906171349.565526  "w
+r4906171349.565526  "u
+r4906171349.565526  "o
+r4906171349.565526  $
+r1.661599481576198  "x
+r1.661599481576198  "v
+r1.661599481576198  "p
+r1.661599481576198  %
+b00000000000000000000000001010001 #
+1"r
+1"t
+#82000
+r4906749893.286147  "w
+r4906749893.286147  "u
+r4906749893.286147  "o
+r4906749893.286147  $
+r1.661987939571977  "x
+r1.661987939571977  "v
+r1.661987939571977  "p
+r1.661987939571977  %
+b00000000000000000000000001010010 #
+0"r
+0"t
+#83000
+r4907123524.965031  "w
+r4907123524.965031  "u
+r4907123524.965031  "o
+r4907123524.965031  $
+r1.669107312430244  "x
+r1.669107312430244  "v
+r1.669107312430244  "p
+r1.669107312430244  %
+b00000000000000000000000001010011 #
+1"r
+1"t
+#84000
+r4907397919.532505  "w
+r4907397919.532505  "u
+r4907397919.532505  "o
+r4907397919.532505  $
+r1.666818948407522  "x
+r1.666818948407522  "v
+r1.666818948407522  "p
+r1.666818948407522  %
+b00000000000000000000000001010100 #
+0"r
+0"t
+#85000
+r4906773398.715662  "w
+r4906773398.715662  "u
+r4906773398.715662  "o
+r4906773398.715662  $
+r1.669396890045586  "x
+r1.669396890045586  "v
+r1.669396890045586  "p
+r1.669396890045586  %
+b00000000000000000000000001010101 #
+1"r
+1"t
+#86000
+r4906072811.608229  "w
+r4906072811.608229  "u
+r4906072811.608229  "o
+r4906072811.608229  $
+r1.668657519979125  "x
+r1.668657519979125  "v
+r1.668657519979125  "p
+r1.668657519979125  %
+b00000000000000000000000001010110 #
+0"r
+0"t
+#87000
+r4906242555.635430  "w
+r4906242555.635430  "u
+r4906242555.635430  "o
+r4906242555.635430  $
+r1.669609314879774  "x
+r1.669609314879774  "v
+r1.669609314879774  "p
+r1.669609314879774  %
+b00000000000000000000000001010111 #
+1"r
+1"t
+#88000
+r4906097996.933080  "w
+r4906097996.933080  "u
+r4906097996.933080  "o
+r4906097996.933080  $
+r1.668306200230284  "x
+r1.668306200230284  "v
+r1.668306200230284  "p
+r1.668306200230284  %
+b00000000000000000000000001011000 #
+0"r
+0"t
+#89000
+r4906054892.820522  "w
+r4906054892.820522  "u
+r4906054892.820522  "o
+r4906054892.820522  $
+r1.670222655342192  "x
+r1.670222655342192  "v
+r1.670222655342192  "p
+r1.670222655342192  %
+b00000000000000000000000001011001 #
+1"r
+1"t
+#90000
+1'
+18
+1E
+1}
+1"9
+1":
+1"%
+1L
+1?
+11
+1R
+1"d
+1"h
+1f
+1.
+1)
+r4906223204.995589  "w
+r4906223204.995589  "u
+r4906223204.995589  "o
+r4906223204.995589  $
+r1.670002774140902  "x
+r1.670002774140902  "v
+r1.670002774140902  "p
+r1.670002774140902  %
+b00000000000000000000000001011010 #
+0"r
+0"t
+b10000000000000000000000000010000 "+
+b10000000000000000000000000010000 "&
+b10000000000000000000000000010000 I
+b10000000000000000000000000010000 @
+b10000000000000000000000000010000 ,
+b10111 "f
+b01110010 "_
+b10111 "j
+b01110111 "_
+b00000100 "\
+1p
+1s
+b01100 "g
+b01100 "k
+1|
+1"n
+b10100000000000000000000000000000 "m
+b10100000000000000000000000000000 "5
+b10100000000000000000000000000000 "*
+b10100000000000000000000000000000 Q
+b10100000000000000000000000000000 D
+b10100000000000000000000000000000 6
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "l
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "V
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx "4
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ")
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx P
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx C
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 5
+b10100000000000000000000000000011 "Z
+b10100000000000000000000000000010 "Y
+b10100000000000000000000000000001 "X
+b10100000000000000000000000000000 "W
+#91000
+r4905773780.619769  "w
+r4905773780.619769  "u
+r4905773780.619769  "o
+r4905773780.619769  $
+r1.667676647944138  "x
+r1.667676647944138  "v
+r1.667676647944138  "p
+r1.667676647944138  %
+b00000000000000000000000001011011 #
+1"r
+1"t
+#92000
+r4905368791.210815  "w
+r4905368791.210815  "u
+r4905368791.210815  "o
+r4905368791.210815  $
+r1.665721384347407  "x
+r1.665721384347407  "v
+r1.665721384347407  "p
+r1.665721384347407  %
+b00000000000000000000000001011100 #
+0"r
+0"t
+#93000
+r4906149791.952782  "w
+r4906149791.952782  "u
+r4906149791.952782  "o
+r4906149791.952782  $
+r1.672380077493170  "x
+r1.672380077493170  "v
+r1.672380077493170  "p
+r1.672380077493170  %
+b00000000000000000000000001011101 #
+1"r
+1"t
+#94000
+r4906029549.109566  "w
+r4906029549.109566  "u
+r4906029549.109566  "o
+r4906029549.109566  $
+r1.671690858848310  "x
+r1.671690858848310  "v
+r1.671690858848310  "p
+r1.671690858848310  %
+b00000000000000000000000001011110 #
+0"r
+0"t
+#95000
+r4904220340.461193  "w
+r4904220340.461193  "u
+r4904220340.461193  "o
+r4904220340.461193  $
+r1.664908908736538  "x
+r1.664908908736538  "v
+r1.664908908736538  "p
+r1.664908908736538  %
+b00000000000000000000000001011111 #
+1"r
+1"t
+#96000
+r4904452787.640349  "w
+r4904452787.640349  "u
+r4904452787.640349  "o
+r4904452787.640349  $
+r1.655681562707239  "x
+r1.655681562707239  "v
+r1.655681562707239  "p
+r1.655681562707239  %
+b00000000000000000000000001100000 #
+0"r
+0"t
+#97000
+r4911325012.785327  "w
+r4911325012.785327  "u
+r4911325012.785327  "o
+r4911325012.785327  $
+r1.662222244043506  "x
+r1.662222244043506  "v
+r1.662222244043506  "p
+r1.662222244043506  %
+b00000000000000000000000001100001 #
+1"r
+1"t
+#98000
+r4905989550.843597  "w
+r4905989550.843597  "u
+r4905989550.843597  "o
+r4905989550.843597  $
+r1.668994558748652  "x
+r1.668994558748652  "v
+r1.668994558748652  "p
+r1.668994558748652  %
+b00000000000000000000000001100010 #
+0"r
+0"t
+#99000
+r4906320066.894002  "w
+r4906320066.894002  "u
+r4906320066.894002  "o
+r4906320066.894002  $
+r1.674006956390479  "x
+r1.674006956390479  "v
+r1.674006956390479  "p
+r1.674006956390479  %
+b00000000000000000000000001100011 #
+1"r
+1"t
+#100000
+0'
+08
+0E
+0}
+0"9
+0":
+0"%
+0L
+0?
+01
+0R
+0"d
+0"h
+0f
+0.
+0)
+r4905323400.490388  "w
+r4905323400.490388  "u
+r4905323400.490388  "o
+r4905323400.490388  $
+r1.673202254717170  "x
+r1.673202254717170  "v
+r1.673202254717170  "p
+r1.673202254717170  %
+b00000000000000000000000001100100 #

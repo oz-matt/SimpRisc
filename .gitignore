@@ -1,0 +1,14 @@
+csrc/
+simv.daidir/
+simv.msv/
+verdiLog/
+
+simv
+
+*.log
+*.vcd
+*.fsdb*
+*.conf
+*.key
+*.vpd
+*.dat.work*

@@ -1,0 +1,17 @@
+../sv_src/defines.sv
+../sv_src/axil_int.sv
+../sv_src/mdriver_int.sv
+../sv_src/masterif.sv
+../sv_src/umem.sv
+../sv_src/axi_master_wrapper.sv
+../sv_src/instruction_parser.sv
+../sv_src/lfsr5.sv
+../sv_src/axi_mem.sv
+../sv_src/memslave.sv
+../sv_src/cpu.sv
+../sv_src/sindrv.sv
+../sv_src/design.sv
+../sv_src/soc_top.sv
+../sv_src/memw_if.sv
+../sv_src/insgen_if.sv
+

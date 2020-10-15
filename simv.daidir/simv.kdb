@@ -6,12 +6,13 @@ SystemC=FALSE
 UUM=FALSE
 KDB=TRUE
 USE_NOVAS_HOME=FALSE
-COSIM=FALSE
-TOP=top_tb 
+COSIM=TRUE
+SPICOM_OPTION= -simflow -ad vcsAD.init -logdir simv.daidir/spicomLog  -lib simv.daidir/work 
+TOP=vramp top_tb 
 ELAB=TRUE
 SIMV_WRAPPER=FALSE
 [vcs]
-RUN_ELABCOM=\rm -rf simv.daidir/kdb.elab++ ;unset TURBO_LOG_DIR ; /home/work/synopsys/L-2016.06/linux64/bin/elabcom -logdir simv.daidir/elabcomLog  -simvdaidir simv.daidir -lib simv.daidir/work -elab simv.daidir/kdb -simflow -top 'top_tb '  -Lf work  >& /dev/null 
+RUN_ELABCOM=\rm -rf simv.daidir/kdb.elab++ ;unset TURBO_LOG_DIR ; /home/work/synopsys/L-2016.06/linux64/bin/elabcom -logdir simv.daidir/elabcomLog  -simvdaidir simv.daidir -lib simv.daidir/work -elab simv.daidir/kdb -simflow -cosim -top 'vramp top_tb '  -Lf work  >& /dev/null 
 
 [Value]
 WREALX=ffff534e50535f58

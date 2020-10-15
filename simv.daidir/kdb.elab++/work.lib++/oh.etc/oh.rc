@@ -1,5 +1,5 @@
 @elabcom rc file Version 1.0
 [oh]
 invokeDir = /home/work/Desktop/simprisc
-hostCommand = -lib simv.daidir/work -elab simv.daidir/kdb -simflow -top "top_tb " -Lf work -SNPS_ELABCOM -saveElab
+hostCommand = -lib simv.daidir/work -elab simv.daidir/kdb -simflow -cosim -top "vramp top_tb " -Lf work -SNPS_ELABCOM -saveElab
 simType = VCS
