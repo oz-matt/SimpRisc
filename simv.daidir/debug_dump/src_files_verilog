@@ -32,5 +32,6 @@
 /home/work/Desktop/simprisc/sv_src/sindrv.sv
 /home/work/Desktop/simprisc/sv_src/soc_top.sv
 /home/work/Desktop/simprisc/sv_src/umem.sv
+/home/work/Desktop/simprisc/svclk2a.vams
 /home/work/Desktop/simprisc/top_tb.sv
 /home/work/Desktop/simprisc/top_th.sv

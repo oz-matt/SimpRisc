@@ -6,9 +6,11 @@
 `include "ams_src/ams-models/varactor.va"
 `include "ams_src/ams-models/and_gate.va"
 `include "ams_src/ams-models/d_ff_r.va"
+`include "svclk2a.vams"
 
-module top(s, maxv, vwr);
-
+module top(s, maxv, vwr, fclk);
+input fclk; logic fclk;
+voltage fout;
 electrical vcovgnd, o1, o2, ondc, vdd, vctrl, cme, cin, gnd, tmid, cg;
 electrical clkin, clkout, dr, qup, qdn, cup, qbu, cmid, fmid;
 ground gnd;
@@ -19,6 +21,9 @@ reg clk;
 
 initial clk = 0;
 always #1 clk <= !clk;
+
+
+  svclk2a svcc(clk, fout);
 
   voltage probe_freq;
 freqmeasure fm(ondc, gnd, s, clk, maxv);

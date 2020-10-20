@@ -1,0 +1,14 @@
+ScopeSigMgr:loadpffile /home/work/Desktop/simprisc/novas.fsdb 1 openonly
+# {}
+ScopeSigMgr:loadpffile /home/work/Desktop/simprisc/out/ana.wdb 1 openonly
+# PF:1
+pf:read PF:1 top_tb.amstop.v(vctrl)
+# WF:1:1
+Graph addsignal WF:1:1 -region new -yview real(y) -xview real(x) -tracehi 2
+# Signal0
+wm geometry .sigmgr 376x204+2+26
+wm geometry .sigmgr._PF:1 208x315+2+26
+wm geometry .sigmgr 376x204+516+163
+wm geometry .sigmgr._PF:1 208x315+958+463
+wm geometry .sigmgr 376x204+2+26
+wm geometry .sigmgr._PF:1 208x315+2+26

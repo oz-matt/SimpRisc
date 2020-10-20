@@ -12,6 +12,7 @@ vramp.snps_port0 0
 top_tb.snps_dummy_1 0
 top_tb.snps_dummy_2 0
 top_tb.snps_dummy_3 0
+top_tb.snps_dummy_4 0
 top_tb.amstop.dr 0
 top_tb.amstop.o1 1.63589
 top_tb.amstop.o2 1.63589
@@ -23,17 +24,20 @@ top_tb.amstop.qdn 0
 top_tb.amstop.qup 0
 top_tb.amstop.vdd 3
 top_tb.amstop.cmid 1.5
+top_tb.amstop.fout 0
 top_tb.amstop.ondc 1.5
 top_tb.amstop.tmid 1.5
 top_tb.amstop.clkout 3
 top_tb.amstop.vcovgnd 0.271775
 top_tb.amstop.vctrl 1.5
 top_tb.amstop.clkin 0
-top_tb.amstop.snps_dummy_4 0
 top_tb.amstop.snps_dummy_5 0
 top_tb.amstop.snps_dummy_6 0
+top_tb.amstop.snps_dummy_7 0
+top_tb.amstop.snps_dummy_8 0
 top_tb.amstop.fm.rep 0
 top_tb.amstop.fm.freq 0
 top_tb.amstop.fm.snps_devent_2 0
 top_tb.amstop.fm.snps_aevent_5 1
+top_tb.amstop.svcc.inclk 0
 ###   END: Saved Operating Point ###

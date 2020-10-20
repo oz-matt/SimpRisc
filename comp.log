@@ -1,12 +1,11 @@
-Command: vcs -ams +ad -ams_discipline logic +systemverilogext+.sv -lca -debug_access+all \
--y /home/work/synopsys/L-2016.06/packages/sva +libext+.v +incdir+/home/work/synopsys/L-2016.06/packages/sva \
--P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a \
--full64 +libext+.v+.h+.vh+.vlib -kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps \
-+incdir+ams_src/ams-models -F sv_src/files.f -F ams_src/files.f -adopt absdelta top_tb.sv \
-
+Command: vcs -ams +ad -ams_discipline logic -sverilog -lca -debug_access+all -y /home/work/synopsys/L-2016.06/packages/sva \
++libext+.v +incdir+/home/work/synopsys/L-2016.06/packages/sva -P /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab \
+/home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -full64 +libext+.v+.h+.vh+.vlib \
+-kdb +vcs+vcdpluson -l comp.log -timescale=1ns/1ps +incdir+ams_src/ams-models -F \
+sv_src/files.f -F ams_src/files.f -adopt absdelta top_tb.sv
 *** Using c compiler /home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/gcc instead of cc ...
                          Chronologic VCS (TM)
-         Version L-2016.06_Full64 -- Fri Oct 16 03:59:03 2020
+         Version L-2016.06_Full64 -- Tue Oct 20 10:12:23 2020
                Copyright (c) 1991-2016 by Synopsys Inc.
                          ALL RIGHTS RESERVED
 
@@ -463,6 +462,8 @@ Parsing included file 'ams_src/ams-models/and_gate.va'.
 Back to file 'ams_src/top.vams'.
 Parsing included file 'ams_src/ams-models/d_ff_r.va'.
 Back to file 'ams_src/top.vams'.
+Parsing included file 'svclk2a.vams'.
+Back to file 'ams_src/top.vams'.
 Parsing design file 'ams_src/vclkgen.va'
 Parsing included file 'ams_src/ams-models/disciplines.vams'.
 Back to file 'ams_src/vclkgen.va'.
@@ -482,6 +483,12 @@ Top Level Modules:
        vramp
        top_tb
 TimeScale is 1 ns / 1 ps
+
+Warning-[IWNF] Implicit wire has no fanin
+top_tb.sv, 29
+  Implicit wire 'fclk' does not have any driver, please make sure this is 
+  intended.
+
   TIMESTAMP: Aug 14 2013 19:01:19
 
 
@@ -550,6 +557,8 @@ Parsing included file 'ams_src/ams-models/and_gate.va'.
 Back to file 'ams_src/top.vams'.
 Parsing included file 'ams_src/ams-models/d_ff_r.va'.
 Back to file 'ams_src/top.vams'.
+Parsing included file 'svclk2a.vams'.
+Back to file 'ams_src/top.vams'.
 Parsing design file 'ams_src/vclkgen.va'
 Parsing included file 'ams_src/ams-models/disciplines.vams'.
 Back to file 'ams_src/vclkgen.va'.
@@ -571,9 +580,9 @@ Top Level Modules:
 TimeScale is 1 ns / 1 ps
 Notice: Ports coerced to inout, use -notice for details
 Starting vcs inline pass...
-24 unique modules to generate
-24 modules and 0 UDP read. 
-recompiling package _vcs_unit__3606502047
+25 unique modules to generate
+25 modules and 0 UDP read. 
+recompiling package _vcs_unit__864972048
 recompiling package std
 recompiling module umem
 recompiling module axi_master_wrapper
@@ -590,6 +599,7 @@ recompiling module ind
 recompiling module varactor
 recompiling module and_gate
 recompiling module d_ff_r
+recompiling module svclk2a
 recompiling module top
 recompiling module vclkgen
 recompiling module vpulse
@@ -597,13 +607,13 @@ recompiling module vramp
 recompiling module vsrc
 recompiling module top_th
 recompiling module top_tb
-All of 24 modules done
+All of 25 modules done
 rm -f _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod -x ../simv; fi
 /home/disk/H-2013.03-SP2/GNU/amd64/gcc-4.5.2-static/bin/g++  -o ../simv   -Wl,-rpath-link=./ \
 -Wl,-rpath='$ORIGIN'/simv.daidir/ -Wl,-rpath=./simv.daidir/ -Wl,-rpath='$ORIGIN'/simv.daidir//scsim.db.dir \
 -Wl,-rpath=/home/disk/H-2013.03-SP2/amd64/interfaces -Wl,-E -rdynamic   amcQwB.o \
-objs/amcQw_d.o   _9506_archive_1.so  SIM_l.o   /home/disk/H-2013.03-SP2/amd64/interfaces/libxa_cosim.so \
+objs/amcQw_d.o   _102215_archive_1.so  SIM_l.o   /home/disk/H-2013.03-SP2/amd64/interfaces/libxa_cosim.so \
 rmapats_mop.o rmapats.o rmar.o  rmar_llvm_0_1.o rmar_llvm_0_0.o          /home/work/synopsys/L-2016.06/linux64/lib/libzerosoft_rt_stubs.so \
 /home/work/synopsys/L-2016.06/linux64/lib/libvirsim.so /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so \
 /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a \
@@ -614,4 +624,4 @@ _vcs_pli_stub_.o   /home/work/synopsys/L-2016.06/linux64/lib/vcs_save_restore_ne
 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a -ldl -lm  -lc -lpthread \
 -ldl 
 ../simv up to date
-CPU time: 1.267 seconds to compile + .599 seconds to elab + .437 seconds to link
+CPU time: 1.165 seconds to compile + .591 seconds to elab + .380 seconds to link

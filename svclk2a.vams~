@@ -1,0 +1,19 @@
+module svclk2a(inclk, outclk);
+  input inclk; logic inclk;
+  output outclk; voltage outclk;
+
+  parameter real vlevel = 3.0 from [0:inf);
+  parameter real tt = 1p from [0:inf);
+
+  real cval;
+
+always @(posedge inclk) 
+
+  analog begin
+    //@(initial_step) cval = 0;
+
+    V(outclk) <+ transition(inclk ? vlevel : 0.0, 0.0, tt);
+  end
+
+endmodule
+

@@ -24,19 +24,20 @@ Args:        -p t -t spec -f out/ana.pvadir/pvaHDL.lis -o out/ana.pvadir
 ### optimize mode ###
 Args: pva -p t -t spec -f out/ana.pvadir/pvaHDL.lis -o out/ana.pvadir
 
-Begin of pVA compiling on Fri Oct 16 03:59:11 2020
+Begin of pVA compiling on Tue Oct 20 10:12:27 2020
 
 Parsing 'simv.daidir/snps_HVA.va'
 
-End of pVA compiling on Fri Oct 16 03:59:11 2020
+End of pVA compiling on Tue Oct 20 10:12:27 2020
 
 *pvaI* Hierarchical Verilog-A (HVA) instance has been detected: freqmeasure (ams_src/freqmeasure.vams:1)
-*pvaI* Hierarchical Verilog-A (HVA) instance has been detected: top (ams_src/top.vams:10)
+*pvaI* Hierarchical Verilog-A (HVA) instance has been detected: svclk2a (svclk2a.vams:1)
+*pvaI* Hierarchical Verilog-A (HVA) instance has been detected: top (ams_src/top.vams:11)
 *pvaI* Hierarchical Verilog-A (HVA) instance has been detected: vramp (ams_src/vramp.va:4)
 *pvaI* Hierarchical Verilog-A (HVA) instance has been detected: top_tb (top_tb.sv:18)
 *pvaI* Defparam detected.
 
-End of build pVA DB on Fri Oct 16 03:59:11 2020
+End of build pVA DB on Tue Oct 20 10:12:27 2020
 
 *pvaI* module HVA_defpHelper has no statments and no instances.
 *pvaI* Module (HVA_defpHelper): 0 unexpanded port, 0 init, 0 behav, 0 contrib, 7/79 expr(s)
@@ -98,22 +99,27 @@ End of build pVA DB on Fri Oct 16 03:59:11 2020
 *pvaI*        port 'snps_dummy_2' declared, but not used
 *pvaI*        port 'snps_dummy_3' declared, but not used
 *pvaI*        generated 2 flow node(s) during compilation.
+*pvaI* Module (svclk2a): 3 unexpanded port, 0 init, 1 behav, 1 contrib, 13/79 expr(s)
+*pvaI*              0 afCount, 0 fixDIS
+*pvaI*        0 const-G and 0 const-C, No switchBranch, 0 bypassOpt
+*pvaI*        port 'snps_dummy_1' declared, but not used
+*pvaI*        generated 1 flow node(s) during compilation.
 *pvaI* Module (vramp): 2 unexpanded port, 2 init, 3 behav, 1 contrib, 9/79 expr(s)
 *pvaI*              0 afCount, 0 fixDIS
 *pvaI*        0 const-G and 0 const-C, No switchBranch, 0 bypassOpt
 *pvaI*        generated 1 flow node(s) during compilation.
 
-End of pVA genC on Fri Oct 16 03:59:20 2020
+End of pVA genC on Tue Oct 20 10:12:35 2020
 
-*pvaI* #### Total 2836 line-size(s), 268/1501 expr(s), 29 contr(s), 55 init(s), 138 behav(s), 54 port(s)
+*pvaI* #### Total 3192 line-size(s), 294/1659 expr(s), 31 contr(s), 55 init(s), 140 behav(s), 60 port(s)
 
 Generating out/ana.pvadir/pvaRTL_amd64.so
 
 
-End of submitting pVA out/ana.pvadir/pvaRTL.mak on Fri Oct 16 03:59:20 2020
+End of submitting pVA out/ana.pvadir/pvaRTL.mak on Tue Oct 20 10:12:35 2020
 
 
-End of pVA elaboration on Fri Oct 16 03:59:20 2020
+End of pVA elaboration on Tue Oct 20 10:12:35 2020
 
 *pvaI* Creating VA module (vramp) for instance vramp.vramp_behavioral with gmd reduction
 *pvaI* Creating VA module (vsrc) for instance top_tb.amstop.v0 with gmd reduction
@@ -130,8 +136,9 @@ End of pVA elaboration on Fri Oct 16 03:59:20 2020
 *pvaI* Creating VA module (cap) for instance top_tb.amstop.clpf with gmd reduction
 *pvaI* Creating VA module (vclkgen) for instance top_tb.amstop.vref with gmd reduction
 *pvaI* Creating VA module (freqdivider) for instance top_tb.amstop.fdiv with gmd reduction
+*pvaI* Creating VA module (svclk2a) for instance top_tb.amstop.svcc.svclk2a_behavioral with gmd reduction
 *pvaI* Creating VA module (freqmeasure) for instance top_tb.amstop.fm.freqmeasure_behavioral with gmd reduction
 
 
-pVA concluded on Fri Oct 16 03:59:34 2020
+pVA concluded on Tue Oct 20 10:12:49 2020
 

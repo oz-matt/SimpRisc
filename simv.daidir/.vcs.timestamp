@@ -19,7 +19,6 @@
 +itf+/home/work/synopsys/L-2016.06/linux64/lib/vcsdp_lite.tab
 +libext+.v
 +libext+.v+.h+.vh+.vlib
-+systemverilogext+.sv
 +v2k
 +vcs+vcdpluson
 +vcsBaseVer=VCS10.1
@@ -63,6 +62,7 @@
 -l
 -lca
 -picarchive
+-sverilog
 -timescale=1ns/1ps
 -y
 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/novas.tab
@@ -78,11 +78,11 @@ uvm_home=/home/work/synopsys/L-2016.06/etc/uvm-1.2
 sysc_uni_pwd=/home/work/Desktop/simprisc
 ml_seq_dir=/home/work/INCISIV122/specman/src
 X_DIR=/home/work/xkit/xkitroot
-XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1602790592.489745-626984281
+XDG_SESSION_COOKIE=fe1625d1c98dddbf574c6d7500000025-1603045671.986850-333495811
 XA_HOME=/home/disk/H-2013.03-SP2
 XA_ARCH=amd64
 XA_64=1
-XAUTHORITY=/var/run/gdm/auth-for-work-qyVXc1/database
+XAUTHORITY=/var/run/gdm/auth-for-work-jKXb8a/database
 WINDOWPATH=1
 VMR_MODE_FLAG=64
 VERDI_HOME=/home/disk/Verdi3_L-2016.06-1
@@ -101,13 +101,13 @@ UVM_HOME=/home/work/synopsys/L-2016.06/etc/uvm-1.2
 USERNAME=work
 UNAME=/bin/uname
 T_DIR=/home/work/xkit/xkitroot/xh035/cadence/v6_2
-TURBO_LOG_DIR=/tmp/vcs_20201015195859_7612
+TURBO_LOG_DIR=/tmp/vcs_20201020021219_100330
 TOOL_HOME=/home/work/synopsys/L-2016.06/linux64
 SYNOPSYS_HOME=/opt/synopsys
-SSH_AUTH_SOCK=/tmp/keyring-fAfmSo/socket.ssh
+SSH_AUTH_SOCK=/tmp/keyring-01c2v1/socket.ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SOCV_KIT_HOME=/home/work/INCISIV122/kits/VerificationKit
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2769,unix/unix:/tmp/.ICE-unix/2769
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/2881,unix/unix:/tmp/.ICE-unix/2881
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 SCL_HOME=/opt/synopsys/v11.10
@@ -135,8 +135,8 @@ HSP_BIN=/opt/synopsys/Hspice-2015.06-3//hspice/bin
 HISTCONTROL=ignoredups
 G_BROKEN_FILENAMES=1
 GTK_RC_FILES=/etc/gtk/gtkrc:/home/work/.gtkrc-1.2-gnome2
-GNOME_KEYRING_SOCKET=/tmp/keyring-fAfmSo/socket
-GNOME_KEYRING_PID=2759
+GNOME_KEYRING_SOCKET=/tmp/keyring-01c2v1/socket
+GNOME_KEYRING_PID=2871
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GDM_LANG=en_US.UTF-8
 GDM_KEYBOARD_LAYOUT=us
@@ -147,7 +147,7 @@ DVT_LICENSE_FILE=/home/work/Downloads/dvt_eclipse/licenses/dvt_MatthewMorra_Acad
 DVT_HOME=/home/work/Downloads/dvt_eclipse
 DISABLE_NIV_CODEC=1
 DESKTOP_SESSION=gnome
-DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-xh3ALbgtFS,guid=c330a58f8411b47746076cdb0000005a
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-8DbeUNHDgt,guid=f3b97e509b4bd6d21ed6a90100000156
 CVS_RSH=ssh
 COLORTERM=gnome-terminal
 CDS_Netlisting_Mode=Analog
@@ -160,6 +160,7 @@ ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 0
 43
 1602636602 top_th.sv
+1603159721 svclk2a.vams
 1602375052 ams_src/ams-models/d_ff_r.va
 1602432181 ams_src/ams-models/and_gate.va
 1602357373 ams_src/ams-models/varactor.va
@@ -172,12 +173,12 @@ ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 1601757476 ams_src/ams-models/disciplines.vams
 1371792340 /home/disk/H-2013.03-SP2/include/discipline.h
 0 simv.daidir/spicelib
-1602791832 top_tb.sv
+1603158376 top_tb.sv
 1601323521 ams_src/vsrc.vams
 1602186949 ams_src/vramp.va
 1601622332 ams_src/vpulse.va
 1602204727 ams_src/vclkgen.va
-1602790952 ams_src/top.vams
+1603159589 ams_src/top.vams
 1602360504 ams_src/freqmeasure.vams
 1602563234 ams_src/freqdivider.va
 1602635527 sv_src/insgen_if.sv
@@ -196,7 +197,6 @@ ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 1594769994 sv_src/mdriver_int.sv
 1594769994 sv_src/axil_int.sv
 1594769994 sv_src/defines.sv
-1594769994 sv_src/defines.sv
 1602709448 ams_src/files.f
 1602706351 sv_src/files.f
 1468145700 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/verdi.tab
@@ -208,4 +208,4 @@ ALTERAOCLSDKROOT=/home/disk/intelFPGA/17.0/hld
 1464147272 /home/work/synopsys/L-2016.06/linux64/lib/liberrorinf.so
 1464147248 /home/work/synopsys/L-2016.06/linux64/lib/libsnpsmalloc.so
 1468144468 /home/disk/Verdi3_L-2016.06-1/share/PLI/VCS/LINUX64/pli.a
-1602791946 simv.daidir
+1603159945 simv.daidir
